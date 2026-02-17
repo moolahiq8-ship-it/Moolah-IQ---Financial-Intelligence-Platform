@@ -55,7 +55,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/blog"
-              className="p-2 text-gray-300 hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+              className="p-2 text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
               aria-label="Search articles"
             >
               <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 -mr-2 text-gray-500"
+            className="md:hidden p-2 -mr-2 text-gray-700"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >

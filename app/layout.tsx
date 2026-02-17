@@ -48,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${playfair.variable} flex flex-col min-h-screen`}>
+      <body className={`${inter.className} ${playfair.variable} flex flex-col min-h-screen antialiased font-medium`}>
       {/* Pinterest Tag */}
             <Script id="pinterest-tag" strategy="afterInteractive">
               {`

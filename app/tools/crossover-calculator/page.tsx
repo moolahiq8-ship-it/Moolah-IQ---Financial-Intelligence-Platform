@@ -18,7 +18,7 @@ export default function CrossoverCalculatorPage() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">
           Home
         </Link>
@@ -38,7 +38,7 @@ export default function CrossoverCalculatorPage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">
           Crossover Point Calculator
         </h1>
-        <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
+        <p className="text-lg text-gray-700 max-w-2xl leading-relaxed">
           Discover when your passive investment income will cover all your
           monthly expenses — your personal financial independence date.
         </p>
@@ -49,8 +49,8 @@ export default function CrossoverCalculatorPage() {
 
       {/* Disclaimer */}
       <div className="mt-12 bg-light-bg rounded-xl p-6 border border-gray-100">
-        <p className="text-xs text-gray-400 leading-relaxed">
-          <span className="font-semibold text-gray-500">Disclaimer:</span> This
+        <p className="text-xs text-gray-600 leading-relaxed">
+          <span className="font-semibold text-gray-700">Disclaimer:</span> This
           calculator is for educational and illustrative purposes only. It uses
           simplified assumptions including a constant annual return rate, fixed
           monthly expenses, and the 4% safe withdrawal rate. Actual investment

@@ -5,41 +5,41 @@ import CardIllustration from "./CardIllustration";
 
 const categoryColors: Record<string, { gradient: string; badge: string }> = {
   earn: {
-    gradient: "from-emerald-400 to-teal-600",
+    gradient: "from-emerald-600 to-teal-800",
     badge: "bg-emerald-50 text-emerald-700",
   },
   spend: {
-    gradient: "from-amber-400 to-orange-600",
+    gradient: "from-amber-600 to-orange-800",
     badge: "bg-amber-50 text-amber-700",
   },
   save: {
-    gradient: "from-blue-400 to-indigo-600",
+    gradient: "from-blue-600 to-indigo-800",
     badge: "bg-blue-50 text-blue-700",
   },
   invest: {
-    gradient: "from-purple-400 to-violet-600",
+    gradient: "from-purple-600 to-violet-800",
     badge: "bg-purple-50 text-purple-700",
   },
   optimize: {
-    gradient: "from-yellow-400 to-amber-600",
+    gradient: "from-yellow-600 to-amber-800",
     badge: "bg-yellow-50 text-yellow-700",
   },
   protect: {
-    gradient: "from-rose-400 to-red-600",
+    gradient: "from-rose-600 to-red-800",
     badge: "bg-rose-50 text-rose-700",
   },
   milestones: {
-    gradient: "from-cyan-400 to-blue-600",
+    gradient: "from-cyan-600 to-blue-800",
     badge: "bg-cyan-50 text-cyan-700",
   },
   legacy: {
-    gradient: "from-amber-300 to-amber-700",
+    gradient: "from-amber-500 to-amber-700",
     badge: "bg-amber-50 text-amber-800",
   },
 };
 
 const defaultColors = {
-  gradient: "from-gray-400 to-gray-600",
+  gradient: "from-gray-600 to-gray-800",
   badge: "bg-gray-50 text-gray-700",
 };
 
@@ -129,7 +129,7 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
           >
             {post.category}
           </Link>
-          <span className="text-xs text-gray-300 font-medium">
+          <span className="text-xs text-gray-700 font-medium">
             {post.readingTime}
           </span>
         </div>
@@ -142,7 +142,7 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
         </Link>
 
         {/* Excerpt */}
-        <p className="text-gray-400 text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">
           {post.excerpt}
         </p>
 
@@ -163,11 +163,11 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
               style={{ width: `${barPercent}%` }}
             />
           </div>
-          <p className="text-[10px] text-gray-400 mt-1.5 font-medium">{iq.label} level complexity</p>
+          <p className="text-[10px] text-gray-600 mt-1.5 font-medium">{iq.label} level complexity</p>
         </div>
 
         {/* Author + date */}
-        <div className="flex items-center gap-2 text-xs text-gray-300">
+        <div className="flex items-center gap-2 text-xs text-gray-700">
           <span className="font-medium">{post.author}</span>
           <span>&middot;</span>
           <time dateTime={post.date}>{formattedDate}</time>

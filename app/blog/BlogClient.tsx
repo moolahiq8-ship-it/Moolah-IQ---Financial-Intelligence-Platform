@@ -49,7 +49,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
         <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-3 tracking-tight">
           Blog
         </h1>
-        <p className="text-gray-400 text-lg">
+        <p className="text-gray-600 text-lg">
           Browse all articles on personal finance, investing, and building wealth.
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
         </div>
       ) : (
         <div className="text-center py-20">
-          <p className="text-gray-400 text-lg">No posts found.</p>
+          <p className="text-gray-600 text-lg">No posts found.</p>
         </div>
       )}
     </section>

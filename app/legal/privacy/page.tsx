@@ -24,10 +24,10 @@ export default function PrivacyPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <span>/</span>
-        <span className="text-gray-400">Legal</span>
+        <span className="text-gray-600">Legal</span>
         <span>/</span>
         <span className="text-primary font-medium">Privacy Policy</span>
       </nav>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-3">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-600">
           Last updated: February 12, 2026
         </p>
       </div>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
         <ul className="space-y-2">
           {sections.map((s) => (
             <li key={s.id}>
-              <a href={`#${s.id}`} className="text-sm text-gray-500 hover:text-primary transition-colors">
+              <a href={`#${s.id}`} className="text-sm text-gray-700 hover:text-primary transition-colors">
                 {s.title}
               </a>
             </li>
@@ -201,7 +201,7 @@ export default function PrivacyPage() {
               <span>Set preferences for specific websites</span>
             </li>
           </ul>
-          <p className="mt-3 text-sm text-gray-400">
+          <p className="mt-3 text-sm text-gray-600">
             Note: Disabling cookies may affect some site functionality but will not impact calculator usage,
             as calculators process data entirely in your browser.
           </p>

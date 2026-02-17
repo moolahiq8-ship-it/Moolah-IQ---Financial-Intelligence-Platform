@@ -31,7 +31,7 @@ function InfoTooltip({ text }: { text: string }) {
   return (
     <span className="relative group inline-flex ml-1.5 cursor-help">
       <svg
-        className="w-4 h-4 text-gray-400 hover:text-primary transition-colors"
+        className="w-4 h-4 text-gray-600 hover:text-primary transition-colors"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -267,7 +267,7 @@ export default function MortgageRefinanceCalculator() {
                   min={0}
                   step={0.1}
                 />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold text-lg pointer-events-none">%</span>
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-semibold text-lg pointer-events-none">%</span>
               </div>
             </div>
             <div>
@@ -323,7 +323,7 @@ export default function MortgageRefinanceCalculator() {
                   min={0}
                   step={0.1}
                 />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-semibold text-lg pointer-events-none">%</span>
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-semibold text-lg pointer-events-none">%</span>
               </div>
             </div>
             <div>
@@ -338,7 +338,7 @@ export default function MortgageRefinanceCalculator() {
                     className={`py-3 rounded-lg font-bold text-lg transition-all duration-200 ${
                       newTerm === t
                         ? "bg-gold text-primary shadow-md"
-                        : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                   >
                     {t} yr
@@ -380,7 +380,7 @@ export default function MortgageRefinanceCalculator() {
       <div className="flex justify-end">
         <button
           onClick={handleReset}
-          className="px-5 py-2 text-sm font-semibold text-gray-400 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
+          className="px-5 py-2 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
         >
           Reset Defaults
         </button>
@@ -391,13 +391,13 @@ export default function MortgageRefinanceCalculator() {
         <div className="flex items-start gap-4 sm:gap-6">
           <div className="flex-shrink-0 mt-1">{dc.icon}</div>
           <div>
-            <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-1">
+            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-1">
               Should You Refinance?
             </p>
             <p className={`text-2xl sm:text-3xl font-extrabold ${dc.color} mb-2`}>
               {dc.label}
             </p>
-            <p className="text-sm text-gray-500 leading-relaxed max-w-xl">
+            <p className="text-sm text-gray-700 leading-relaxed max-w-xl">
               {dc.desc}
             </p>
           </div>
@@ -407,13 +407,13 @@ export default function MortgageRefinanceCalculator() {
       {/* Key Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
             New Monthly Payment
           </p>
           <p className="text-2xl font-extrabold text-dark-text">
             {formatFullCurrency(results.newMonthlyPayment)}
           </p>
-          <p className={`text-sm font-semibold mt-1 ${results.monthlySavings > 0 ? "text-accent" : results.monthlySavings < 0 ? "text-red-500" : "text-gray-400"}`}>
+          <p className={`text-sm font-semibold mt-1 ${results.monthlySavings > 0 ? "text-accent" : results.monthlySavings < 0 ? "text-red-500" : "text-gray-600"}`}>
             {results.monthlySavings > 0
               ? `Save ${formatFullCurrency(results.monthlySavings)}/mo`
               : results.monthlySavings < 0
@@ -422,7 +422,7 @@ export default function MortgageRefinanceCalculator() {
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
             Break-Even Point
             <InfoTooltip text="The number of months it takes for your monthly savings to recoup the closing costs. You need to stay in your home at least this long to benefit." />
           </p>
@@ -431,31 +431,31 @@ export default function MortgageRefinanceCalculator() {
               ? `${results.breakEvenMonths} months`
               : "N/A"}
           </p>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-gray-600 mt-1">
             {results.breakEvenMonths > 0
               ? `${(results.breakEvenMonths / 12).toFixed(1)} years`
               : "Savings don't cover costs"}
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
             Total Interest Saved
           </p>
           <p className={`text-2xl font-extrabold ${results.interestSaved > 0 ? "text-accent" : "text-dark-text"}`}>
             {formatFullCurrency(results.interestSaved)}
           </p>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-gray-600 mt-1">
             Over life of loan
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
             Net Savings
           </p>
           <p className={`text-2xl font-extrabold ${results.netSavings > 0 ? "text-gold-dark" : "text-dark-text"}`}>
             {formatFullCurrency(results.netSavings)}
           </p>
-          <p className="text-sm text-gray-400 mt-1">
+          <p className="text-sm text-gray-600 mt-1">
             After closing costs
           </p>
         </div>
@@ -467,7 +467,7 @@ export default function MortgageRefinanceCalculator() {
           <h2 className="text-xl font-bold text-primary mb-1">
             Break-Even Timeline
           </h2>
-          <p className="text-sm text-gray-400 mb-6">
+          <p className="text-sm text-gray-600 mb-6">
             When your cumulative monthly savings surpass the closing costs
           </p>
           <div className="h-[350px] sm:h-[420px]">
@@ -536,7 +536,7 @@ export default function MortgageRefinanceCalculator() {
           <div className="flex flex-wrap justify-center gap-6 mt-4 text-sm">
             <div className="flex items-center gap-2">
               <span className="w-4 h-0.5 bg-accent inline-block rounded" />
-              <span className="text-gray-500">Cumulative Savings</span>
+              <span className="text-gray-700">Cumulative Savings</span>
             </div>
             <div className="flex items-center gap-2">
               <span
@@ -546,12 +546,12 @@ export default function MortgageRefinanceCalculator() {
                     "repeating-linear-gradient(90deg, #EF4444 0, #EF4444 4px, transparent 4px, transparent 8px)",
                 }}
               />
-              <span className="text-gray-500">Closing Costs</span>
+              <span className="text-gray-700">Closing Costs</span>
             </div>
             {results.breakEvenDataPoint && (
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 bg-gold rounded-full inline-block border-2 border-white shadow" />
-                <span className="text-gray-500">Break-Even Point</span>
+                <span className="text-gray-700">Break-Even Point</span>
               </div>
             )}
           </div>
@@ -567,7 +567,7 @@ export default function MortgageRefinanceCalculator() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b-2 border-gray-100">
-                <th className="text-left py-3 pr-4 font-bold text-gray-400 uppercase tracking-wider text-xs"></th>
+                <th className="text-left py-3 pr-4 font-bold text-gray-600 uppercase tracking-wider text-xs"></th>
                 <th className="text-right py-3 px-4 font-bold text-primary uppercase tracking-wider text-xs">
                   Current
                 </th>
@@ -619,26 +619,26 @@ export default function MortgageRefinanceCalculator() {
 
       {/* Assumptions */}
       <div className="bg-light-bg rounded-xl p-6 border border-gray-100">
-        <h3 className="text-sm font-bold text-gray-500 mb-3">Assumptions & Notes</h3>
-        <ul className="space-y-1.5 text-xs text-gray-400 leading-relaxed">
+        <h3 className="text-sm font-bold text-gray-700 mb-3">Assumptions & Notes</h3>
+        <ul className="space-y-1.5 text-xs text-gray-600 leading-relaxed">
           <li className="flex gap-2">
-            <span className="text-gray-300 flex-shrink-0">-</span>
+            <span className="text-gray-700 flex-shrink-0">-</span>
             Assumes you stay in your home past the break-even point.
           </li>
           <li className="flex gap-2">
-            <span className="text-gray-300 flex-shrink-0">-</span>
+            <span className="text-gray-700 flex-shrink-0">-</span>
             Does not include potential tax implications of mortgage interest deduction changes.
           </li>
           <li className="flex gap-2">
-            <span className="text-gray-300 flex-shrink-0">-</span>
+            <span className="text-gray-700 flex-shrink-0">-</span>
             Closing costs are estimates — actual costs may vary by lender and location.
           </li>
           <li className="flex gap-2">
-            <span className="text-gray-300 flex-shrink-0">-</span>
+            <span className="text-gray-700 flex-shrink-0">-</span>
             Does not account for property taxes, homeowner&apos;s insurance, or PMI.
           </li>
           <li className="flex gap-2">
-            <span className="text-gray-300 flex-shrink-0">-</span>
+            <span className="text-gray-700 flex-shrink-0">-</span>
             For educational purposes only. This is not financial advice — consult a qualified mortgage professional.
           </li>
         </ul>

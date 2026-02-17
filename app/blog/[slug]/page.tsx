@@ -55,7 +55,7 @@ export default async function PostPage({ params }: Props) {
   return (
     <article className="max-w-4xl mx-auto px-4 py-12">
       {/* Breadcrumb */}
-      <nav className="text-sm text-gray-400 mb-6">
+      <nav className="text-sm text-gray-600 mb-6">
         <Link href="/" className="hover:text-accent">
           Home
         </Link>{" "}
@@ -77,7 +77,7 @@ export default async function PostPage({ params }: Props) {
         <h1 className="text-4xl font-bold text-primary mt-4 mb-4">
           {post.title}
         </h1>
-        <div className="flex items-center gap-4 text-sm text-gray-500">
+        <div className="flex items-center gap-4 text-sm text-gray-700">
           <span>{post.author}</span>
           <span>&middot;</span>
           <time dateTime={post.date}>{formattedDate}</time>

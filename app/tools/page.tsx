@@ -83,7 +83,7 @@ export default function ToolsPage() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">
           Home
         </Link>
@@ -96,7 +96,7 @@ export default function ToolsPage() {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">
           Financial Tools
         </h1>
-        <p className="text-lg text-gray-500 max-w-2xl leading-relaxed">
+        <p className="text-lg text-gray-700 max-w-2xl leading-relaxed">
           Free calculators and planning tools to help you make smarter money
           decisions and plan your financial future.
         </p>
@@ -121,7 +121,7 @@ export default function ToolsPage() {
             <h2 className="text-lg font-bold text-dark-text group-hover:text-primary transition-colors mb-2">
               {tool.title}
             </h2>
-            <p className="text-sm text-gray-400 leading-relaxed mb-4">
+            <p className="text-sm text-gray-600 leading-relaxed mb-4">
               {tool.description}
             </p>
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-dark transition-colors">

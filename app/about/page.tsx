@@ -12,7 +12,7 @@ const pillars = [
     name: "Earn",
     description: "Scale your primary income, launch side hustles, and master the art of negotiation.",
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-    gradient: "from-emerald-600/20 to-teal-600/10",
+    gradient: "from-emerald-600/20 to-teal-800/10",
     accent: "text-emerald-700",
     ring: "ring-emerald-600/30",
     iconBg: "from-emerald-100 to-teal-100",
@@ -21,7 +21,7 @@ const pillars = [
     name: "Spend",
     description: "Transition from mindless consumption to intentional spending\u2014making every dollar work harder.",
     icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
-    gradient: "from-amber-600/20 to-orange-600/10",
+    gradient: "from-amber-600/20 to-orange-800/10",
     accent: "text-amber-700",
     ring: "ring-amber-600/30",
     iconBg: "from-amber-100 to-orange-100",
@@ -30,7 +30,7 @@ const pillars = [
     name: "Save",
     description: "Move beyond the piggy bank with high-yield strategies and robust emergency funds.",
     icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
-    gradient: "from-blue-600/20 to-indigo-600/10",
+    gradient: "from-blue-600/20 to-indigo-800/10",
     accent: "text-blue-700",
     ring: "ring-blue-600/30",
     iconBg: "from-blue-100 to-indigo-100",
@@ -39,7 +39,7 @@ const pillars = [
     name: "Invest",
     description: "Demystify the markets by mastering stocks, index funds, and the unstoppable power of compound growth.",
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-    gradient: "from-purple-600/20 to-violet-600/10",
+    gradient: "from-purple-600/20 to-violet-800/10",
     accent: "text-purple-700",
     ring: "ring-purple-600/30",
     iconBg: "from-purple-100 to-violet-100",
@@ -57,7 +57,7 @@ const pillars = [
     name: "Protect",
     description: "Shield your hard-earned wealth with smart insurance, estate planning, and fraud prevention.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    gradient: "from-rose-600/20 to-red-600/10",
+    gradient: "from-rose-600/20 to-red-800/10",
     accent: "text-rose-700",
     ring: "ring-rose-600/30",
     iconBg: "from-rose-100 to-red-100",
@@ -66,7 +66,7 @@ const pillars = [
     name: "Milestones",
     description: "Navigate life\u2019s major plays\u2014from securing your first home to starting a family and planning for retirement.",
     icon: "M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9",
-    gradient: "from-cyan-600/20 to-blue-600/10",
+    gradient: "from-cyan-600/20 to-blue-800/10",
     accent: "text-cyan-700",
     ring: "ring-cyan-600/30",
     iconBg: "from-cyan-100 to-blue-100",
@@ -96,7 +96,7 @@ export default function AboutPage() {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-primary mb-4 tracking-tight">
             About Moolah IQ
           </h1>
-          <p className="text-lg sm:text-xl font-medium text-slate-600 max-w-2xl leading-relaxed">
+          <p className="text-lg sm:text-xl font-medium text-slate-800 max-w-2xl leading-relaxed">
             Empowering smarter money decisions through data-backed intelligence and disciplined strategy.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Foundation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 tracking-tight">The 8 Pillars</h2>
-          <p className="text-slate-600 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-slate-800 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
             Every strategy, video, and guide at Moolah IQ is built upon our eight core pillars of personal finance:
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
               <h3 className={`text-sm font-extrabold uppercase tracking-wider ${pillar.accent} mb-2`}>
                 {pillar.name}
               </h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">{pillar.description}</p>
+              <p className="text-slate-800 text-sm font-medium leading-relaxed">{pillar.description}</p>
             </div>
           ))}
         </div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold uppercase tracking-widest text-accent">How We Work</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 tracking-tight">Our Approach</h2>
-          <p className="text-slate-600 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-slate-800 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
             At Moolah IQ, we cut through the noise with three guiding principles:
           </p>
         </div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-extrabold text-slate-800 mb-3">Clarity</h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+              <p className="text-slate-800 text-sm font-medium leading-relaxed">
                 We translate &ldquo;finance-speak&rdquo; into plain English. No jargon enters our content without a clear explanation.
               </p>
             </div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-extrabold text-slate-800 mb-3">Actionability</h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+              <p className="text-slate-800 text-sm font-medium leading-relaxed">
                 Theory is useless without execution. Every piece of content includes concrete steps you can take today.
               </p>
             </div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-extrabold text-slate-800 mb-3">Honesty</h3>
-              <p className="text-slate-600 text-sm font-medium leading-relaxed">
+              <p className="text-slate-800 text-sm font-medium leading-relaxed">
                 We prioritize transparency over trends. We share what actually works, what&apos;s a trap, and the &ldquo;why&rdquo; behind every strategy.
               </p>
             </div>
@@ -239,7 +239,7 @@ export default function AboutPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary mb-3 tracking-tight">
               Join the Moolah IQ Community
             </h2>
-            <p className="text-slate-600 font-medium mb-8 max-w-lg mx-auto text-lg leading-relaxed">
+            <p className="text-slate-800 font-medium mb-8 max-w-lg mx-auto text-lg leading-relaxed">
               Subscribe to our newsletter and get weekly money intelligence delivered straight to your inbox.
             </p>
             <Newsletter variant="inline" />

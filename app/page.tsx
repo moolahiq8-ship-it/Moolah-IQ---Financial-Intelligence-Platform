@@ -23,7 +23,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-dark-text mb-2">Expert Guides</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 In-depth articles written with clarity and backed by research.
               </p>
             </div>
@@ -34,7 +34,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-dark-text mb-2">Actionable Tips</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Every article includes steps you can take today to improve your finances.
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold text-dark-text mb-2">No Jargon</h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Finance explained in plain English. Accessible to everyone.
               </p>
             </div>
@@ -94,7 +94,7 @@ export default function Home() {
                       New
                     </span>
                   </div>
-                  <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
                     Find out when your passive investment income will cover your
                     monthly expenses — your personal financial independence date.
                   </p>
@@ -132,7 +132,7 @@ export default function Home() {
               Level Up Your{" "}
               <span className="text-accent">Financial IQ</span>
             </h2>
-            <p className="text-white/50 text-base md:text-lg mb-10 leading-relaxed">
+            <p className="text-white/70 text-base md:text-lg mb-10 leading-relaxed">
               Join thousands of readers getting weekly intelligence briefs
               delivered straight to their inbox.
             </p>

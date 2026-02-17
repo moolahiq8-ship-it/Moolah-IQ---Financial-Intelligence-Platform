@@ -26,10 +26,10 @@ export default function TermsPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-400 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <span>/</span>
-        <span className="text-gray-400">Legal</span>
+        <span className="text-gray-600">Legal</span>
         <span>/</span>
         <span className="text-primary font-medium">Terms of Service</span>
       </nav>
@@ -39,7 +39,7 @@ export default function TermsPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-3">
           Terms of Service
         </h1>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-600">
           Last updated: February 12, 2026
         </p>
       </div>
@@ -58,7 +58,7 @@ export default function TermsPage() {
         <ul className="space-y-2">
           {sections.map((s) => (
             <li key={s.id}>
-              <a href={`#${s.id}`} className="text-sm text-gray-500 hover:text-primary transition-colors">
+              <a href={`#${s.id}`} className="text-sm text-gray-700 hover:text-primary transition-colors">
                 {s.title}
               </a>
             </li>

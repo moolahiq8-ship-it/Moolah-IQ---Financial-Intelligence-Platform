@@ -18,7 +18,7 @@ export default function CategoryFilter({
         className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
           selected === null
             ? "bg-primary text-white shadow-sm"
-            : "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-dark-text"
+            : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-dark-text"
         }`}
       >
         All
@@ -30,7 +30,7 @@ export default function CategoryFilter({
           className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
             selected === cat
               ? "bg-primary text-white shadow-sm"
-              : "bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-dark-text"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-dark-text"
           }`}
         >
           {cat}

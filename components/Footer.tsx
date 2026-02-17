@@ -17,7 +17,7 @@ export default function Footer() {
                 className="h-9 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               Level up your financial intelligence. Data-backed strategies to
               build wealth, budget smarter, and invest with confidence.
             </p>
@@ -172,10 +172,10 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Moolah IQ. All rights reserved.
           </p>
-          <div className="flex items-center gap-3 text-xs text-white/30">
+          <div className="flex items-center gap-3 text-xs text-white/50">
             <Link href="/legal/disclaimer" className="hover:text-white/60 transition-colors">Disclaimer</Link>
             <span>|</span>
             <Link href="/legal/privacy" className="hover:text-white/60 transition-colors">Privacy</Link>
