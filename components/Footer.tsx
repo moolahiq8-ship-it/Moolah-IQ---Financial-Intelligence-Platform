@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0f2847] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-4">
@@ -65,33 +65,73 @@ export default function Footer() {
           </div>
 
           {/* Categories */}
-          <div>
+          <div className="md:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-              Topics
+              Categories
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
               <li>
                 <Link
-                  href="/category/saving"
+                  href="/category/earn"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Saving
+                  Earn
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/category/investing"
+                  href="/category/spend"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Investing
+                  Spend
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/category/budgeting"
+                  href="/category/save"
                   className="text-white/60 hover:text-white transition-colors"
                 >
-                  Budgeting
+                  Save
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/category/invest"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Invest
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/category/optimize"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Optimize
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/category/protect"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Protect
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/category/milestones"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Milestones
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/category/legacy"
+                  className="text-white/60 hover:text-white transition-colors"
+                >
+                  Legacy
                 </Link>
               </li>
             </ul>

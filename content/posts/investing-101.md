@@ -2,7 +2,7 @@
 title: "Investing 101: How to Start Investing with Any Amount"
 date: "2025-02-01"
 excerpt: "You don't need thousands of dollars to start investing. Learn the basics of stocks, index funds, and compound interest."
-category: "Investing"
+category: "Invest"
 tags: ["investing", "beginners", "index-funds", "compound-interest"]
 iqLevel: "Market IQ"
 iqScore: 110

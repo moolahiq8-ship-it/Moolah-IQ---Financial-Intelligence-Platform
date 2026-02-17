@@ -7,6 +7,17 @@ interface Props {
   params: { category: string };
 }
 
+const categoryDescriptions: Record<string, string> = {
+  earn: "Strategies to grow your income through careers, side hustles, freelancing, and salary negotiation.",
+  spend: "Smart budgeting techniques, mindful spending habits, and ways to make every dollar count.",
+  save: "High-yield savings accounts, emergency funds, and goal-based saving strategies.",
+  invest: "Stock market fundamentals, index funds, retirement accounts, and compound growth.",
+  optimize: "Tax planning, credit score improvement, debt payoff strategies, and financial fine-tuning.",
+  protect: "Insurance essentials, estate planning, fraud prevention, and wealth protection.",
+  milestones: "Financial guidance for life's big moments — buying a home, starting a family, and retirement.",
+  legacy: "Generational wealth building, charitable giving, and long-term financial planning.",
+};
+
 export async function generateStaticParams() {
   return getAllCategories().map((cat) => ({
     category: cat.toLowerCase(),
@@ -16,9 +27,12 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category =
     params.category.charAt(0).toUpperCase() + params.category.slice(1);
+  const description =
+    categoryDescriptions[params.category.toLowerCase()] ||
+    `Browse all Moolah IQ articles about ${category}.`;
   return {
     title: `${category} Articles`,
-    description: `Browse all Moolah IQ articles about ${category}.`,
+    description,
   };
 }
 

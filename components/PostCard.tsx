@@ -4,21 +4,37 @@ import { PostFrontmatter, IqLevel } from "@/lib/posts";
 import CardIllustration from "./CardIllustration";
 
 const categoryColors: Record<string, { gradient: string; badge: string }> = {
-  saving: {
+  earn: {
     gradient: "from-emerald-400 to-teal-600",
     badge: "bg-emerald-50 text-emerald-700",
   },
-  investing: {
-    gradient: "from-blue-400 to-indigo-600",
-    badge: "bg-blue-50 text-blue-700",
-  },
-  budgeting: {
+  spend: {
     gradient: "from-amber-400 to-orange-600",
     badge: "bg-amber-50 text-amber-700",
   },
-  trading: {
-    gradient: "from-purple-400 to-pink-600",
+  save: {
+    gradient: "from-blue-400 to-indigo-600",
+    badge: "bg-blue-50 text-blue-700",
+  },
+  invest: {
+    gradient: "from-purple-400 to-violet-600",
     badge: "bg-purple-50 text-purple-700",
+  },
+  optimize: {
+    gradient: "from-yellow-400 to-amber-600",
+    badge: "bg-yellow-50 text-yellow-700",
+  },
+  protect: {
+    gradient: "from-rose-400 to-red-600",
+    badge: "bg-rose-50 text-rose-700",
+  },
+  milestones: {
+    gradient: "from-cyan-400 to-blue-600",
+    badge: "bg-cyan-50 text-cyan-700",
+  },
+  legacy: {
+    gradient: "from-amber-300 to-amber-700",
+    badge: "bg-amber-50 text-amber-800",
   },
 };
 

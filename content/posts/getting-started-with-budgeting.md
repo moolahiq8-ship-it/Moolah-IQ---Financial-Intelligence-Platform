@@ -2,7 +2,7 @@
 title: "Getting Started with Budgeting: A Beginner's Guide"
 date: "2025-01-15"
 excerpt: "Learn how to create your first budget with the 50/30/20 rule, track your spending, and build a system that actually sticks."
-category: "Budgeting"
+category: "Spend"
 tags: ["budgeting", "beginners", "saving", "50-30-20"]
 iqLevel: "Foundational IQ"
 iqScore: 95

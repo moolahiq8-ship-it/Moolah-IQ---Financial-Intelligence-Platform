@@ -2,7 +2,7 @@
 title: "The 5 Best High-Yield Savings Accounts in 2026"
 date: "2026-02-11"
 excerpt: "Earn 4%+ APY on your savings. We compare the top high-yield savings accounts by rates, fees, minimums, and features to help you pick the right one."
-category: "Saving"
+category: "Save"
 tags: ["savings", "high-yield", "banks", "emergency-fund", "interest-rates"]
 iqLevel: "Strategic IQ"
 iqScore: 125
