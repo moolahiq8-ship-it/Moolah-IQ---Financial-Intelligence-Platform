@@ -6,15 +6,15 @@ interface CategoryFilterProps {
   onSelect: (category: string | null) => void;
 }
 
-const categoryHoverColors: Record<string, string> = {
-  Earn: "hover:bg-emerald-100 hover:text-emerald-800",
-  Spend: "hover:bg-amber-100 hover:text-amber-800",
-  Save: "hover:bg-blue-100 hover:text-blue-800",
-  Invest: "hover:bg-purple-100 hover:text-purple-800",
-  Optimize: "hover:bg-yellow-100 hover:text-yellow-800",
-  Protect: "hover:bg-rose-100 hover:text-rose-800",
-  Milestones: "hover:bg-cyan-100 hover:text-cyan-800",
-  Legacy: "hover:bg-amber-100 hover:text-amber-800",
+const categoryDefaultColors: Record<string, string> = {
+  Earn: "bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100",
+  Spend: "bg-amber-50 text-amber-700 border border-amber-200 hover:bg-amber-100",
+  Save: "bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100",
+  Invest: "bg-purple-50 text-purple-700 border border-purple-200 hover:bg-purple-100",
+  Optimize: "bg-yellow-50 text-yellow-700 border border-yellow-200 hover:bg-yellow-100",
+  Protect: "bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100",
+  Milestones: "bg-cyan-50 text-cyan-700 border border-cyan-200 hover:bg-cyan-100",
+  Legacy: "bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100",
 };
 
 const categoryActiveColors: Record<string, string> = {
@@ -52,7 +52,7 @@ export default function CategoryFilter({
           className={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${
             selected === cat
               ? categoryActiveColors[cat] || "bg-primary text-white shadow-md"
-              : `bg-gray-100 text-gray-700 ${categoryHoverColors[cat] || "hover:bg-gray-200 hover:text-dark-text"}`
+              : categoryDefaultColors[cat] || "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-dark-text"
           }`}
         >
           {cat}

@@ -88,6 +88,9 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-white to-accent/[0.06]" />
+        {/* Mesh gradient blobs */}
+        <div className="absolute -top-20 -right-20 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gold rounded-full blur-3xl opacity-20" />
         <div className="relative max-w-4xl mx-auto px-4 pt-16 sm:pt-20 pb-12 sm:pb-16">
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 mb-6 shadow-md">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />

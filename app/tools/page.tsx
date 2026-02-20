@@ -81,28 +81,33 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-700 mb-8">
-        <Link href="/" className="hover:text-primary transition-colors">
-          Home
-        </Link>
-        <span>/</span>
-        <span className="text-primary font-medium">Tools</span>
-      </nav>
+    <>
+      {/* Dark Navy Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-950">
+        {/* Circuit board pattern */}
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-sm text-white/60 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">
+              Home
+            </Link>
+            <span>/</span>
+            <span className="text-white font-medium">Tools</span>
+          </nav>
 
-      {/* Header */}
-      <div className="mb-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">
-          Financial Tools
-        </h1>
-        <p className="text-lg text-gray-700 max-w-2xl leading-relaxed">
-          Free calculators and planning tools to help you make smarter money
-          decisions and plan your financial future.
-        </p>
-      </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+            Financial Tools
+          </h1>
+          <p className="text-lg text-white/70 max-w-2xl leading-relaxed">
+            Free calculators and planning tools to help you make smarter money
+            decisions and plan your financial future.
+          </p>
+        </div>
+      </section>
 
       {/* Tools Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {tools.map((tool) => (
           <Link
@@ -143,6 +148,7 @@ export default function ToolsPage() {
           </Link>
         ))}
       </div>
-    </section>
+      </section>
+    </>
   );
 }

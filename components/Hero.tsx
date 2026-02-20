@@ -1,6 +1,12 @@
 export default function Hero() {
   return (
     <section className="bg-primary pb-32 pt-16 md:pt-20 relative overflow-hidden neural-bg">
+      {/* Mesh gradient blobs */}
+      <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-gold rounded-full blur-3xl opacity-20" />
+      <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-accent rounded-full blur-3xl opacity-20" />
+      {/* Dot grid pattern */}
+      <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+
       {/* Left — 3D glassmorphism chart */}
       <div className="hidden lg:block absolute left-6 xl:left-16 top-1/2 -translate-y-1/2">
         <div className="relative w-[286px] h-[286px]">
