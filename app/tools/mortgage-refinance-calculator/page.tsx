@@ -18,7 +18,7 @@ export default function MortgageRefinanceCalculatorPage() {
   return (
     <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-700 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">
           Home
         </Link>

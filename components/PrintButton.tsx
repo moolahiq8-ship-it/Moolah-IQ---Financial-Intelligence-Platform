@@ -4,7 +4,7 @@ export default function PrintButton() {
   return (
     <button
       onClick={() => window.print()}
-      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors print:hidden"
+      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-lg transition-colors print:hidden"
     >
       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path

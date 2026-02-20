@@ -31,7 +31,7 @@ function InfoTooltip({ text }: { text: string }) {
   return (
     <span className="relative group inline-flex ml-1.5 cursor-help">
       <svg
-        className="w-4 h-4 text-gray-600 hover:text-primary transition-colors"
+        className="w-4 h-4 text-gray-700 hover:text-primary transition-colors"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -239,7 +239,7 @@ export default function MortgageRefinanceCalculator() {
           <h2 className="text-xl font-bold text-primary mb-6">Current Mortgage</h2>
           <div className="space-y-5">
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Current Loan Balance ($)
               </label>
               <input
@@ -251,7 +251,7 @@ export default function MortgageRefinanceCalculator() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Current Interest Rate (%)
                 <InfoTooltip text="Your current mortgage APR. Check your latest mortgage statement or online account for this number." />
               </label>
@@ -267,11 +267,11 @@ export default function MortgageRefinanceCalculator() {
                   min={0}
                   step={0.1}
                 />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-semibold text-lg pointer-events-none">%</span>
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 font-semibold text-lg pointer-events-none">%</span>
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Current Monthly Payment ($)
                 <InfoTooltip text="Your current principal & interest payment. Exclude taxes, insurance, and HOA if they are escrowed separately." />
               </label>
@@ -284,7 +284,7 @@ export default function MortgageRefinanceCalculator() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Years Remaining
               </label>
               <input
@@ -307,7 +307,7 @@ export default function MortgageRefinanceCalculator() {
           <h2 className="text-xl font-bold text-primary mb-6">Refinance Scenario</h2>
           <div className="space-y-5">
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 New Interest Rate (%)
                 <InfoTooltip text="The rate offered by your lender for refinancing. Shop multiple lenders to find the best rate." />
               </label>
@@ -323,11 +323,11 @@ export default function MortgageRefinanceCalculator() {
                   min={0}
                   step={0.1}
                 />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-semibold text-lg pointer-events-none">%</span>
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 font-semibold text-lg pointer-events-none">%</span>
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 New Loan Term (years)
               </label>
               <div className="grid grid-cols-3 gap-2">
@@ -347,7 +347,7 @@ export default function MortgageRefinanceCalculator() {
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Closing Costs ($)
                 <InfoTooltip text="Fees charged to process the refinance — typically 2-5% of the loan amount. Includes appraisal, title insurance, origination fees, and more." />
               </label>
@@ -360,7 +360,7 @@ export default function MortgageRefinanceCalculator() {
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-600 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Cash Out Amount ($)
                 <InfoTooltip text="Optional extra cash you want to take out of your home equity. This increases your new loan balance." />
               </label>
@@ -380,7 +380,7 @@ export default function MortgageRefinanceCalculator() {
       <div className="flex justify-end">
         <button
           onClick={handleReset}
-          className="px-5 py-2 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
+          className="px-5 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-lg transition-colors"
         >
           Reset Defaults
         </button>
@@ -391,7 +391,7 @@ export default function MortgageRefinanceCalculator() {
         <div className="flex items-start gap-4 sm:gap-6">
           <div className="flex-shrink-0 mt-1">{dc.icon}</div>
           <div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-1">
+            <p className="text-sm font-semibold text-gray-700 uppercase tracking-widest mb-1">
               Should You Refinance?
             </p>
             <p className={`text-2xl sm:text-3xl font-extrabold ${dc.color} mb-2`}>
@@ -407,13 +407,13 @@ export default function MortgageRefinanceCalculator() {
       {/* Key Metrics */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-700 uppercase tracking-widest mb-2">
             New Monthly Payment
           </p>
           <p className="text-2xl font-extrabold text-dark-text">
             {formatFullCurrency(results.newMonthlyPayment)}
           </p>
-          <p className={`text-sm font-semibold mt-1 ${results.monthlySavings > 0 ? "text-accent" : results.monthlySavings < 0 ? "text-red-500" : "text-gray-600"}`}>
+          <p className={`text-sm font-semibold mt-1 ${results.monthlySavings > 0 ? "text-accent" : results.monthlySavings < 0 ? "text-red-500" : "text-gray-700"}`}>
             {results.monthlySavings > 0
               ? `Save ${formatFullCurrency(results.monthlySavings)}/mo`
               : results.monthlySavings < 0
@@ -422,7 +422,7 @@ export default function MortgageRefinanceCalculator() {
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-700 uppercase tracking-widest mb-2">
             Break-Even Point
             <InfoTooltip text="The number of months it takes for your monthly savings to recoup the closing costs. You need to stay in your home at least this long to benefit." />
           </p>
@@ -431,31 +431,31 @@ export default function MortgageRefinanceCalculator() {
               ? `${results.breakEvenMonths} months`
               : "N/A"}
           </p>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-700 mt-1">
             {results.breakEvenMonths > 0
               ? `${(results.breakEvenMonths / 12).toFixed(1)} years`
               : "Savings don't cover costs"}
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-700 uppercase tracking-widest mb-2">
             Total Interest Saved
           </p>
           <p className={`text-2xl font-extrabold ${results.interestSaved > 0 ? "text-accent" : "text-dark-text"}`}>
             {formatFullCurrency(results.interestSaved)}
           </p>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-700 mt-1">
             Over life of loan
           </p>
         </div>
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-5 sm:p-6">
-          <p className="text-xs font-semibold text-gray-600 uppercase tracking-widest mb-2">
+          <p className="text-xs font-semibold text-gray-700 uppercase tracking-widest mb-2">
             Net Savings
           </p>
           <p className={`text-2xl font-extrabold ${results.netSavings > 0 ? "text-gold-dark" : "text-dark-text"}`}>
             {formatFullCurrency(results.netSavings)}
           </p>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-700 mt-1">
             After closing costs
           </p>
         </div>
@@ -467,7 +467,7 @@ export default function MortgageRefinanceCalculator() {
           <h2 className="text-xl font-bold text-primary mb-1">
             Break-Even Timeline
           </h2>
-          <p className="text-sm text-gray-600 mb-6">
+          <p className="text-sm text-gray-700 mb-6">
             When your cumulative monthly savings surpass the closing costs
           </p>
           <div className="h-[350px] sm:h-[420px]">
@@ -550,7 +550,7 @@ export default function MortgageRefinanceCalculator() {
             </div>
             {results.breakEvenDataPoint && (
               <div className="flex items-center gap-2">
-                <span className="w-3 h-3 bg-gold rounded-full inline-block border-2 border-white shadow" />
+                <span className="w-3 h-3 bg-gold rounded-full inline-block border-2 border-white shadow-lg" />
                 <span className="text-gray-700">Break-Even Point</span>
               </div>
             )}
@@ -567,7 +567,7 @@ export default function MortgageRefinanceCalculator() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b-2 border-gray-100">
-                <th className="text-left py-3 pr-4 font-bold text-gray-600 uppercase tracking-wider text-xs"></th>
+                <th className="text-left py-3 pr-4 font-bold text-gray-700 uppercase tracking-wider text-xs"></th>
                 <th className="text-right py-3 px-4 font-bold text-primary uppercase tracking-wider text-xs">
                   Current
                 </th>
@@ -579,17 +579,17 @@ export default function MortgageRefinanceCalculator() {
             <tbody>
               <tr className="border-b border-gray-50">
                 <td className="py-4 pr-4 font-semibold text-dark-text">Interest Rate</td>
-                <td className="py-4 px-4 text-right text-gray-600">{currentRate}%</td>
+                <td className="py-4 px-4 text-right text-gray-700">{currentRate}%</td>
                 <td className="py-4 pl-4 text-right font-semibold text-accent">{newRate}%</td>
               </tr>
               <tr className="border-b border-gray-50">
                 <td className="py-4 pr-4 font-semibold text-dark-text">Monthly Payment</td>
-                <td className="py-4 px-4 text-right text-gray-600">{formatFullCurrency(currentPayment)}</td>
+                <td className="py-4 px-4 text-right text-gray-700">{formatFullCurrency(currentPayment)}</td>
                 <td className="py-4 pl-4 text-right font-semibold text-accent">{formatFullCurrency(results.newMonthlyPayment)}</td>
               </tr>
               <tr className="border-b border-gray-50">
                 <td className="py-4 pr-4 font-semibold text-dark-text">Remaining Term</td>
-                <td className="py-4 px-4 text-right text-gray-600">{yearsRemaining} years</td>
+                <td className="py-4 px-4 text-right text-gray-700">{yearsRemaining} years</td>
                 <td className="py-4 pl-4 text-right font-semibold text-accent">{newTerm} years</td>
               </tr>
               <tr className="border-b border-gray-50">
@@ -597,18 +597,18 @@ export default function MortgageRefinanceCalculator() {
                   Total Interest
                   <InfoTooltip text="Total interest paid over the remaining life of the loan on each path." />
                 </td>
-                <td className="py-4 px-4 text-right text-gray-600">{formatFullCurrency(results.currentTotalInterest)}</td>
+                <td className="py-4 px-4 text-right text-gray-700">{formatFullCurrency(results.currentTotalInterest)}</td>
                 <td className="py-4 pl-4 text-right font-semibold text-accent">{formatFullCurrency(results.refinanceTotalInterest)}</td>
               </tr>
               <tr className="border-b border-gray-50">
                 <td className="py-4 pr-4 font-semibold text-dark-text">Loan Balance</td>
-                <td className="py-4 px-4 text-right text-gray-600">{formatFullCurrency(currentBalance)}</td>
+                <td className="py-4 px-4 text-right text-gray-700">{formatFullCurrency(currentBalance)}</td>
                 <td className="py-4 pl-4 text-right font-semibold text-accent">{formatFullCurrency(results.newLoanAmount)}</td>
               </tr>
               {closingCosts > 0 && (
                 <tr>
                   <td className="py-4 pr-4 font-semibold text-dark-text">Closing Costs</td>
-                  <td className="py-4 px-4 text-right text-gray-600">-</td>
+                  <td className="py-4 px-4 text-right text-gray-700">-</td>
                   <td className="py-4 pl-4 text-right font-semibold text-red-500">{formatFullCurrency(closingCosts)}</td>
                 </tr>
               )}
@@ -620,7 +620,7 @@ export default function MortgageRefinanceCalculator() {
       {/* Assumptions */}
       <div className="bg-light-bg rounded-xl p-6 border border-gray-100">
         <h3 className="text-sm font-bold text-gray-700 mb-3">Assumptions & Notes</h3>
-        <ul className="space-y-1.5 text-xs text-gray-600 leading-relaxed">
+        <ul className="space-y-1.5 text-xs text-gray-700 leading-relaxed">
           <li className="flex gap-2">
             <span className="text-gray-700 flex-shrink-0">-</span>
             Assumes you stay in your home past the break-even point.

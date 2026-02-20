@@ -6,66 +6,66 @@ import CardIllustration from "./CardIllustration";
 const categoryColors: Record<string, { gradient: string; badge: string }> = {
   earn: {
     gradient: "from-emerald-600 to-teal-800",
-    badge: "bg-emerald-50 text-emerald-700",
+    badge: "bg-emerald-200 text-emerald-700",
   },
   spend: {
     gradient: "from-amber-600 to-orange-800",
-    badge: "bg-amber-50 text-amber-700",
+    badge: "bg-amber-200 text-amber-700",
   },
   save: {
     gradient: "from-blue-600 to-indigo-800",
-    badge: "bg-blue-50 text-blue-700",
+    badge: "bg-blue-200 text-blue-700",
   },
   invest: {
     gradient: "from-purple-600 to-violet-800",
-    badge: "bg-purple-50 text-purple-700",
+    badge: "bg-purple-200 text-purple-700",
   },
   optimize: {
     gradient: "from-yellow-600 to-amber-800",
-    badge: "bg-yellow-50 text-yellow-700",
+    badge: "bg-yellow-200 text-yellow-700",
   },
   protect: {
     gradient: "from-rose-600 to-red-800",
-    badge: "bg-rose-50 text-rose-700",
+    badge: "bg-rose-200 text-rose-700",
   },
   milestones: {
     gradient: "from-cyan-600 to-blue-800",
-    badge: "bg-cyan-50 text-cyan-700",
+    badge: "bg-cyan-200 text-cyan-700",
   },
   legacy: {
     gradient: "from-amber-500 to-amber-700",
-    badge: "bg-amber-50 text-amber-800",
+    badge: "bg-amber-200 text-amber-800",
   },
 };
 
 const defaultColors = {
   gradient: "from-gray-600 to-gray-800",
-  badge: "bg-gray-50 text-gray-700",
+  badge: "bg-gray-100 text-gray-700",
 };
 
 const iqConfig: Record<IqLevel, { color: string; bg: string; bar: string; label: string }> = {
   "Foundational IQ": {
     color: "text-emerald-600",
     bg: "bg-emerald-500",
-    bar: "bg-emerald-100",
+    bar: "bg-emerald-300",
     label: "Beginner",
   },
   "Market IQ": {
     color: "text-blue-600",
     bg: "bg-blue-500",
-    bar: "bg-blue-100",
+    bar: "bg-blue-300",
     label: "Intermediate",
   },
   "Strategic IQ": {
     color: "text-amber-600",
     bg: "bg-amber-500",
-    bar: "bg-amber-100",
+    bar: "bg-amber-300",
     label: "Advanced",
   },
   "Alpha IQ": {
     color: "text-red-600",
     bg: "bg-red-500",
-    bar: "bg-red-100",
+    bar: "bg-red-300",
     label: "Expert",
   },
 };
@@ -142,12 +142,12 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
         </Link>
 
         {/* Excerpt */}
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="text-gray-700 text-sm leading-relaxed line-clamp-2 mb-4">
           {post.excerpt}
         </p>
 
         {/* IQ Complexity */}
-        <div className="mb-4 p-3 rounded-lg bg-gray-50 border border-gray-100">
+        <div className="mb-4 p-3 rounded-lg bg-gray-100 border border-gray-100">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-1.5">
               <svg className={`w-3.5 h-3.5 ${iq.color}`} fill="currentColor" viewBox="0 0 20 20">
@@ -163,7 +163,7 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
               style={{ width: `${barPercent}%` }}
             />
           </div>
-          <p className="text-[10px] text-gray-600 mt-1.5 font-medium">{iq.label} level complexity</p>
+          <p className="text-[10px] text-gray-700 mt-1.5 font-medium">{iq.label} level complexity</p>
         </div>
 
         {/* Author + date */}

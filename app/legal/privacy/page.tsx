@@ -24,10 +24,10 @@ export default function PrivacyPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-700 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <span>/</span>
-        <span className="text-gray-600">Legal</span>
+        <span className="text-gray-700">Legal</span>
         <span>/</span>
         <span className="text-primary font-medium">Privacy Policy</span>
       </nav>
@@ -37,12 +37,12 @@ export default function PrivacyPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-3">
           Privacy Policy
         </h1>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-700">
           Last updated: February 12, 2026
         </p>
       </div>
 
-      <p className="text-gray-600 leading-relaxed mb-10">
+      <p className="text-gray-700 leading-relaxed mb-10">
         At Moolah IQ, we take your privacy seriously. This Privacy Policy explains what information
         we collect, how we use it, and the choices you have. By using our website, you agree to the
         collection and use of information as described here.
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
       </div>
 
       {/* Content */}
-      <div className="space-y-10 text-gray-600 leading-relaxed">
+      <div className="space-y-10 text-gray-700 leading-relaxed">
         <div id="information-we-collect">
           <h2 className="text-xl font-bold text-primary mb-4">1. Information We Collect</h2>
           <p className="mb-4">
@@ -163,7 +163,7 @@ export default function PrivacyPage() {
                   <th className="text-left py-3 font-bold text-primary">Duration</th>
                 </tr>
               </thead>
-              <tbody className="text-gray-600">
+              <tbody className="text-gray-700">
                 <tr className="border-b border-gray-50">
                   <td className="py-3 pr-4 font-semibold text-dark-text">Essential</td>
                   <td className="py-3 pr-4">Basic site functionality and security</td>
@@ -201,7 +201,7 @@ export default function PrivacyPage() {
               <span>Set preferences for specific websites</span>
             </li>
           </ul>
-          <p className="mt-3 text-sm text-gray-600">
+          <p className="mt-3 text-sm text-gray-700">
             Note: Disabling cookies may affect some site functionality but will not impact calculator usage,
             as calculators process data entirely in your browser.
           </p>

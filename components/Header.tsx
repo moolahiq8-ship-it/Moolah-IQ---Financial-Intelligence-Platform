@@ -8,7 +8,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm">
+    <header className="bg-white sticky top-0 z-50 shadow-md">
       <div className="mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-[72px]">
           {/* Logo */}
@@ -27,25 +27,25 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
             <Link
               href="/"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
             >
               Home
             </Link>
             <Link
               href="/blog"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
             >
               Blog
             </Link>
             <Link
               href="/tools"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
             >
               Tools
             </Link>
             <Link
               href="/about"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
             >
               About
             </Link>
@@ -55,7 +55,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="/blog"
-              className="p-2 text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-50"
+              className="p-2 text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
               aria-label="Search articles"
             >
               <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,28 +95,28 @@ export default function Header() {
           <div className="px-4 py-4 space-y-1">
             <Link
               href="/"
-              className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               href="/blog"
-              className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               Blog
             </Link>
             <Link
               href="/tools"
-              className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               Tools
             </Link>
             <Link
               href="/about"
-              className="block px-4 py-3 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-xl transition-colors"
+              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
               onClick={() => setMenuOpen(false)}
             >
               About

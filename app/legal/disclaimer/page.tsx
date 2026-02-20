@@ -22,10 +22,10 @@ export default function DisclaimerPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-700 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <span>/</span>
-        <span className="text-gray-600">Legal</span>
+        <span className="text-gray-700">Legal</span>
         <span>/</span>
         <span className="text-primary font-medium">Disclaimer</span>
       </nav>
@@ -35,7 +35,7 @@ export default function DisclaimerPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-3">
           Disclaimer & Educational Use Policy
         </h1>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-700">
           Last updated: February 12, 2026
         </p>
       </div>
@@ -57,7 +57,7 @@ export default function DisclaimerPage() {
       </div>
 
       {/* Content */}
-      <div className="space-y-10 text-gray-600 leading-relaxed">
+      <div className="space-y-10 text-gray-700 leading-relaxed">
         <div id="educational-purpose">
           <h2 className="text-xl font-bold text-primary mb-4">1. Educational Purpose Only</h2>
           <p className="mb-3">

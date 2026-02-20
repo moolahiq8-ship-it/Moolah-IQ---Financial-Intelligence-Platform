@@ -59,7 +59,7 @@ function InfoTooltip({ text }: InfoTooltipProps) {
   return (
     <span className="relative group inline-flex ml-1.5 cursor-help">
       <svg
-        className="w-4 h-4 text-gray-600 hover:text-primary transition-colors"
+        className="w-4 h-4 text-gray-700 hover:text-primary transition-colors"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -232,7 +232,7 @@ export default function CrossoverCalculator() {
         <h2 className="text-xl font-bold text-primary mb-6">Your Numbers</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Current Invested Assets ($)
             </label>
             <input
@@ -244,7 +244,7 @@ export default function CrossoverCalculator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Monthly Investment ($)
             </label>
             <input
@@ -256,7 +256,7 @@ export default function CrossoverCalculator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Expected Annual Return (%)
             </label>
             <div className="relative">
@@ -271,13 +271,13 @@ export default function CrossoverCalculator() {
                 min={0}
                 step={0.1}
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-semibold text-lg pointer-events-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 font-semibold text-lg pointer-events-none">
                 %
               </span>
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Monthly Expenses ($)
             </label>
             <input
@@ -292,7 +292,7 @@ export default function CrossoverCalculator() {
         <div className="mt-6 flex justify-end">
           <button
             onClick={handleReset}
-            className="px-5 py-2 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
+            className="px-5 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-lg transition-colors"
           >
             Reset Defaults
           </button>
@@ -303,7 +303,7 @@ export default function CrossoverCalculator() {
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-6 sm:p-8 text-center">
         {crossoverReached ? (
           <>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-gray-700 uppercase tracking-widest mb-2">
               Your Crossover Point
               <InfoTooltip text="The Crossover Point is when your passive investment income covers all your monthly expenses — you've reached financial independence." />
             </p>
@@ -333,13 +333,13 @@ export default function CrossoverCalculator() {
           </>
         ) : (
           <>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-gray-700 uppercase tracking-widest mb-2">
               Your Crossover Point
             </p>
             <p className="text-2xl sm:text-3xl font-extrabold text-gray-700 mb-2">
               50+ years away
             </p>
-            <p className="text-sm text-gray-600 max-w-md mx-auto">
+            <p className="text-sm text-gray-700 max-w-md mx-auto">
               At current inputs, financial independence is beyond the 50-year
               projection horizon. Try increasing your monthly investment or
               reducing expenses.
@@ -353,7 +353,7 @@ export default function CrossoverCalculator() {
         <h2 className="text-xl font-bold text-primary mb-1">
           Projection Chart
         </h2>
-        <p className="text-sm text-gray-600 mb-6">
+        <p className="text-sm text-gray-700 mb-6">
           Portfolio growth vs. passive income using the{" "}
           <span className="font-semibold text-dark-text">
             4% Rule
@@ -469,7 +469,7 @@ export default function CrossoverCalculator() {
           </div>
           {crossoverReached && (
             <div className="flex items-center gap-2">
-              <span className="w-3 h-3 bg-gold rounded-full inline-block border-2 border-white shadow" />
+              <span className="w-3 h-3 bg-gold rounded-full inline-block border-2 border-white shadow-lg" />
               <span className="text-gray-700">Crossover Point</span>
             </div>
           )}
@@ -493,7 +493,7 @@ export default function CrossoverCalculator() {
                     ? ms.pct === 1
                       ? "border-gold bg-gold/5"
                       : "border-accent/30 bg-accent/5"
-                    : "border-gray-100 bg-gray-50"
+                    : "border-gray-100 bg-gray-100"
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
@@ -531,10 +531,10 @@ export default function CrossoverCalculator() {
                           : `${(ms.month / 12).toFixed(1)} years`}
                       </span>
                     </p>
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-gray-700">
                       Portfolio: {formatFullCurrency(ms.portfolio)}
                     </p>
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-gray-700">
                       Income: {formatFullCurrency(ms.passiveIncome)}/mo
                     </p>
                   </>

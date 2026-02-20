@@ -38,7 +38,7 @@ function InfoTooltip({ text }: { text: string }) {
   return (
     <span className="relative group inline-flex ml-1.5 cursor-help">
       <svg
-        className="w-4 h-4 text-gray-600 hover:text-primary transition-colors"
+        className="w-4 h-4 text-gray-700 hover:text-primary transition-colors"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -265,7 +265,7 @@ export default function CompoundInterestCalculator() {
         <h2 className="text-xl font-bold text-primary mb-6">Your Numbers</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Initial Investment ($)
               <InfoTooltip text="The lump sum you're starting with. This is your beginning principal that will compound over time." />
             </label>
@@ -278,7 +278,7 @@ export default function CompoundInterestCalculator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Monthly Contribution ($)
               <InfoTooltip text="The amount you add each month. Consistent contributions are the most powerful lever for building wealth." />
             </label>
@@ -291,7 +291,7 @@ export default function CompoundInterestCalculator() {
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Annual Interest Rate (%)
               <InfoTooltip text="The expected annual rate of return. Historically, the S&P 500 has averaged ~10% before inflation, or ~7% after inflation." />
             </label>
@@ -307,13 +307,13 @@ export default function CompoundInterestCalculator() {
                 min={0}
                 step={0.1}
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 font-semibold text-lg pointer-events-none">
+              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-700 font-semibold text-lg pointer-events-none">
                 %
               </span>
             </div>
           </div>
           <div>
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Time Period (years)
             </label>
             <input
@@ -329,7 +329,7 @@ export default function CompoundInterestCalculator() {
             />
           </div>
           <div className="sm:col-span-2">
-            <label className="block text-sm font-semibold text-gray-600 mb-2">
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
               Compound Frequency
               <InfoTooltip text="How often interest is calculated and added to your balance. More frequent compounding produces slightly higher returns." />
             </label>
@@ -362,7 +362,7 @@ export default function CompoundInterestCalculator() {
           </button>
           <button
             onClick={handleReset}
-            className="px-5 py-2 text-sm font-semibold text-gray-600 hover:text-primary hover:bg-gray-50 rounded-lg transition-colors"
+            className="px-5 py-2 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-lg transition-colors"
           >
             Reset Defaults
           </button>
@@ -394,7 +394,7 @@ export default function CompoundInterestCalculator() {
                 />
                 <div className="flex flex-wrap gap-2 text-xs flex-1">
                   <label className="flex items-center gap-1">
-                    <span className="text-gray-600">Initial:</span>
+                    <span className="text-gray-700">Initial:</span>
                     <input
                       type="number"
                       value={s.principal}
@@ -410,7 +410,7 @@ export default function CompoundInterestCalculator() {
                     />
                   </label>
                   <label className="flex items-center gap-1">
-                    <span className="text-gray-600">Monthly:</span>
+                    <span className="text-gray-700">Monthly:</span>
                     <input
                       type="number"
                       value={s.monthly}
@@ -426,7 +426,7 @@ export default function CompoundInterestCalculator() {
                     />
                   </label>
                   <label className="flex items-center gap-1">
-                    <span className="text-gray-600">Rate:</span>
+                    <span className="text-gray-700">Rate:</span>
                     <input
                       type="number"
                       value={s.rate}
@@ -443,10 +443,10 @@ export default function CompoundInterestCalculator() {
                       min={0}
                       step={0.1}
                     />
-                    <span className="text-gray-600">%</span>
+                    <span className="text-gray-700">%</span>
                   </label>
                   <label className="flex items-center gap-1">
-                    <span className="text-gray-600">Years:</span>
+                    <span className="text-gray-700">Years:</span>
                     <input
                       type="number"
                       value={s.years}
@@ -491,7 +491,7 @@ export default function CompoundInterestCalculator() {
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100/50 p-6 sm:p-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-gray-700 uppercase tracking-widest mb-2">
               Future Value
               <InfoTooltip text="The total value of your investment at the end of the time period, including all contributions and compound interest earned." />
             </p>
@@ -500,7 +500,7 @@ export default function CompoundInterestCalculator() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-gray-700 uppercase tracking-widest mb-2">
               Total Contributions
             </p>
             <p className="text-3xl sm:text-4xl font-extrabold text-primary">
@@ -508,7 +508,7 @@ export default function CompoundInterestCalculator() {
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-600 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-gray-700 uppercase tracking-widest mb-2">
               Interest Earned
               <InfoTooltip text="This is the power of compound interest — money your money earned for you, without any additional effort." />
             </p>
@@ -533,7 +533,7 @@ export default function CompoundInterestCalculator() {
                 }}
               />
             </div>
-            <div className="flex justify-between mt-2 text-xs text-gray-600">
+            <div className="flex justify-between mt-2 text-xs text-gray-700">
               <span>
                 <span className="inline-block w-2 h-2 rounded-full bg-primary mr-1" />
                 Contributions ({((result.totalContributions / result.futureValue) * 100).toFixed(0)}%)
@@ -552,7 +552,7 @@ export default function CompoundInterestCalculator() {
         <h2 className="text-xl font-bold text-primary mb-1">
           {comparing && comparisonChartData ? "Scenario Comparison" : "Growth Over Time"}
         </h2>
-        <p className="text-sm text-gray-600 mb-6">
+        <p className="text-sm text-gray-700 mb-6">
           {comparing && comparisonChartData
             ? "Total portfolio value for each scenario over time"
             : "How your contributions and compound interest build over time"}
@@ -686,12 +686,12 @@ export default function CompoundInterestCalculator() {
             <h2 className="text-xl font-bold text-primary">
               Year-by-Year Breakdown
             </h2>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-gray-700 mt-1">
               Detailed view of your investment growth each year
             </p>
           </div>
           <svg
-            className={`w-5 h-5 text-gray-600 transition-transform duration-200 flex-shrink-0 ${
+            className={`w-5 h-5 text-gray-700 transition-transform duration-200 flex-shrink-0 ${
               tableOpen ? "rotate-180" : ""
             }`}
             fill="none"
@@ -715,9 +715,9 @@ export default function CompoundInterestCalculator() {
                 </thead>
                 <tbody>
                   {result.yearRows.map((row) => (
-                    <tr key={row.year} className="border-b border-gray-50 hover:bg-gray-50/50 transition-colors">
+                    <tr key={row.year} className="border-b border-gray-50 hover:bg-gray-100/50 transition-colors">
                       <td className="py-3 pr-4 font-semibold text-dark-text">{row.year}</td>
-                      <td className="py-3 px-4 text-right text-gray-600">
+                      <td className="py-3 px-4 text-right text-gray-700">
                         {formatFullCurrency(row.principal)}
                       </td>
                       <td className="py-3 px-4 text-right text-accent font-medium">

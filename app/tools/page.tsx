@@ -83,7 +83,7 @@ export default function ToolsPage() {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-700 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">
           Home
         </Link>
@@ -121,7 +121,7 @@ export default function ToolsPage() {
             <h2 className="text-lg font-bold text-dark-text group-hover:text-primary transition-colors mb-2">
               {tool.title}
             </h2>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">
+            <p className="text-sm text-gray-700 leading-relaxed mb-4">
               {tool.description}
             </p>
             <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-dark transition-colors">

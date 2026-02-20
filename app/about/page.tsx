@@ -15,7 +15,7 @@ const pillars = [
     gradient: "from-emerald-600/20 to-teal-800/10",
     accent: "text-emerald-700",
     ring: "ring-emerald-600/30",
-    iconBg: "from-emerald-100 to-teal-100",
+    iconBg: "from-emerald-300 to-teal-300",
   },
   {
     name: "Spend",
@@ -24,7 +24,7 @@ const pillars = [
     gradient: "from-amber-600/20 to-orange-800/10",
     accent: "text-amber-700",
     ring: "ring-amber-600/30",
-    iconBg: "from-amber-100 to-orange-100",
+    iconBg: "from-amber-300 to-orange-300",
   },
   {
     name: "Save",
@@ -33,7 +33,7 @@ const pillars = [
     gradient: "from-blue-600/20 to-indigo-800/10",
     accent: "text-blue-700",
     ring: "ring-blue-600/30",
-    iconBg: "from-blue-100 to-indigo-100",
+    iconBg: "from-blue-300 to-indigo-300",
   },
   {
     name: "Invest",
@@ -42,7 +42,7 @@ const pillars = [
     gradient: "from-purple-600/20 to-violet-800/10",
     accent: "text-purple-700",
     ring: "ring-purple-600/30",
-    iconBg: "from-purple-100 to-violet-100",
+    iconBg: "from-purple-300 to-violet-300",
   },
   {
     name: "Optimize",
@@ -51,7 +51,7 @@ const pillars = [
     gradient: "from-yellow-600/20 to-amber-600/10",
     accent: "text-yellow-700",
     ring: "ring-yellow-600/30",
-    iconBg: "from-yellow-100 to-amber-100",
+    iconBg: "from-yellow-300 to-amber-300",
   },
   {
     name: "Protect",
@@ -60,7 +60,7 @@ const pillars = [
     gradient: "from-rose-600/20 to-red-800/10",
     accent: "text-rose-700",
     ring: "ring-rose-600/30",
-    iconBg: "from-rose-100 to-red-100",
+    iconBg: "from-rose-300 to-red-300",
   },
   {
     name: "Milestones",
@@ -69,7 +69,7 @@ const pillars = [
     gradient: "from-cyan-600/20 to-blue-800/10",
     accent: "text-cyan-700",
     ring: "ring-cyan-600/30",
-    iconBg: "from-cyan-100 to-blue-100",
+    iconBg: "from-cyan-300 to-blue-300",
   },
   {
     name: "Legacy",
@@ -78,7 +78,7 @@ const pillars = [
     gradient: "from-amber-500/20 to-yellow-700/10",
     accent: "text-amber-800",
     ring: "ring-amber-500/30",
-    iconBg: "from-amber-100 to-yellow-100",
+    iconBg: "from-amber-300 to-yellow-300",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-white to-accent/[0.06]" />
         <div className="relative max-w-4xl mx-auto px-4 pt-16 sm:pt-20 pb-12 sm:pb-16">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 mb-6 shadow-md">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-widest text-accent">About Us</span>
           </div>
@@ -104,9 +104,9 @@ export default function AboutPage() {
 
       {/* Mission */}
       <section className="max-w-4xl mx-auto px-4 py-14 sm:py-16">
-        <div className="relative rounded-3xl bg-gradient-to-br from-primary/[0.04] via-white to-accent/[0.08] border border-gray-200/80 p-8 sm:p-12 shadow-sm">
+        <div className="relative rounded-3xl bg-gradient-to-br from-primary/[0.04] via-white to-accent/[0.08] border border-gray-200/80 p-8 sm:p-12 shadow-md">
           <div className="absolute -top-4 left-8 sm:left-12">
-            <div className="inline-flex items-center gap-2 bg-white px-5 py-1.5 rounded-full border border-gray-200 shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-white px-5 py-1.5 rounded-full border border-gray-200 shadow-md">
               <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
@@ -150,7 +150,7 @@ export default function AboutPage() {
               key={pillar.name}
               className={`group relative rounded-2xl bg-gradient-to-br ${pillar.gradient} border border-gray-200/80 p-6 ring-1 ${pillar.ring} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gray-300/40`}
             >
-              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${pillar.iconBg} shadow-sm flex items-center justify-center mb-4 ring-1 ${pillar.ring} transition-transform duration-300 group-hover:scale-110`}>
+              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${pillar.iconBg} shadow-md flex items-center justify-center mb-4 ring-1 ${pillar.ring} transition-transform duration-300 group-hover:scale-110`}>
                 <svg className={`w-5 h-5 ${pillar.accent}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={pillar.icon} />
                 </svg>
@@ -183,10 +183,10 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Clarity */}
-          <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-300">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-300">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center mx-auto mb-5 ring-1 ring-amber-300/60 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-300 to-yellow-300 flex items-center justify-center mx-auto mb-5 ring-1 ring-amber-300/60 transition-transform duration-300 group-hover:scale-110">
                 <svg className="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
@@ -199,10 +199,10 @@ export default function AboutPage() {
           </div>
 
           {/* Actionability */}
-          <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-emerald-300">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-emerald-300">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center mx-auto mb-5 ring-1 ring-emerald-300/60 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-300 to-green-300 flex items-center justify-center mx-auto mb-5 ring-1 ring-emerald-300/60 transition-transform duration-300 group-hover:scale-110">
                 <svg className="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -215,10 +215,10 @@ export default function AboutPage() {
           </div>
 
           {/* Honesty */}
-          <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center mx-auto mb-5 ring-1 ring-blue-300/60 transition-transform duration-300 group-hover:scale-110">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-300 to-indigo-300 flex items-center justify-center mx-auto mb-5 ring-1 ring-blue-300/60 transition-transform duration-300 group-hover:scale-110">
                 <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
@@ -234,7 +234,7 @@ export default function AboutPage() {
 
       {/* Newsletter CTA */}
       <section className="max-w-4xl mx-auto px-4 pb-16 sm:pb-20 pt-6">
-        <div className="relative overflow-hidden bg-gradient-to-br from-primary/[0.06] via-white to-accent/[0.10] rounded-3xl border border-gray-200/80 p-8 sm:p-12 text-center shadow-sm">
+        <div className="relative overflow-hidden bg-gradient-to-br from-primary/[0.06] via-white to-accent/[0.10] rounded-3xl border border-gray-200/80 p-8 sm:p-12 text-center shadow-md">
           <div className="relative">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary mb-3 tracking-tight">
               Join the Moolah IQ Community

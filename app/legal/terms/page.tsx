@@ -26,10 +26,10 @@ export default function TermsPage() {
   return (
     <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <nav className="flex items-center gap-2 text-sm text-gray-700 mb-8">
         <Link href="/" className="hover:text-primary transition-colors">Home</Link>
         <span>/</span>
-        <span className="text-gray-600">Legal</span>
+        <span className="text-gray-700">Legal</span>
         <span>/</span>
         <span className="text-primary font-medium">Terms of Service</span>
       </nav>
@@ -39,12 +39,12 @@ export default function TermsPage() {
         <h1 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight mb-3">
           Terms of Service
         </h1>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-700">
           Last updated: February 12, 2026
         </p>
       </div>
 
-      <p className="text-gray-600 leading-relaxed mb-10">
+      <p className="text-gray-700 leading-relaxed mb-10">
         Welcome to Moolah IQ. These Terms of Service (&quot;Terms&quot;) govern your access to and use of the
         Moolah IQ website, including all content, calculators, tools, and services. Please read them carefully
         before using our site.
@@ -67,7 +67,7 @@ export default function TermsPage() {
       </div>
 
       {/* Content */}
-      <div className="space-y-10 text-gray-600 leading-relaxed">
+      <div className="space-y-10 text-gray-700 leading-relaxed">
         <div id="acceptance">
           <h2 className="text-xl font-bold text-primary mb-4">1. Acceptance of Terms</h2>
           <p className="mb-3">

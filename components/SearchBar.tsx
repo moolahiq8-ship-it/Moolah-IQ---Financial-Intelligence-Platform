@@ -56,7 +56,7 @@ export default function SearchBar({ posts, onResults }: SearchBarProps) {
         value={query}
         onChange={(e) => handleSearch(e.target.value)}
         placeholder="Search articles..."
-        className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white text-dark-text placeholder-gray-300 text-sm shadow-sm transition-shadow"
+        className="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white text-dark-text placeholder-gray-300 text-sm shadow-md transition-shadow"
       />
     </div>
   );

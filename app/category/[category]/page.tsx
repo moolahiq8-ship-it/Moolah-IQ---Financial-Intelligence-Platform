@@ -43,7 +43,7 @@ export default function CategoryPage({ params }: Props) {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
-      <nav className="text-sm text-gray-600 mb-6">
+      <nav className="text-sm text-gray-700 mb-6">
         <Link href="/" className="hover:text-accent">
           Home
         </Link>{" "}
