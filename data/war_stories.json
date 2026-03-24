@@ -1,0 +1,57 @@
+[
+  {
+    "id": "WS-01",
+    "pillars": ["LEGACY", "MILESTONES"],
+    "persona": "Real Estate Pro (SRES)",
+    "title": "The Titles That Time Forgot",
+    "summary": "A family was forced into an emergency property sale because outdated property titles — never updated after a grandparent's death — triggered a legal quagmire during probate. What should have been a smooth inheritance became a six-figure loss with court fees, back taxes, and a forced below-market sale.",
+    "principle": "Financial cost of administrative delay in estate planning",
+    "emotional_arc": "comfort → shock → regret → resolve",
+    "lesson": "Estate documents are not 'set it and forget it.' Review titles, beneficiaries, and deeds every 3-5 years or after any major life event.",
+    "tags": ["estate-planning", "probate", "property-titles", "legacy", "family-wealth"]
+  },
+  {
+    "id": "WS-02",
+    "pillars": ["PROTECT", "SAVE"],
+    "persona": "Insurance Pro",
+    "title": "The Gap That Swallowed a Savings Account",
+    "summary": "A homeowner discovered — after a catastrophic pipe burst — that their insurance policy excluded water damage from internal plumbing failures. The $47,000 repair bill wiped out their emergency fund and forced them into high-interest debt. The exclusion was buried on page 34 of the policy.",
+    "principle": "The Gap Principle: no coverage until you verify exclusions",
+    "emotional_arc": "security → devastation → anger → education",
+    "lesson": "Never assume you're covered. Read every exclusion clause. Ask your agent to walk you through what is NOT covered — that list matters more than what is.",
+    "tags": ["insurance", "exclusions", "emergency-fund", "homeowner", "risk-management"]
+  },
+  {
+    "id": "WS-03",
+    "pillars": ["EARN", "INVEST"],
+    "persona": "STR Operator",
+    "title": "Full House, Empty Pockets",
+    "summary": "A short-term rental operator celebrated 100% occupancy for three consecutive months — then discovered they'd netted a loss. Cleaning fees had crept up 40%, dynamic pricing software was underpricing weeknights, and a new city permit fee ate the remaining margin. Revenue was a vanity metric masking operational bleed.",
+    "principle": "Occupancy is vanity; Net per Night is truth",
+    "emotional_arc": "pride → confusion → frustration → discipline",
+    "lesson": "Track Net Revenue per Available Night (NRevPAN), not occupancy rate. A 70% occupied property at premium rates beats 100% occupancy at breakeven.",
+    "tags": ["short-term-rental", "airbnb", "revenue-management", "cost-creep", "str-metrics"]
+  },
+  {
+    "id": "WS-04",
+    "pillars": ["INVEST", "PROTECT"],
+    "persona": "Futures & Options Trader",
+    "title": "The Perfect Setup That Wasn't",
+    "summary": "A seasoned trader identified a textbook bull-flag pattern on crude oil futures. Every technical indicator confirmed the setup. He sized up to 3x his normal position. Overnight, an unexpected OPEC emergency meeting crashed prices 12%. The 'perfect' trade became a five-figure loss because he'd ignored macro tail risk in his position sizing.",
+    "principle": "Risk-Adjusted Return: never ignore 1% tail risk",
+    "emotional_arc": "confidence → shock → denial → humility",
+    "lesson": "Technical setups exist inside macro contexts. Always ask: 'What event, however unlikely, could invalidate this thesis overnight?' Then size your position as if that event is coming.",
+    "tags": ["futures", "options", "risk-management", "position-sizing", "tail-risk"]
+  },
+  {
+    "id": "WS-05",
+    "pillars": ["SPEND", "MILESTONES"],
+    "persona": "Investment Property Owner",
+    "title": "The Deal That Wasn't a Deal",
+    "summary": "A first-time investor bought a 'below-market' duplex at auction, celebrating the $40,000 discount off comparable sales. Post-purchase inspection revealed: foundation cracks ($28,000), knob-and-tube wiring ($19,000), and an unpermitted addition that required $15,000 to remediate or demolish. The 'deal' cost $22,000 more than a turnkey property down the street.",
+    "principle": "True cost of a home is never just the price tag",
+    "emotional_arc": "excitement → dread → calculation → wisdom",
+    "lesson": "Total Cost of Acquisition = Purchase Price + Deferred Maintenance + Compliance Costs + Opportunity Cost. Always budget 15-25% above purchase price for unknowns on distressed properties.",
+    "tags": ["investment-property", "due-diligence", "hidden-costs", "auction", "rehab"]
+  }
+]

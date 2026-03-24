@@ -1,0 +1,101 @@
+# Moolah IQ — Weekly Content Queue
+#
+# 8 pre-planned topics rotating through 4 pillars.
+# The pipeline API (or n8n) pops the next unprocessed topic each Monday.
+#
+# Fields:
+#   topic:          Video/blog topic (passed to pipeline as-is)
+#   pillar:         One of the 8 Moolah IQ pillars
+#   target_keyword: Primary SEO keyword for the SEO agent to optimize around
+#   war_story_ref:  ID from data/war_stories.json to anchor the narrative
+#   priority:       1 (highest) to 3 (lowest) — tiebreaker for scheduling
+#   status:         queued | scheduled | completed | skipped
+
+# ── EARN ──────────────────────────────────────────────────────────────
+
+- topic: "Side Hustle Math: When a Second Income Actually Costs You Money"
+  pillar: EARN
+  target_keyword: "side hustle income"
+  war_story_ref: WS-03
+  priority: 1
+  status: queued
+  notes: >
+    Ties into the STR operator story — revenue vs. net income.
+    High search volume topic with strong YouTube CTR potential.
+
+- topic: "5 Passive Income Myths That Keep You Broke"
+  pillar: EARN
+  target_keyword: "passive income myths"
+  war_story_ref: WS-03
+  priority: 2
+  status: queued
+  notes: >
+    Contrarian angle on a saturated keyword. Use the "Full House,
+    Empty Pockets" story to show that even real estate income
+    isn't truly passive.
+
+# ── SAVE ──────────────────────────────────────────────────────────────
+
+- topic: "Emergency Fund 2026: How Much You Really Need"
+  pillar: SAVE
+  target_keyword: "emergency fund"
+  war_story_ref: WS-02
+  priority: 1
+  status: queued
+  notes: >
+    Evergreen anchor content. Update with 2026 cost-of-living data.
+    The pipe-burst story (WS-02) is the perfect emotional hook.
+
+- topic: "High-Yield Savings Accounts Ranked: Where to Park Your Cash"
+  pillar: SAVE
+  target_keyword: "high yield savings account"
+  war_story_ref: WS-02
+  priority: 2
+  status: queued
+  notes: >
+    Product-adjacent content with strong affiliate potential.
+    Pairs with the emergency fund video as a natural next step.
+
+# ── SPEND ─────────────────────────────────────────────────────────────
+
+- topic: "The Hidden Cost of Homeownership"
+  pillar: SPEND
+  target_keyword: "hidden cost of homeownership"
+  war_story_ref: WS-05
+  priority: 1
+  status: completed
+  notes: >
+    Already produced in pipeline live run (Task 8-10).
+    Strong QC pass rate, compliance approved.
+
+- topic: "Subscription Audit: The $2,400/Year You Don't Notice"
+  pillar: SPEND
+  target_keyword: "subscription audit"
+  war_story_ref: WS-05
+  priority: 2
+  status: queued
+  notes: >
+    Actionable format — viewers can follow along in real time.
+    Use the "deal that wasn't a deal" framing for hidden recurring costs.
+
+# ── PROTECT ───────────────────────────────────────────────────────────
+
+- topic: "Insurance Gaps That Could Cost You Everything"
+  pillar: PROTECT
+  target_keyword: "insurance gaps"
+  war_story_ref: WS-02
+  priority: 1
+  status: queued
+  notes: >
+    Direct match to the Gap Principle (WS-02). High emotional
+    resonance — the $47K pipe burst story is the centerpiece.
+
+- topic: "Estate Planning at 35: What You Need Before It's Too Late"
+  pillar: PROTECT
+  target_keyword: "estate planning"
+  war_story_ref: WS-01
+  priority: 2
+  status: queued
+  notes: >
+    Targets the 30-45 demographic. The "Titles That Time Forgot"
+    story (WS-01) shows the real cost of procrastination.

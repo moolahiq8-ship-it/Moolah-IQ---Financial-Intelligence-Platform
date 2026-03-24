@@ -1,0 +1,29 @@
+# Moolah IQ V3.8.2 — Python Dependencies
+
+# ── LangGraph / LangChain ────────────────────────────────────────────
+langgraph
+langchain
+langchain-anthropic
+langchain-google-genai
+langsmith
+langchain-ollama
+
+# ── HTTP & Async ─────────────────────────────────────────────────────
+httpx
+requests
+aiohttp
+websockets
+
+# ── API Framework ────────────────────────────────────────────────────
+fastapi
+uvicorn
+
+# ── Media Processing ─────────────────────────────────────────────────
+ffmpeg-python
+pillow
+faster-whisper
+
+# ── Config & Data ────────────────────────────────────────────────────
+python-dotenv
+pyyaml
+pydantic

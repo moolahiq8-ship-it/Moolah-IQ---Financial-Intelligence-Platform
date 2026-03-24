@@ -1,0 +1,354 @@
+{
+  "name": "Moolah IQ — Weekly Pipeline Trigger",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9,
+              "triggerAtMinute": 0
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Every Monday 9 AM",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0],
+      "notes": "Fires every Monday at 9:00 AM local time. Kicks off the weekly content pipeline."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://localhost:8080/health",
+        "options": {
+          "timeout": 5000
+        }
+      },
+      "id": "health-check",
+      "name": "API Health Check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0],
+      "notes": "Verify the pipeline API is running before submitting a job."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "health-ok",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "ok",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "is-api-healthy",
+      "name": "API Healthy?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [440, 0],
+      "notes": "Only proceed if the pipeline API returned status=ok."
+    },
+    {
+      "parameters": {
+        "url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "method": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "⚠️ Moolah IQ pipeline API is DOWN. Monday content run skipped. Check `python scripts/start_api.py` on the server."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "api-down-alert",
+      "name": "Alert: API Down",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 200],
+      "notes": "Replace webhook URL with your Slack/Discord incoming webhook."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://localhost:8080/topics/next",
+        "options": {
+          "timeout": 5000
+        },
+        "description": "Fetch the next queued topic from the pipeline API. Falls back to a default topic if the endpoint is not available."
+      },
+      "id": "fetch-next-topic",
+      "name": "Fetch Next Topic",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 0],
+      "notes": "Gets the next topic from the queue. If this 404s, the Set Defaults node provides a fallback.",
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"topic\": {{ $json.topic ? '\"' + $json.topic + '\"' : '\"Emergency Fund Basics\"' }},\n  \"pillar\": {{ $json.pillar ? '\"' + $json.pillar + '\"' : '\"SAVE\"' }}\n}",
+        "options": {}
+      },
+      "id": "set-topic-defaults",
+      "name": "Set Topic Defaults",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [880, 0],
+      "notes": "Ensures topic and pillar are always set, even if the queue endpoint fails."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:8080/run",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"topic\": \"{{ $json.topic }}\",\n  \"pillar\": \"{{ $json.pillar }}\",\n  \"mock_mode\": false\n}",
+        "options": {
+          "timeout": 15000
+        }
+      },
+      "id": "trigger-pipeline",
+      "name": "Trigger Pipeline",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 0],
+      "notes": "POST /run — returns immediately with a run_id. Pipeline executes in background."
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "minutes"
+      },
+      "id": "wait-5m",
+      "name": "Wait 5 Minutes",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1320, 0],
+      "notes": "Pipeline typically takes 3-6 minutes. Wait before first status poll."
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=http://localhost:8080/status/{{ $('Trigger Pipeline').item.json.run_id }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "check-status",
+      "name": "Check Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 0],
+      "notes": "GET /status/{run_id} — returns full pipeline results when complete."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "is-done",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "running",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "is-pipeline-done",
+      "name": "Pipeline Done?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1760, 0],
+      "notes": "Check if status is no longer 'running'. Branches to result handling or retry."
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "minutes"
+      },
+      "id": "wait-retry",
+      "name": "Wait & Retry",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [1980, 200],
+      "notes": "Pipeline still running. Wait 5 more minutes then re-check status."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-publish",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "completed",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "is-success",
+      "name": "Run Succeeded?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1980, 0],
+      "notes": "Check if pipeline completed successfully (vs failed)."
+    },
+    {
+      "parameters": {
+        "url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "method": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "=✅ *Moolah IQ Pipeline Complete*\n\n*Topic:* {{ $('Check Status').item.json.topic }}\n*Pillar:* {{ $('Check Status').item.json.pillar }}\n*Compliance:* {{ $('Check Status').item.json.compliance.approved ? 'APPROVED' : 'BLOCKED' }}\n*QC:* {{ $('Check Status').item.json.qc_passed }}/{{ $('Check Status').item.json.qc_passed + $('Check Status').item.json.qc_failed }} passed\n*Corrections:* {{ $('Check Status').item.json.corrections }}\n*Time:* {{ $('Check Status').item.json.elapsed_seconds }}s\n*SEO Title:* {{ $('Check Status').item.json.seo.youtube_title_a }}\n*Script:* {{ $('Check Status').item.json.script_words }} words\n*Blog:* {{ $('Check Status').item.json.blog_words }} words\n*Publish:* YT={{ $('Check Status').item.json.publish_status.youtube }}, NL={{ $('Check Status').item.json.publish_status.newsletter }}, Social={{ $('Check Status').item.json.publish_status.social }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "success-notification",
+      "name": "Notify: Success",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2200, -100],
+      "notes": "Posts a rich summary to Slack. Replace webhook URL with your own."
+    },
+    {
+      "parameters": {
+        "url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "method": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "=❌ *Moolah IQ Pipeline FAILED*\n\n*Topic:* {{ $('Check Status').item.json.topic }}\n*Pillar:* {{ $('Check Status').item.json.pillar }}\n*Error:* {{ $('Check Status').item.json.error }}\n*Time:* {{ $('Check Status').item.json.elapsed_seconds }}s\n*Run ID:* {{ $('Check Status').item.json.run_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "failure-notification",
+      "name": "Notify: Failure",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [2200, 100],
+      "notes": "Alerts on pipeline failure with error details."
+    }
+  ],
+  "connections": {
+    "Every Monday 9 AM": {
+      "main": [
+        [{ "node": "API Health Check", "type": "main", "index": 0 }]
+      ]
+    },
+    "API Health Check": {
+      "main": [
+        [{ "node": "API Healthy?", "type": "main", "index": 0 }]
+      ]
+    },
+    "API Healthy?": {
+      "main": [
+        [{ "node": "Fetch Next Topic", "type": "main", "index": 0 }],
+        [{ "node": "Alert: API Down", "type": "main", "index": 0 }]
+      ]
+    },
+    "Fetch Next Topic": {
+      "main": [
+        [{ "node": "Set Topic Defaults", "type": "main", "index": 0 }]
+      ]
+    },
+    "Set Topic Defaults": {
+      "main": [
+        [{ "node": "Trigger Pipeline", "type": "main", "index": 0 }]
+      ]
+    },
+    "Trigger Pipeline": {
+      "main": [
+        [{ "node": "Wait 5 Minutes", "type": "main", "index": 0 }]
+      ]
+    },
+    "Wait 5 Minutes": {
+      "main": [
+        [{ "node": "Check Status", "type": "main", "index": 0 }]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [{ "node": "Pipeline Done?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Pipeline Done?": {
+      "main": [
+        [{ "node": "Run Succeeded?", "type": "main", "index": 0 }],
+        [{ "node": "Wait & Retry", "type": "main", "index": 0 }]
+      ]
+    },
+    "Wait & Retry": {
+      "main": [
+        [{ "node": "Check Status", "type": "main", "index": 0 }]
+      ]
+    },
+    "Run Succeeded?": {
+      "main": [
+        [{ "node": "Notify: Success", "type": "main", "index": 0 }],
+        [{ "node": "Notify: Failure", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": ""
+  },
+  "staticData": null,
+  "tags": [
+    { "name": "moolah-iq" },
+    { "name": "content-pipeline" },
+    { "name": "automation" }
+  ],
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "moolah-iq-pipeline"
+  }
+}

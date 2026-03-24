@@ -14,7 +14,7 @@ const tools = [
       "Calculate when your passive investment income will exceed your monthly expenses — your financial independence date.",
     href: "/tools/crossover-calculator",
     badge: "Strategic IQ",
-    badgeColor: "text-primary bg-primary/10",
+    badgeColor: "text-primary bg-primary/30",
     icon: (
       <svg
         className="w-7 h-7 text-gold"
@@ -37,7 +37,7 @@ const tools = [
       "See how your money grows over time with compound interest. Compare scenarios and visualize the power of consistent investing.",
     href: "/tools/compound-interest-calculator",
     badge: "Market IQ",
-    badgeColor: "text-accent bg-accent/10",
+    badgeColor: "text-emerald-700 bg-accent/30",
     icon: (
       <svg
         className="w-7 h-7 text-accent"
@@ -60,7 +60,7 @@ const tools = [
       "Should you refinance? Calculate your break-even point, monthly savings, and see if refinancing makes financial sense.",
     href: "/tools/mortgage-refinance-calculator",
     badge: "Strategic IQ",
-    badgeColor: "text-primary bg-primary/10",
+    badgeColor: "text-primary bg-primary/30",
     icon: (
       <svg
         className="w-7 h-7 text-gold"
@@ -83,9 +83,12 @@ export default function ToolsPage() {
   return (
     <>
       {/* Dark Navy Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 to-blue-950">
-        {/* Circuit board pattern */}
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
+      <section className="relative overflow-hidden bg-primary neural-bg">
+        {/* Mesh gradient blobs */}
+        <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-gold rounded-full blur-3xl opacity-20" />
+        <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-accent rounded-full blur-3xl opacity-20" />
+        {/* Dot grid pattern */}
+        <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-white/60 mb-8">
@@ -116,7 +119,7 @@ export default function ToolsPage() {
             className="group bg-white rounded-2xl shadow-xl border border-gray-100/50 p-6 hover:shadow-2xl hover:border-gold/30 transition-all duration-300"
           >
             <div className="flex items-start justify-between mb-4">
-              <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-gold/30 rounded-xl flex items-center justify-center">
                 {tool.icon}
               </div>
               <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${tool.badgeColor}`}>

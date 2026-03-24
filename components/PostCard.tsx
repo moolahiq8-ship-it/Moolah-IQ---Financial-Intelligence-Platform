@@ -6,41 +6,41 @@ import CardIllustration from "./CardIllustration";
 const categoryColors: Record<string, { gradient: string; badge: string }> = {
   earn: {
     gradient: "from-emerald-600 to-teal-800",
-    badge: "bg-emerald-200 text-emerald-700",
+    badge: "bg-emerald-300 text-emerald-800",
   },
   spend: {
     gradient: "from-amber-600 to-orange-800",
-    badge: "bg-amber-200 text-amber-700",
+    badge: "bg-amber-300 text-amber-800",
   },
   save: {
     gradient: "from-blue-600 to-indigo-800",
-    badge: "bg-blue-200 text-blue-700",
+    badge: "bg-blue-300 text-blue-800",
   },
   invest: {
     gradient: "from-purple-600 to-violet-800",
-    badge: "bg-purple-200 text-purple-700",
+    badge: "bg-purple-300 text-purple-800",
   },
   optimize: {
     gradient: "from-yellow-600 to-amber-800",
-    badge: "bg-yellow-200 text-yellow-700",
+    badge: "bg-yellow-300 text-yellow-800",
   },
   protect: {
     gradient: "from-rose-600 to-red-800",
-    badge: "bg-rose-200 text-rose-700",
+    badge: "bg-rose-300 text-rose-800",
   },
   milestones: {
     gradient: "from-cyan-600 to-blue-800",
-    badge: "bg-cyan-200 text-cyan-700",
+    badge: "bg-cyan-300 text-cyan-800",
   },
   legacy: {
     gradient: "from-amber-500 to-amber-700",
-    badge: "bg-amber-200 text-amber-800",
+    badge: "bg-amber-300 text-amber-900",
   },
 };
 
 const defaultColors = {
   gradient: "from-gray-600 to-gray-800",
-  badge: "bg-gray-100 text-gray-700",
+  badge: "bg-gray-200 text-gray-800",
 };
 
 const iqConfig: Record<IqLevel, { color: string; bg: string; bar: string; label: string }> = {
@@ -106,11 +106,11 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
           </div>
         )}
         {/* IQ difficulty badge overlay */}
-        <div className={`absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-md backdrop-blur-md text-white text-[10px] font-bold shadow-lg transition-all duration-300 group-hover:scale-110 ${
-          post.iqLevel === "Foundational IQ" ? "bg-emerald-600/80 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.5)]" :
-          post.iqLevel === "Market IQ" ? "bg-blue-600/80 group-hover:shadow-[0_0_12px_rgba(59,130,246,0.5)]" :
-          post.iqLevel === "Strategic IQ" ? "bg-amber-600/80 group-hover:shadow-[0_0_12px_rgba(245,158,11,0.5)]" :
-          "bg-red-600/80 group-hover:shadow-[0_0_12px_rgba(239,68,68,0.5)]"
+        <div className={`absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-md text-white text-[10px] font-bold shadow-lg transition-all duration-300 group-hover:scale-110 ${
+          post.iqLevel === "Foundational IQ" ? "bg-emerald-600 group-hover:shadow-[0_0_12px_rgba(16,185,129,0.5)]" :
+          post.iqLevel === "Market IQ" ? "bg-blue-600 group-hover:shadow-[0_0_12px_rgba(59,130,246,0.5)]" :
+          post.iqLevel === "Strategic IQ" ? "bg-amber-600 group-hover:shadow-[0_0_12px_rgba(245,158,11,0.5)]" :
+          "bg-red-600 group-hover:shadow-[0_0_12px_rgba(239,68,68,0.5)]"
         }`}>
           <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 2a6 6 0 00-6 6c0 2.04 1.02 3.84 2.57 4.93L6 18h8l-.57-5.07A5.97 5.97 0 0016 8a6 6 0 00-6-6zm-1 14h2v1H9v-1z" />

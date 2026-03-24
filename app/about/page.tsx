@@ -85,21 +85,22 @@ const pillars = [
 export default function AboutPage() {
   return (
     <div className="antialiased">
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-white to-accent/[0.06]" />
+      {/* Hero — Dark Navy */}
+      <section className="relative overflow-hidden bg-primary neural-bg">
         {/* Mesh gradient blobs */}
-        <div className="absolute -top-20 -right-20 w-96 h-96 bg-accent rounded-full blur-3xl opacity-20" />
-        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gold rounded-full blur-3xl opacity-20" />
+        <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-gold rounded-full blur-3xl opacity-20" />
+        <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-accent rounded-full blur-3xl opacity-20" />
+        {/* Dot grid pattern */}
+        <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
         <div className="relative max-w-4xl mx-auto px-4 pt-16 sm:pt-20 pb-12 sm:pb-16">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full px-4 py-1.5 mb-6 shadow-md">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-widest text-accent">About Us</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-primary mb-4 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
             About Moolah IQ
           </h1>
-          <p className="text-lg sm:text-xl font-medium text-slate-800 max-w-2xl leading-relaxed">
+          <p className="text-lg sm:text-xl font-medium text-white/70 max-w-2xl leading-relaxed">
             Empowering smarter money decisions through data-backed intelligence and disciplined strategy.
           </p>
         </div>

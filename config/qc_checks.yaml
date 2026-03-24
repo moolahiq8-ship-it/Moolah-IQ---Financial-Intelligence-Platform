@@ -1,0 +1,364 @@
+# Moolah IQ V3.8.2 — 57-Point QC Checklist
+# Each check has: id, category, name, description, severity (blocking/warning)
+
+# ═══════════════════════════════════════════════════════════════════════
+# SCRIPT QUALITY (15 checks)
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: QC-01
+  category: script
+  name: Hook impact
+  description: Opening hook is ≤15 seconds and uses a pattern-interrupt or surprising statement.
+  severity: blocking
+
+- id: QC-02
+  category: script
+  name: Story arc completeness
+  description: War story has setup, conflict, climax, and resolution beats.
+  severity: blocking
+
+- id: QC-03
+  category: script
+  name: Data citations
+  description: Every statistical claim has a named source (FRED, BLS, Census, etc.).
+  severity: blocking
+
+- id: QC-04
+  category: script
+  name: CTA clarity
+  description: Call-to-action is specific, actionable, and appears in final 15 seconds.
+  severity: blocking
+
+- id: QC-05
+  category: script
+  name: Brand voice consistency
+  description: Tone is authoritative but approachable throughout; no jargon without explanation.
+  severity: blocking
+
+- id: QC-06
+  category: script
+  name: Disclaimer presence
+  description: A 'not financial advice' disclaimer appears in script (spoken or on-screen).
+  severity: blocking
+
+- id: QC-07
+  category: script
+  name: Pacing target
+  description: Script word count maps to 8-12 minute read at 150-160 WPM.
+  severity: warning
+
+- id: QC-08
+  category: script
+  name: Transition smoothness
+  description: Each section transition uses a bridge sentence or verbal signpost.
+  severity: warning
+
+- id: QC-09
+  category: script
+  name: Jargon avoidance
+  description: Financial jargon is defined on first use or replaced with plain language.
+  severity: warning
+
+- id: QC-10
+  category: script
+  name: Emotional beats
+  description: Script hits ≥3 distinct emotional beats (e.g., curiosity, empathy, urgency).
+  severity: warning
+
+- id: QC-11
+  category: script
+  name: Principle statement
+  description: The core financial principle is stated clearly and memorably.
+  severity: blocking
+
+- id: QC-12
+  category: script
+  name: Actionable steps
+  description: Solution section contains ≥3 concrete, numbered steps the viewer can take.
+  severity: blocking
+
+- id: QC-13
+  category: script
+  name: Audience addressing
+  description: Script directly addresses the viewer (the word 'you') at least 5 times.
+  severity: warning
+
+- id: QC-14
+  category: script
+  name: Length compliance
+  description: Total script length is within 1,200-1,900 words.
+  severity: warning
+
+- id: QC-15
+  category: script
+  name: Originality check
+  description: Content does not substantially duplicate an existing Moolah IQ video.
+  severity: blocking
+
+# ═══════════════════════════════════════════════════════════════════════
+# BLOG QUALITY (12 checks)
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: QC-16
+  category: blog
+  name: SEO heading structure
+  description: Blog has exactly 1 H1, uses H2/H3 hierarchy correctly, no skipped levels.
+  severity: blocking
+
+- id: QC-17
+  category: blog
+  name: Keyword density
+  description: Primary keyword density is 1.5-2.5%, secondary 0.5-1.0%.
+  severity: warning
+
+- id: QC-18
+  category: blog
+  name: Internal links
+  description: Blog contains ≥3 internal links to related Moolah IQ pillar pages.
+  severity: blocking
+
+- id: QC-19
+  category: blog
+  name: Readability score
+  description: Flesch Reading Ease score is ≥60.
+  severity: warning
+
+- id: QC-20
+  category: blog
+  name: Image alt text
+  description: All images have descriptive alt text for accessibility.
+  severity: blocking
+
+- id: QC-21
+  category: blog
+  name: Meta description
+  description: Meta description exists and is ≤155 characters.
+  severity: blocking
+
+- id: QC-22
+  category: blog
+  name: CTA placement
+  description: At least one CTA appears in the blog body and one in the conclusion.
+  severity: warning
+
+- id: QC-23
+  category: blog
+  name: Mobile formatting
+  description: No tables wider than viewport; images are responsive.
+  severity: warning
+
+- id: QC-24
+  category: blog
+  name: Schema markup
+  description: Article schema and VideoObject schema (for embed) are present and valid.
+  severity: blocking
+
+- id: QC-25
+  category: blog
+  name: Canonical URL
+  description: Canonical URL is set and points to the correct page.
+  severity: blocking
+
+- id: QC-26
+  category: blog
+  name: Social OG tags
+  description: Open Graph title, description, and image tags are present.
+  severity: warning
+
+- id: QC-27
+  category: blog
+  name: Blog disclaimer
+  description: Financial disclaimer appears in the blog post footer or sidebar.
+  severity: blocking
+
+# ═══════════════════════════════════════════════════════════════════════
+# NEWSLETTER QUALITY (8 checks)
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: QC-28
+  category: newsletter
+  name: Subject line length
+  description: Subject line is ≤50 characters.
+  severity: warning
+
+- id: QC-29
+  category: newsletter
+  name: Preview text
+  description: Preview text exists, is ≤90 characters, and complements (not repeats) subject.
+  severity: warning
+
+- id: QC-30
+  category: newsletter
+  name: Body word count
+  description: Newsletter body is ≤500 words.
+  severity: warning
+
+- id: QC-31
+  category: newsletter
+  name: Link functionality
+  description: All links in the newsletter are valid and resolve correctly.
+  severity: blocking
+
+- id: QC-32
+  category: newsletter
+  name: Unsubscribe link
+  description: Unsubscribe link is present and functional (CAN-SPAM compliance).
+  severity: blocking
+
+- id: QC-33
+  category: newsletter
+  name: CTA clarity
+  description: Newsletter has a clear, single primary CTA.
+  severity: warning
+
+- id: QC-34
+  category: newsletter
+  name: Personalization tokens
+  description: First-name personalization token is used in greeting.
+  severity: warning
+
+- id: QC-35
+  category: newsletter
+  name: Spam score estimate
+  description: Subject line and body pass basic spam-filter heuristics (no ALL CAPS, excessive punctuation).
+  severity: warning
+
+# ═══════════════════════════════════════════════════════════════════════
+# VIDEO PRODUCTION (14 checks)
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: QC-36
+  category: video
+  name: Resolution
+  description: Video output is 1920x1080 (1080p).
+  severity: blocking
+
+- id: QC-37
+  category: video
+  name: Frame rate
+  description: Video frame rate is 60fps.
+  severity: blocking
+
+- id: QC-38
+  category: video
+  name: Audio levels
+  description: Voice peaks at -6dB to -3dB; music bed at -18dB to -12dB.
+  severity: blocking
+
+- id: QC-39
+  category: video
+  name: Color grading consistency
+  description: Color grading is consistent across all clips; matches brand palette.
+  severity: warning
+
+- id: QC-40
+  category: video
+  name: Lower-third readability
+  description: Lower-third text is legible at 720p; sufficient contrast ratio.
+  severity: warning
+
+- id: QC-41
+  category: video
+  name: Thumbnail contrast ratio
+  description: Thumbnail text has ≥4.5:1 contrast ratio against background.
+  severity: blocking
+
+- id: QC-42
+  category: video
+  name: End screen placement
+  description: End screen elements are placed in the final 20 seconds.
+  severity: warning
+
+- id: QC-43
+  category: video
+  name: Music licensing
+  description: All music tracks are royalty-free or properly licensed.
+  severity: blocking
+
+- id: QC-44
+  category: video
+  name: TTS naturalness
+  description: TTS audio has natural prosody; no robotic artifacts or mispronunciations.
+  severity: blocking
+
+- id: QC-45
+  category: video
+  name: Lip-sync accuracy
+  description: If using avatar, lip-sync is within 50ms tolerance.
+  severity: warning
+
+- id: QC-46
+  category: video
+  name: Chapter markers
+  description: Video has YouTube chapter markers matching script sections.
+  severity: warning
+
+- id: QC-47
+  category: video
+  name: Accessibility captions
+  description: Closed captions are generated and ≥95% accurate.
+  severity: blocking
+
+- id: QC-48
+  category: video
+  name: File size
+  description: Final video file is ≤5GB (YouTube upload limit for non-verified).
+  severity: blocking
+
+- id: QC-49
+  category: video
+  name: Codec compliance
+  description: Video is encoded in H.265 (HEVC) or H.264 as fallback.
+  severity: blocking
+
+# ═══════════════════════════════════════════════════════════════════════
+# SEO & METADATA (8 checks)
+# ═══════════════════════════════════════════════════════════════════════
+
+- id: QC-50
+  category: seo
+  name: YouTube title length
+  description: YouTube title is ≤60 characters with primary keyword front-loaded.
+  severity: blocking
+
+- id: QC-51
+  category: seo
+  name: YouTube description length
+  description: YouTube description is 200-300 words with timestamps and CTAs.
+  severity: warning
+
+- id: QC-52
+  category: seo
+  name: Tag count
+  description: Video has 15-25 tags mixing head terms and long-tail keywords.
+  severity: warning
+
+- id: QC-53
+  category: seo
+  name: Hashtag count
+  description: Exactly 3 hashtags appear above the fold in description.
+  severity: warning
+
+- id: QC-54
+  category: seo
+  name: Keyword presence
+  description: Primary keyword appears in title, description first sentence, and ≥2 tags.
+  severity: blocking
+
+- id: QC-55
+  category: seo
+  name: Schema validity
+  description: All schema markup validates against schema.org and Google Rich Results Test.
+  severity: blocking
+
+- id: QC-56
+  category: seo
+  name: OG tag completeness
+  description: Blog has og:title, og:description, og:image, og:url, og:type tags.
+  severity: warning
+
+- id: QC-57
+  category: seo
+  name: Internal link count
+  description: Blog post contains ≥3 internal links to other Moolah IQ pages.
+  severity: blocking

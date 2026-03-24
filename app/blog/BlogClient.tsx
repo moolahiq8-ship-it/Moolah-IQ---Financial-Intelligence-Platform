@@ -8,14 +8,14 @@ import CategoryFilter from "@/components/CategoryFilter";
 import { PostFrontmatter } from "@/lib/posts";
 
 const pillarColors: Record<string, { bg: string; text: string; badge: string }> = {
-  Earn: { bg: "from-emerald-600 to-teal-700", text: "text-emerald-300", badge: "bg-emerald-500/20 text-emerald-300" },
-  Spend: { bg: "from-amber-600 to-orange-700", text: "text-amber-300", badge: "bg-amber-500/20 text-amber-300" },
-  Save: { bg: "from-blue-600 to-indigo-700", text: "text-blue-300", badge: "bg-blue-500/20 text-blue-300" },
-  Invest: { bg: "from-purple-600 to-violet-700", text: "text-purple-300", badge: "bg-purple-500/20 text-purple-300" },
-  Optimize: { bg: "from-yellow-600 to-amber-700", text: "text-yellow-300", badge: "bg-yellow-500/20 text-yellow-300" },
-  Protect: { bg: "from-rose-600 to-red-700", text: "text-rose-300", badge: "bg-rose-500/20 text-rose-300" },
-  Milestones: { bg: "from-cyan-600 to-blue-700", text: "text-cyan-300", badge: "bg-cyan-500/20 text-cyan-300" },
-  Legacy: { bg: "from-amber-500 to-yellow-700", text: "text-amber-300", badge: "bg-amber-500/20 text-amber-300" },
+  Earn: { bg: "from-emerald-600 to-teal-700", text: "text-emerald-300", badge: "bg-emerald-500/40 text-emerald-200" },
+  Spend: { bg: "from-amber-600 to-orange-700", text: "text-amber-300", badge: "bg-amber-500/40 text-amber-200" },
+  Save: { bg: "from-blue-600 to-indigo-700", text: "text-blue-300", badge: "bg-blue-500/40 text-blue-200" },
+  Invest: { bg: "from-purple-600 to-violet-700", text: "text-purple-300", badge: "bg-purple-500/40 text-purple-200" },
+  Optimize: { bg: "from-yellow-600 to-amber-700", text: "text-yellow-300", badge: "bg-yellow-500/40 text-yellow-200" },
+  Protect: { bg: "from-rose-600 to-red-700", text: "text-rose-300", badge: "bg-rose-500/40 text-rose-200" },
+  Milestones: { bg: "from-cyan-600 to-blue-700", text: "text-cyan-300", badge: "bg-cyan-500/40 text-cyan-200" },
+  Legacy: { bg: "from-amber-500 to-yellow-700", text: "text-amber-300", badge: "bg-amber-500/40 text-amber-200" },
 };
 
 interface BlogClientProps {
@@ -58,16 +58,25 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
   const colors = pillarColors[featured?.category] || pillarColors.Invest;
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-      {/* Page header */}
-      <div className="mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-primary mb-3 tracking-tight">
+    <>
+    {/* Dark Navy Hero */}
+    <section className="relative overflow-hidden bg-primary neural-bg">
+      {/* Mesh gradient blobs */}
+      <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-gold rounded-full blur-3xl opacity-20" />
+      <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-accent rounded-full blur-3xl opacity-20" />
+      {/* Dot grid pattern */}
+      <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
           Blog
         </h1>
-        <p className="text-gray-700 text-lg">
+        <p className="text-lg text-white/70 max-w-2xl leading-relaxed">
           Browse all articles on personal finance, investing, and building wealth.
         </p>
       </div>
+    </section>
+
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
 
       {/* Featured Article */}
       {featured && (
@@ -132,5 +141,6 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
         </div>
       )}
     </section>
+    </>
   );
 }
