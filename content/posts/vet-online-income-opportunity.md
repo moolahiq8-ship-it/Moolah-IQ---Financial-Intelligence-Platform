@@ -81,10 +81,10 @@ The goal was never just to avoid losing. It's to move the same resources toward 
 
 Imagine you see an ad: *"Our AI builds you an online store that earns $8,000/month — passive. Just $4,500 to start."* Run the check:
 
-1. **Money flow?** You pay $4,500 before earning anything. Money flows out of you first. ⚠️
-2. **Income promise?** A specific, guaranteed, "passive" number with no reference to your effort or market. ⚠️
-3. **Product and customer?** "AI store" is vague; the only confirmed customer paying money is you. ⚠️
-4. **Independent reputation?** A quick neutral search turns up complaints and refund requests. ⚠️
+1. **Money flow?** You pay $4,500 before earning anything. Money flows out of you first.
+2. **Income promise?** A specific, guaranteed, "passive" number with no reference to your effort or market.
+3. **Product and customer?** "AI store" is vague; the only confirmed customer paying money is you.
+4. **Independent reputation?** A quick neutral search turns up complaints and refund requests.
 5. **The pause?** Four red flags in ten minutes. Easy "no."
 
 That's the entire skill in action. No expertise required — just a calm, repeatable process.
