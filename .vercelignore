@@ -1,0 +1,11 @@
+# Python agent backend — not part of the Next.js site build.
+# Excluded from the Vercel upload so deploying the site never ships the backend.
+src/
+scripts/
+tests/
+data/
+
+# Python artifacts
+*.py
+__pycache__/
+*.pyc
