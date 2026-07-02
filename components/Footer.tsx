@@ -34,16 +34,22 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-2">
-            {/* Two-tone text wordmark — standard gold pops on the navy bg;
-                plain text, no box/background */}
+            {/* Same lockup as the header, adapted for navy: Playfair 800
+                'Moolah' in white (light-bg), IQ chip on a translucent
+                backing so the header's navy chip doesn't vanish here */}
             <Link
               href="/"
-              className="inline-block mb-4"
+              className="inline-flex items-center gap-2 mb-4"
               aria-label="Moolah IQ — home"
             >
-              <span className="text-2xl font-extrabold uppercase tracking-[0.06em] leading-none whitespace-nowrap">
-                <span className="text-accent">Moolah</span>{" "}
-                <span className="text-gold">IQ</span>
+              <span
+                className="text-2xl font-extrabold text-light-bg tracking-tight leading-none"
+                style={{ fontFamily: "var(--font-playfair)" }}
+              >
+                Moolah
+              </span>
+              <span className="bg-white/10 border border-white/[0.18] text-gold-light text-sm font-bold px-[9px] py-[3px] rounded-[5px] leading-none">
+                IQ
               </span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
