@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const EXPLORE_LINKS = [
   { label: "Start here", href: "/#start" },
@@ -33,14 +32,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/logo.png"
-                alt="Moolah IQ - Boost Your Wealth Knowledge"
-                width={160}
-                height={40}
-                className="h-9 w-auto brightness-0 invert"
-              />
+            {/* Two-tone text wordmark — standard gold pops on the navy bg;
+                plain text, no box/background */}
+            <Link
+              href="/"
+              className="inline-block mb-4"
+              aria-label="Moolah IQ — home"
+            >
+              <span className="text-2xl font-extrabold uppercase tracking-[0.06em] leading-none whitespace-nowrap">
+                <span className="text-accent">Moolah</span>{" "}
+                <span className="text-gold">IQ</span>
+              </span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               Level up your financial intelligence. Data-backed strategies to

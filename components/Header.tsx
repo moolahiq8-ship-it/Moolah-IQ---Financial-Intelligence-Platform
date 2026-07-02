@@ -21,22 +21,17 @@ export default function Header() {
       {/* Spec: padding 20px 56px (desktop) */}
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-14">
         <div className="flex items-center justify-between py-3 lg:py-5">
-          {/* Wordmark + IQ chip */}
+          {/* Two-tone text wordmark — Inter 800, wide tracking, no image.
+              IQ uses gold-dark here (standard gold is too weak on the
+              near-white nav); footer uses standard gold on navy. */}
           <Link
             href="/"
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex items-center flex-shrink-0"
             aria-label="Moolah IQ — home"
           >
-            {/* Spec: Playfair 800 24px primary */}
-            <span
-              className="text-2xl font-extrabold text-primary tracking-tight leading-none"
-              style={{ fontFamily: "var(--font-playfair)" }}
-            >
-              Moolah
-            </span>
-            {/* Spec: Inter 700 14px, bg primary, text gold-light, 3px 9px, radius 5px */}
-            <span className="bg-primary text-gold-light text-sm font-bold px-[9px] py-[3px] rounded-[5px] leading-none">
-              IQ
+            <span className="text-[21px] font-extrabold uppercase tracking-[0.06em] leading-none whitespace-nowrap">
+              <span className="text-accent">Moolah</span>{" "}
+              <span className="text-gold-dark">IQ</span>
             </span>
           </Link>
 
