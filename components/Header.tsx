@@ -1,78 +1,70 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
+
+const NAV_LINKS = [
+  // "Start here" is the primary nav link per spec (weight 600, primary color)
+  { label: "Start here", href: "/#start", primary: true },
+  { label: "Articles", href: "/blog", primary: false },
+  { label: "Tools", href: "/tools", primary: false },
+  { label: "Videos", href: "/#videos", primary: false },
+  { label: "About", href: "/about", primary: false },
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-md">
-      <div className="mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-16 md:h-[72px]">
-          {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/logo.png"
-              alt="Moolah IQ - Boost Your Wealth Knowledge"
-              width={308}
-              height={77}
-              className="h-12 w-auto md:h-[62px]"
-              priority
-            />
+    // Spec: sticky, bg rgba(248,250,252,0.94) (= light-bg @ 94%), blur 8px, border #E2E8F0
+    <header className="bg-light-bg/[0.94] backdrop-blur sticky top-0 z-50 border-b border-slate-200">
+      {/* Spec: padding 20px 56px (desktop) */}
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-14">
+        <div className="flex items-center justify-between py-3 lg:py-5">
+          {/* Two-tone text wordmark — Inter 800, wide tracking, no image.
+              IQ uses gold-dark here (standard gold is too weak on the
+              near-white nav); footer uses standard gold on navy. */}
+          <Link
+            href="/"
+            className="flex items-center flex-shrink-0"
+            aria-label="Moolah IQ — home"
+          >
+            <span className="text-[21px] font-extrabold uppercase tracking-[0.06em] leading-none whitespace-nowrap">
+              <span className="text-accent">Moolah</span>{" "}
+              <span className="text-gold-dark">IQ</span>
+            </span>
           </Link>
 
-          {/* Desktop nav — centered */}
-          <nav className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
-            <Link
-              href="/"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
-            >
-              Home
-            </Link>
-            <Link
-              href="/blog"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/tools"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
-            >
-              Tools
-            </Link>
-            <Link
-              href="/about"
-              className="px-4 py-2 text-[16px] font-semibold text-dark-text hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
-            >
-              About
-            </Link>
+          {/* Desktop nav — centered, gap 36px, 15px links */}
+          <nav className="hidden md:flex items-center gap-9 absolute left-1/2 -translate-x-1/2">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`text-[15px] transition-colors hover:text-accent ${
+                  link.primary
+                    ? "font-semibold text-primary"
+                    : "font-medium text-slate-600"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
-          {/* Right side */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Right CTA pill — bg primary, white 14px/600, 11px 22px, radius 999px, hover accent */}
+          <div className="hidden md:flex items-center">
             <Link
-              href="/blog"
-              className="p-2 text-gray-700 hover:text-primary transition-colors rounded-lg hover:bg-gray-100"
-              aria-label="Search articles"
+              href="/#newsletter"
+              className="bg-primary hover:bg-accent text-white font-semibold px-[22px] py-[11px] rounded-full text-sm transition-colors"
             >
-              <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </Link>
-            <Link
-              href="/blog"
-              className="border-2 border-gold text-gold hover:bg-gold hover:text-primary font-bold px-5 py-2 rounded-lg text-[13px] transition-all duration-200"
-            >
-              Boost My IQ
+              Get the weekly brief
             </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 -mr-2 text-gray-700"
+            className="md:hidden p-2 -mr-2 text-slate-600"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -91,43 +83,29 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="md:hidden border-t border-gray-100 bg-white">
+        <nav className="md:hidden border-t border-slate-200 bg-light-bg">
           <div className="px-4 py-4 space-y-1">
-            <Link
-              href="/"
-              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/blog"
-              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/tools"
-              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Tools
-            </Link>
-            <Link
-              href="/about"
-              className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              About
-            </Link>
-            <div className="pt-3">
+            {NAV_LINKS.map((link) => (
               <Link
-                href="/blog"
-                className="block text-center border-2 border-gold text-gold hover:bg-gold hover:text-primary font-bold px-5 py-3 rounded-xl text-sm transition-all duration-200"
+                key={link.label}
+                href={link.href}
+                className={`block px-4 py-3 text-sm rounded-xl transition-colors hover:text-accent hover:bg-white ${
+                  link.primary
+                    ? "font-semibold text-primary"
+                    : "font-medium text-slate-600"
+                }`}
                 onClick={() => setMenuOpen(false)}
               >
-                Boost My IQ
+                {link.label}
+              </Link>
+            ))}
+            <div className="pt-3">
+              <Link
+                href="/#newsletter"
+                className="block text-center bg-primary hover:bg-accent text-white font-semibold px-[22px] py-3 rounded-full text-sm transition-colors"
+                onClick={() => setMenuOpen(false)}
+              >
+                Get the weekly brief
               </Link>
             </div>
           </div>

@@ -1,21 +1,50 @@
 import Link from "next/link";
-import Image from "next/image";
+
+const EXPLORE_LINKS = [
+  { label: "Start here", href: "/#start" },
+  { label: "Articles", href: "/blog" },
+  { label: "Tools", href: "/tools" },
+  { label: "Videos", href: "/#videos" },
+  { label: "About", href: "/about" },
+];
+
+const DISCIPLINE_LINKS = [
+  { label: "Earn", href: "/category/earn" },
+  { label: "Spend", href: "/category/spend" },
+  { label: "Save", href: "/category/save" },
+  { label: "Invest", href: "/category/invest" },
+  { label: "Optimize", href: "/category/optimize" },
+  { label: "Protect", href: "/category/protect" },
+  { label: "Milestones", href: "/category/milestones" },
+  { label: "Legacy", href: "/category/legacy" },
+];
+
+const LEGAL_LINKS = [
+  { label: "Disclaimer", href: "/legal/disclaimer" },
+  { label: "Privacy Policy", href: "/legal/privacy" },
+  { label: "Terms of Service", href: "/legal/terms" },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-[#0f2847] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
+        {/* 6-col only at lg — at md the side columns squeeze to ~84px and
+            legal links wrap badly; tablet gets a 2-col arrangement instead */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand */}
-          <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/logo.png"
-                alt="Moolah IQ - Boost Your Wealth Knowledge"
-                width={160}
-                height={40}
-                className="h-9 w-auto brightness-0 invert"
-              />
+          <div className="sm:col-span-2 lg:col-span-2">
+            {/* Two-tone text wordmark — standard gold pops on the navy bg;
+                plain text, no box/background */}
+            <Link
+              href="/"
+              className="inline-block mb-4"
+              aria-label="Moolah IQ — home"
+            >
+              <span className="text-2xl font-extrabold uppercase tracking-[0.06em] leading-none whitespace-nowrap">
+                <span className="text-accent">Moolah</span>{" "}
+                <span className="text-gold">IQ</span>
+              </span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
               Level up your financial intelligence. Data-backed strategies to
@@ -23,117 +52,41 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Explore */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-              Quick Links
+              Explore
             </h4>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Tools
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-              </li>
+              {EXPLORE_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Categories */}
-          <div className="md:col-span-2">
+          {/* Disciplines */}
+          <div className="lg:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-              Categories
+              Disciplines
             </h4>
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
-              <li>
-                <Link
-                  href="/category/earn"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Earn
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/spend"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Spend
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/save"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Save
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/invest"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Invest
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/optimize"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Optimize
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/protect"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Protect
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/milestones"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Milestones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/legacy"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Legacy
-                </Link>
-              </li>
+              {DISCIPLINE_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -143,30 +96,16 @@ export default function Footer() {
               Legal
             </h4>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/legal/disclaimer"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Disclaimer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/privacy"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/terms"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Terms of Service
-                </Link>
-              </li>
+              {LEGAL_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
