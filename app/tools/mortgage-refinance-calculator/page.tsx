@@ -32,8 +32,8 @@ export default function MortgageRefinanceCalculatorPage() {
 
       {/* Header */}
       <div className="mb-10">
-        <span className="inline-block bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-          Strategic IQ
+        <span className="inline-block bg-[#F0DFA0] text-yellow-800 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+          Strategy
         </span>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary tracking-tight mb-4">
           Mortgage Refinance Calculator

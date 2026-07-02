@@ -3,9 +3,10 @@ const IQ_TIERS = [
     score: 95,
     name: "Foundations",
     description: "First budget, emergency fund, debt basics",
-    // Spec: row bg #ECFDF5 (emerald-50), score accent; meter 33% accent on #D1FAE5 (emerald-100)
-    row: "bg-emerald-50",
-    scoreColor: "text-accent",
+    // Deepened fill: real mint #A7F3D0 (emerald-200); score darkened to
+    // emerald-800 for AA contrast on the deeper fill
+    row: "bg-emerald-200",
+    scoreColor: "text-emerald-800",
     nameColor: "text-dark-text",
     descColor: "text-slate-600",
     track: "bg-emerald-100",
@@ -16,9 +17,10 @@ const IQ_TIERS = [
     score: 110,
     name: "Strategy",
     description: "Index investing, tax basics, rate shopping",
-    // Spec: row bg #FDF8EA, score gold-dark; meter 66% gold on #F3E9C6
-    row: "bg-[#FDF8EA]",
-    scoreColor: "text-gold-dark",
+    // Deepened fill: real warm gold #F0DFA0; score darkened to yellow-800
+    // for AA contrast on the deeper fill
+    row: "bg-[#F0DFA0]",
+    scoreColor: "text-yellow-800",
     nameColor: "text-dark-text",
     descColor: "text-slate-600",
     track: "bg-[#F3E9C6]",

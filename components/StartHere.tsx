@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { iqBadgeLabel, iqTier, IQ_BADGE_CLASSES } from "@/lib/iq";
 
 const GUIDES = [
   {
@@ -7,13 +8,13 @@ const GUIDES = [
     dek: "Create your first budget with the 50/30/20 rule and a system that actually sticks.",
     category: "Spend",
     minutes: 2,
+    iqScore: 95,
     stat: "50/30/20",
     caption: "needs · wants · savings",
-    // Panel bgs cycle #ECFDF5 → #FDF8EA → #EDF3FA per spec
-    panel: "bg-emerald-50",
-    statColor: "text-accent",
-    badge: "95 · Foundations",
-    badgeStyle: "bg-emerald-50 text-accent",
+    // Panel fills cycle mint → warm gold → blue (deepened per reference:
+    // emerald-200 / #F0DFA0 / blue-200); stat text darkened for AA contrast
+    panel: "bg-emerald-200",
+    statColor: "text-emerald-800",
   },
   {
     slug: "vet-online-income-opportunity",
@@ -21,12 +22,11 @@ const GUIDES = [
     dek: "A 5-point due-diligence check to tell whether any “make money online” offer is real.",
     category: "Earn",
     minutes: 6,
+    iqScore: 95,
     stat: "10 min",
     caption: "5-point legitimacy check",
-    panel: "bg-[#FDF8EA]",
-    statColor: "text-gold-dark",
-    badge: "95 · Foundations",
-    badgeStyle: "bg-emerald-50 text-accent",
+    panel: "bg-[#F0DFA0]",
+    statColor: "text-yellow-800",
   },
   {
     slug: "investing-101",
@@ -34,12 +34,11 @@ const GUIDES = [
     dek: "The basics of stocks, index funds, and compound interest — no big balance required.",
     category: "Invest",
     minutes: 3,
+    iqScore: 110,
     stat: "+18.4%",
     caption: "compound growth, illustrated",
-    panel: "bg-[#EDF3FA]",
+    panel: "bg-blue-200",
     statColor: "text-primary",
-    badge: "110 · Strategy",
-    badgeStyle: "bg-[#FDF8EA] text-gold-dark",
   },
   {
     slug: "best-high-yield-savings-accounts-2026",
@@ -47,12 +46,11 @@ const GUIDES = [
     dek: "Top high-yield savings accounts compared by rate, fees, minimums, and features.",
     category: "Save",
     minutes: 5,
+    iqScore: 125,
     stat: "4.50% APY",
     caption: "top rate, verified Feb 2026",
-    panel: "bg-emerald-50",
-    statColor: "text-accent",
-    badge: "125 · Strategy",
-    badgeStyle: "bg-[#FDF8EA] text-gold-dark",
+    panel: "bg-emerald-200",
+    statColor: "text-emerald-800",
   },
 ];
 
@@ -97,7 +95,7 @@ export default function StartHere() {
                 <span className={`text-[28px] font-bold leading-tight ${guide.statColor}`}>
                   {guide.stat}
                 </span>
-                <span className="text-xs text-slate-500 mt-1">{guide.caption}</span>
+                <span className="text-xs text-slate-700 mt-1">{guide.caption}</span>
               </div>
 
               {/* Body */}
@@ -108,9 +106,9 @@ export default function StartHere() {
                   </span>
                   <span className="text-xs text-slate-400">· {guide.minutes} min</span>
                   <span
-                    className={`ml-auto text-[11px] font-bold px-2 py-1 rounded-full whitespace-nowrap ${guide.badgeStyle}`}
+                    className={`ml-auto text-[11px] font-bold px-2 py-1 rounded-full whitespace-nowrap ${IQ_BADGE_CLASSES[iqTier(guide.iqScore)]}`}
                   >
-                    {guide.badge}
+                    {iqBadgeLabel(guide.iqScore)}
                   </span>
                 </div>
                 <h3 className="text-lg/[1.3] font-bold text-primary mb-2">
