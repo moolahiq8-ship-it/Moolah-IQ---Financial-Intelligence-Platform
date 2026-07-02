@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* Tools Showcase */}
-      <section className="border-t border-gray-100 bg-slate-900">
+      <section id="tool" className="border-t border-gray-100 bg-slate-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
           <div className="text-center mb-10">
             <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-3">
@@ -122,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="bg-primary neural-bg">
+      <section id="newsletter" className="bg-primary neural-bg scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-gold font-semibold text-sm uppercase tracking-widest mb-4">

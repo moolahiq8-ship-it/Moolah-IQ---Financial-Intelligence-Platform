@@ -1,6 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
 
+const EXPLORE_LINKS = [
+  { label: "Start here", href: "/#start" },
+  { label: "Articles", href: "/blog" },
+  { label: "Tools", href: "/tools" },
+  { label: "Videos", href: "/#videos" },
+  { label: "About", href: "/about" },
+];
+
+const DISCIPLINE_LINKS = [
+  { label: "Earn", href: "/category/earn" },
+  { label: "Spend", href: "/category/spend" },
+  { label: "Save", href: "/category/save" },
+  { label: "Invest", href: "/category/invest" },
+  { label: "Optimize", href: "/category/optimize" },
+  { label: "Protect", href: "/category/protect" },
+  { label: "Milestones", href: "/category/milestones" },
+  { label: "Legacy", href: "/category/legacy" },
+];
+
+const LEGAL_LINKS = [
+  { label: "Disclaimer", href: "/legal/disclaimer" },
+  { label: "Privacy Policy", href: "/legal/privacy" },
+  { label: "Terms of Service", href: "/legal/terms" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-[#0f2847] text-white">
@@ -23,117 +48,41 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Explore */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-              Quick Links
+              Explore
             </h4>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Tools
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  About
-                </Link>
-              </li>
+              {EXPLORE_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Disciplines */}
           <div className="md:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-              Categories
+              Disciplines
             </h4>
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
-              <li>
-                <Link
-                  href="/category/earn"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Earn
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/spend"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Spend
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/save"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Save
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/invest"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Invest
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/optimize"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Optimize
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/protect"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Protect
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/milestones"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Milestones
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/category/legacy"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Legacy
-                </Link>
-              </li>
+              {DISCIPLINE_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -143,30 +92,16 @@ export default function Footer() {
               Legal
             </h4>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/legal/disclaimer"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Disclaimer
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/privacy"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/terms"
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  Terms of Service
-                </Link>
-              </li>
+              {LEGAL_LINKS.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
