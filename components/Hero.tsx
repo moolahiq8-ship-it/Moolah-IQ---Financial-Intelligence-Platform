@@ -72,7 +72,7 @@ export default function Hero() {
             {/* Subcopy — Inter 18px/1.65 #475569 (slate-600), max 52ch */}
             <p className="text-lg leading-[1.65] text-slate-600 max-w-[52ch] mb-8">
               Every guide and tool carries a Money IQ score — from 95 (first
-              budget) to 160 (estate strategy). Take the 60-second quiz below
+              budget) to 140 (estate strategy). Take the 60-second quiz below
               to find your starting point.
             </p>
 
