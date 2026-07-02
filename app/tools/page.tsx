@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { IQ_BADGE_CLASSES } from "@/lib/iq";
 
 export const metadata: Metadata = {
   title: "Tools",
@@ -13,11 +14,13 @@ const tools = [
     description:
       "Calculate when your passive investment income will exceed your monthly expenses — your financial independence date.",
     href: "/tools/crossover-calculator",
-    badge: "Strategic IQ",
-    badgeColor: "text-primary bg-primary/30",
+    // Tools carry no iqScore, so badges are tier-only (no invented numbers)
+    badge: "Strategy",
+    badgeColor: IQ_BADGE_CLASSES.Strategy,
+    tile: "bg-[#F0DFA0]",
     icon: (
       <svg
-        className="w-7 h-7 text-gold"
+        className="w-7 h-7 text-yellow-800"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -36,11 +39,12 @@ const tools = [
     description:
       "See how your money grows over time with compound interest. Compare scenarios and visualize the power of consistent investing.",
     href: "/tools/compound-interest-calculator",
-    badge: "Market IQ",
-    badgeColor: "text-emerald-700 bg-accent/30",
+    badge: "Strategy",
+    badgeColor: IQ_BADGE_CLASSES.Strategy,
+    tile: "bg-emerald-200",
     icon: (
       <svg
-        className="w-7 h-7 text-accent"
+        className="w-7 h-7 text-emerald-800"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -59,11 +63,12 @@ const tools = [
     description:
       "Should you refinance? Calculate your break-even point, monthly savings, and see if refinancing makes financial sense.",
     href: "/tools/mortgage-refinance-calculator",
-    badge: "Strategic IQ",
-    badgeColor: "text-primary bg-primary/30",
+    badge: "Strategy",
+    badgeColor: IQ_BADGE_CLASSES.Strategy,
+    tile: "bg-[#F0DFA0]",
     icon: (
       <svg
-        className="w-7 h-7 text-gold"
+        className="w-7 h-7 text-yellow-800"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -119,7 +124,7 @@ export default function ToolsPage() {
             className="group bg-white rounded-2xl shadow-xl border border-gray-100/50 p-6 hover:shadow-2xl hover:border-gold/30 transition-all duration-300"
           >
             <div className="flex items-start justify-between mb-4">
-              <div className="w-12 h-12 bg-gold/30 rounded-xl flex items-center justify-center">
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tool.tile}`}>
                 {tool.icon}
               </div>
               <span className={`text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${tool.badgeColor}`}>

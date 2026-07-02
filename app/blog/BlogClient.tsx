@@ -6,6 +6,7 @@ import PostCard from "@/components/PostCard";
 import SearchBar from "@/components/SearchBar";
 import CategoryFilter from "@/components/CategoryFilter";
 import { PostFrontmatter } from "@/lib/posts";
+import { iqBadgeLabel } from "@/lib/iq";
 
 const pillarColors: Record<string, { bg: string; text: string; badge: string }> = {
   Earn: { bg: "from-emerald-600 to-teal-700", text: "text-emerald-300", badge: "bg-emerald-500/40 text-emerald-200" },
@@ -92,7 +93,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
                   <span className={`inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${colors.badge} mb-3`}>
                     {featured.category}
                   </span>
-                  <p className="text-white/60 text-sm font-medium">{featured.iqLevel} &middot; {featured.readingTime}</p>
+                  <p className="text-white/60 text-sm font-medium">{iqBadgeLabel(featured.iqScore)} &middot; {featured.readingTime}</p>
                 </div>
               </div>
               {/* Content side */}
