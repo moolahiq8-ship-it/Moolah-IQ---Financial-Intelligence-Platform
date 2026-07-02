@@ -29,9 +29,11 @@ export default function Footer() {
   return (
     <footer className="bg-[#0f2847] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-10">
+        {/* 6-col only at lg — at md the side columns squeeze to ~84px and
+            legal links wrap badly; tablet gets a 2-col arrangement instead */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand */}
-          <div className="md:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             {/* Two-tone text wordmark — standard gold pops on the navy bg;
                 plain text, no box/background */}
             <Link
@@ -70,7 +72,7 @@ export default function Footer() {
           </div>
 
           {/* Disciplines */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
               Disciplines
             </h4>

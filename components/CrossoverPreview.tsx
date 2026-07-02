@@ -52,7 +52,7 @@ function formatFullCurrency(value: number): string {
   }).format(value);
 }
 
-const SLIDER_CLASS = "w-full accent-accent cursor-pointer";
+const SLIDER_CLASS = "w-full slider-touch cursor-pointer block";
 
 export default function CrossoverPreview() {
   const [monthlyExpenses, setMonthlyExpenses] = useState(3400);

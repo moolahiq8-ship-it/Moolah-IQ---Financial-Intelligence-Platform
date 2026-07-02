@@ -91,8 +91,9 @@ export default function Videos() {
           </a>
         </div>
 
-        {/* Videos — 3-col, gap 20px */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Videos — 3-col desktop, single column below 1024px (a 2-col
+            tablet layout orphans the third video) */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-5">
           {VIDEOS.map((video, i) => (
             <a
               key={video.id || i}

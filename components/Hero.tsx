@@ -93,17 +93,19 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Stat row — top border #E2E8F0, pt 22px, gap 36px */}
-            <dl className="flex flex-wrap gap-9 border-t border-slate-200 pt-[22px]">
+            {/* Stat row — top border #E2E8F0, pt 22px, gap 36px.
+                Deliberate 3-across grid at every width (no accidental
+                wrapping); numbers/labels step down on narrow phones. */}
+            <dl className="grid grid-cols-3 gap-4 sm:gap-9 border-t border-slate-200 pt-[22px]">
               {STATS.map((stat) => (
                 <div key={stat.detail}>
                   <dt className="sr-only">{stat.detail}</dt>
                   <dd>
                     {/* numbers 22px/700 primary; labels 13px #64748B (slate-500) */}
-                    <span className="block text-[22px] font-bold text-primary leading-tight">
+                    <span className="block text-lg sm:text-[22px] font-bold text-primary leading-tight">
                       {stat.headline}
                     </span>
-                    <span className="block text-[13px] text-slate-500 mt-1">
+                    <span className="block text-xs sm:text-[13px] text-slate-500 mt-1">
                       {stat.detail}
                     </span>
                   </dd>
