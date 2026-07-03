@@ -42,12 +42,6 @@ const IQ_TIERS = [
   },
 ];
 
-const STATS = [
-  { headline: "Every guide", detail: "scored by difficulty" },
-  { headline: "8", detail: "money disciplines" },
-  { headline: "$0", detail: "paywalls, ever" },
-];
-
 export default function Hero() {
   return (
     <section className="bg-light-bg">
@@ -79,7 +73,7 @@ export default function Hero() {
             </p>
 
             {/* CTAs — primary: bg accent, white 16px/700, 15px 30px, hover primary */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
               <a
                 href="#quiz"
                 className="inline-block text-center bg-accent hover:bg-primary text-white font-bold text-base px-[30px] py-[15px] rounded-xl transition-colors"
@@ -94,26 +88,6 @@ export default function Hero() {
                 <span aria-hidden="true">→</span>
               </a>
             </div>
-
-            {/* Stat row — top border #E2E8F0, pt 22px, gap 36px.
-                Deliberate 3-across grid at every width (no accidental
-                wrapping); numbers/labels step down on narrow phones. */}
-            <dl className="grid grid-cols-3 gap-4 sm:gap-9 border-t border-slate-200 pt-[22px]">
-              {STATS.map((stat) => (
-                <div key={stat.detail}>
-                  <dt className="sr-only">{stat.detail}</dt>
-                  <dd>
-                    {/* numbers 22px/700 primary; labels 13px #64748B (slate-500) */}
-                    <span className="block text-lg sm:text-[22px] font-bold text-primary leading-tight">
-                      {stat.headline}
-                    </span>
-                    <span className="block text-xs sm:text-[13px] text-slate-500 mt-1">
-                      {stat.detail}
-                    </span>
-                  </dd>
-                </div>
-              ))}
-            </dl>
           </div>
 
           {/* Right — THE IQ SCALE card */}
