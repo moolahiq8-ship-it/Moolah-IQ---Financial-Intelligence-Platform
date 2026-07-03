@@ -3,46 +3,7 @@ import Image from "next/image";
 import { PostFrontmatter } from "@/lib/posts";
 import { iqTier, iqBadgeLabel, IQ_BADGE_CLASSES, IqTier } from "@/lib/iq";
 import CardIllustration from "./CardIllustration";
-
-const categoryColors: Record<string, { gradient: string; badge: string }> = {
-  earn: {
-    gradient: "from-emerald-600 to-teal-800",
-    badge: "bg-emerald-300 text-emerald-800",
-  },
-  spend: {
-    gradient: "from-amber-600 to-orange-800",
-    badge: "bg-amber-300 text-amber-800",
-  },
-  save: {
-    gradient: "from-blue-600 to-indigo-800",
-    badge: "bg-blue-300 text-blue-800",
-  },
-  invest: {
-    gradient: "from-purple-600 to-violet-800",
-    badge: "bg-purple-300 text-purple-800",
-  },
-  optimize: {
-    gradient: "from-yellow-600 to-amber-800",
-    badge: "bg-yellow-300 text-yellow-800",
-  },
-  protect: {
-    gradient: "from-rose-600 to-red-800",
-    badge: "bg-rose-300 text-rose-800",
-  },
-  milestones: {
-    gradient: "from-cyan-600 to-blue-800",
-    badge: "bg-cyan-300 text-cyan-800",
-  },
-  legacy: {
-    gradient: "from-amber-500 to-amber-700",
-    badge: "bg-amber-300 text-amber-900",
-  },
-};
-
-const defaultColors = {
-  gradient: "from-gray-600 to-gray-800",
-  badge: "bg-gray-200 text-gray-800",
-};
+import { categoryColor } from "@/lib/categories";
 
 // Complexity meter styling per tier (tier derives from iqScore via lib/iq)
 const iqConfig: Record<IqTier, { bg: string; bar: string; label: string }> = {
@@ -70,8 +31,7 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
     day: "numeric",
   });
 
-  const colors =
-    categoryColors[post.category.toLowerCase()] || defaultColors;
+  const c = categoryColor(post.category);
 
   const tier = iqTier(post.iqScore);
   const iq = iqConfig[tier];
@@ -92,7 +52,7 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
           </div>
         ) : (
           <div
-            className={`aspect-[16/10] bg-gradient-to-br ${colors.gradient} rounded-xl flex items-center justify-center overflow-hidden`}
+            className={`aspect-[16/10] bg-gradient-to-br ${c.thumb} rounded-xl flex items-center justify-center overflow-hidden`}
           >
             <div className="group-hover:scale-105 transition-transform duration-500 flex items-center justify-center w-full h-full">
               <CardIllustration slug={post.slug} category={post.category} />
@@ -114,7 +74,7 @@ export default function PostCard({ post }: { post: PostFrontmatter }) {
         <div className="flex items-center gap-3 mb-3">
           <Link
             href={`/category/${post.category.toLowerCase()}`}
-            className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${colors.badge} hover:opacity-80 transition-opacity`}
+            className={`text-[11px] font-bold uppercase tracking-[0.06em] px-2.5 py-1 rounded-md ${c.tint} ${c.text} hover:opacity-80 transition-opacity`}
           >
             {post.category}
           </Link>

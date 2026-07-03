@@ -7,17 +7,7 @@ import SearchBar from "@/components/SearchBar";
 import CategoryFilter from "@/components/CategoryFilter";
 import { PostFrontmatter } from "@/lib/posts";
 import { iqBadgeLabel } from "@/lib/iq";
-
-const pillarColors: Record<string, { bg: string; text: string; badge: string }> = {
-  Earn: { bg: "from-emerald-600 to-teal-700", text: "text-emerald-300", badge: "bg-emerald-500/40 text-emerald-200" },
-  Spend: { bg: "from-amber-600 to-orange-700", text: "text-amber-300", badge: "bg-amber-500/40 text-amber-200" },
-  Save: { bg: "from-blue-600 to-indigo-700", text: "text-blue-300", badge: "bg-blue-500/40 text-blue-200" },
-  Invest: { bg: "from-purple-600 to-violet-700", text: "text-purple-300", badge: "bg-purple-500/40 text-purple-200" },
-  Optimize: { bg: "from-yellow-600 to-amber-700", text: "text-yellow-300", badge: "bg-yellow-500/40 text-yellow-200" },
-  Protect: { bg: "from-rose-600 to-red-700", text: "text-rose-300", badge: "bg-rose-500/40 text-rose-200" },
-  Milestones: { bg: "from-cyan-600 to-blue-700", text: "text-cyan-300", badge: "bg-cyan-500/40 text-cyan-200" },
-  Legacy: { bg: "from-amber-500 to-yellow-700", text: "text-amber-300", badge: "bg-amber-500/40 text-amber-200" },
-};
+import { categoryColor } from "@/lib/categories";
 
 interface BlogClientProps {
   posts: PostFrontmatter[];
@@ -56,7 +46,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
   };
 
   const featured = posts[0];
-  const colors = pillarColors[featured?.category] || pillarColors.Invest;
+  const c = featured ? categoryColor(featured.category) : categoryColor("invest");
 
   return (
     <>
@@ -86,11 +76,11 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
           <Link href={`/blog/${featured.slug}`} className="group block">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-xl border border-gray-100/50">
               {/* Image / gradient side */}
-              <div className={`relative bg-gradient-to-br ${colors.bg} p-8 md:p-10 flex flex-col justify-end min-h-[240px]`}>
+              <div className={`relative bg-gradient-to-br ${c.thumb} p-8 md:p-10 flex flex-col justify-end min-h-[240px]`}>
                 {/* Dot pattern overlay */}
                 <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
                 <div className="relative">
-                  <span className={`inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${colors.badge} mb-3`}>
+                  <span className={`inline-block text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full ${c.tint} ${c.text} mb-3`}>
                     {featured.category}
                   </span>
                   <p className="text-white/60 text-sm font-medium">{iqBadgeLabel(featured.iqScore)} &middot; {featured.readingTime}</p>

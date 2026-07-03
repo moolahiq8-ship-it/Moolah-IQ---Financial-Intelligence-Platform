@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -53,6 +54,36 @@ const config: Config = {
         "pillar-legacy-bg": "#E6CE8A",
         "pillar-legacy-bg2": "#E8D191",
         "pillar-legacy-text": "#6D5607",
+        // Category UI (article surfaces) — shares the pillar family via
+        // lib/categories.ts. -tint = lighter chip fill; -active = solid
+        // darkened just enough for white text to pass AA; -grad/-grad2 =
+        // thumbnail gradient endpoints (135°, solid→~25% darker). `solid`
+        // reuses accent/gold/pillar-*-icon; save's dark ends reuse primary.
+        "pillar-earn-tint": "#C9EAD9",
+        "pillar-earn-active": "#0C865D",
+        "pillar-earn-grad2": "#056F52",
+        "pillar-spend-tint": "#EFD3A6",
+        "pillar-spend-active": "#966E27",
+        "pillar-spend-grad": "#D69B3A",
+        "pillar-spend-grad2": "#A9691A",
+        "pillar-save-tint": "#C4D5EC",
+        "pillar-save-active": "#2E5A93",
+        "pillar-invest-tint": "#BFE4E1",
+        "pillar-invest-active": "#0C8479",
+        "pillar-invest-grad": "#14B8A6",
+        "pillar-invest-grad2": "#0E7490",
+        "pillar-optimize-tint": "#D8E4C6",
+        "pillar-optimize-active": "#647E40",
+        "pillar-optimize-grad2": "#5C743B",
+        "pillar-protect-tint": "#E8CBB2",
+        "pillar-protect-active": "#A8663B",
+        "pillar-protect-grad2": "#8F5632",
+        "pillar-milestones-tint": "#CFE1F0",
+        "pillar-milestones-active": "#4579A9",
+        "pillar-milestones-grad2": "#38638A",
+        "pillar-legacy-tint": "#EFDFAC",
+        "pillar-legacy-active": "#8C7324",
+        "pillar-legacy-grad2": "#9F8329",
       },
       typography: {
         DEFAULT: {
