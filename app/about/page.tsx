@@ -12,73 +12,73 @@ const pillars = [
     name: "Earn",
     description: "Scale your primary income, launch side hustles, and master the art of negotiation.",
     icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-    gradient: "from-emerald-600/40 to-teal-800/25",
-    accent: "text-emerald-800",
-    ring: "ring-emerald-600/40",
-    iconBg: "from-emerald-300 to-teal-300",
+    bg: "from-pillar-earn-bg to-pillar-earn-bg2",
+    tile: "bg-accent",
+    text: "text-pillar-earn-text",
+    ring: "ring-accent/25",
   },
   {
     name: "Spend",
     description: "Transition from mindless consumption to intentional spending\u2014making every dollar work harder.",
     icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
-    gradient: "from-amber-600/40 to-orange-800/25",
-    accent: "text-amber-800",
-    ring: "ring-amber-600/40",
-    iconBg: "from-amber-300 to-orange-300",
+    bg: "from-pillar-spend-bg to-pillar-spend-bg2",
+    tile: "bg-pillar-spend-icon",
+    text: "text-pillar-spend-text",
+    ring: "ring-pillar-spend-icon/25",
   },
   {
     name: "Save",
     description: "Move beyond the piggy bank with high-yield strategies and robust emergency funds.",
     icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
-    gradient: "from-blue-600/40 to-indigo-800/25",
-    accent: "text-blue-800",
-    ring: "ring-blue-600/40",
-    iconBg: "from-blue-300 to-indigo-300",
+    bg: "from-pillar-save-bg to-pillar-save-bg2",
+    tile: "bg-pillar-save-icon",
+    text: "text-pillar-save-text",
+    ring: "ring-pillar-save-icon/25",
   },
   {
     name: "Invest",
     description: "Demystify the markets by mastering stocks, index funds, and the unstoppable power of compound growth.",
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-    gradient: "from-purple-600/40 to-violet-800/25",
-    accent: "text-purple-800",
-    ring: "ring-purple-600/40",
-    iconBg: "from-purple-300 to-violet-300",
+    bg: "from-pillar-invest-bg to-pillar-invest-bg2",
+    tile: "bg-pillar-invest-icon",
+    text: "text-pillar-invest-text",
+    ring: "ring-pillar-invest-icon/25",
   },
   {
     name: "Optimize",
     description: "Fine-tune the engine through tax efficiency, credit score mastery, and strategic debt management.",
     icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-    gradient: "from-yellow-600/40 to-amber-600/25",
-    accent: "text-yellow-800",
-    ring: "ring-yellow-600/40",
-    iconBg: "from-yellow-300 to-amber-300",
+    bg: "from-pillar-optimize-bg to-pillar-optimize-bg2",
+    tile: "bg-pillar-optimize-icon",
+    text: "text-pillar-optimize-text",
+    ring: "ring-pillar-optimize-icon/25",
   },
   {
     name: "Protect",
     description: "Shield your hard-earned wealth with smart insurance, estate planning, and fraud prevention.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    gradient: "from-rose-600/40 to-red-800/25",
-    accent: "text-rose-800",
-    ring: "ring-rose-600/40",
-    iconBg: "from-rose-300 to-red-300",
+    bg: "from-pillar-protect-bg to-pillar-protect-bg2",
+    tile: "bg-pillar-protect-icon",
+    text: "text-pillar-protect-text",
+    ring: "ring-pillar-protect-icon/25",
   },
   {
     name: "Milestones",
     description: "Navigate life\u2019s major plays\u2014from securing your first home to starting a family and planning for retirement.",
     icon: "M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9",
-    gradient: "from-cyan-600/40 to-blue-800/25",
-    accent: "text-cyan-800",
-    ring: "ring-cyan-600/40",
-    iconBg: "from-cyan-300 to-blue-300",
+    bg: "from-pillar-milestones-bg to-pillar-milestones-bg2",
+    tile: "bg-pillar-milestones-icon",
+    text: "text-pillar-milestones-text",
+    ring: "ring-pillar-milestones-icon/25",
   },
   {
     name: "Legacy",
     description: "Think beyond yourself by building generational wealth and creating a lasting impact through charitable planning.",
     icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-    gradient: "from-amber-500/40 to-yellow-700/25",
-    accent: "text-amber-900",
-    ring: "ring-amber-500/40",
-    iconBg: "from-amber-300 to-yellow-300",
+    bg: "from-pillar-legacy-bg to-pillar-legacy-bg2",
+    tile: "bg-gold",
+    text: "text-pillar-legacy-text",
+    ring: "ring-gold/25",
   },
 ];
 
@@ -152,17 +152,17 @@ export default function AboutPage() {
           {pillars.map((pillar) => (
             <div
               key={pillar.name}
-              className={`group relative rounded-2xl bg-gradient-to-br ${pillar.gradient} border border-gray-200/80 p-6 ring-1 ${pillar.ring} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gray-300/40`}
+              className={`group relative rounded-2xl bg-gradient-to-br ${pillar.bg} border border-gray-200/80 p-6 ring-1 ${pillar.ring} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gray-300/40`}
             >
-              <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${pillar.iconBg} shadow-md flex items-center justify-center mb-4 ring-1 ${pillar.ring} transition-transform duration-300 group-hover:scale-110`}>
-                <svg className={`w-5 h-5 ${pillar.accent}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className={`w-11 h-11 rounded-xl ${pillar.tile} shadow-md flex items-center justify-center mb-4 ring-1 ${pillar.ring} transition-transform duration-300 group-hover:scale-110`}>
+                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={pillar.icon} />
                 </svg>
               </div>
-              <h3 className={`text-sm font-extrabold uppercase tracking-wider ${pillar.accent} mb-2`}>
+              <h3 className={`text-sm font-extrabold uppercase tracking-wider ${pillar.text} mb-2`}>
                 {pillar.name}
               </h3>
-              <p className="text-slate-800 text-sm font-medium leading-relaxed">{pillar.description}</p>
+              <p className="text-dark-text/[0.76] text-sm font-medium leading-relaxed">{pillar.description}</p>
             </div>
           ))}
         </div>
