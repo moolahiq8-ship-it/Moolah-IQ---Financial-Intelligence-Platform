@@ -84,6 +84,8 @@ const config: Config = {
         "pillar-legacy-tint": "#EFDFAC",
         "pillar-legacy-active": "#8C7324",
         "pillar-legacy-grad2": "#9F8329",
+        // Mortgage tool glyph — requested #96790A had no existing token match
+        "pillar-legacy-glyph": "#96790A",
       },
       typography: {
         DEFAULT: {

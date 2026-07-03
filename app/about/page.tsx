@@ -170,13 +170,13 @@ export default function AboutPage() {
           <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-300">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-400 flex items-center justify-center mx-auto mb-5 ring-1 ring-amber-400/60 transition-transform duration-300 group-hover:scale-110">
-                <svg className="w-7 h-7 text-amber-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-14 h-14 rounded-2xl bg-gold flex items-center justify-center mx-auto mb-5 ring-1 ring-amber-400/60 transition-transform duration-300 group-hover:scale-110">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-extrabold text-slate-800 mb-3">Clarity</h3>
-              <p className="text-slate-800 text-sm font-medium leading-relaxed">
+              <h3 className="text-lg font-extrabold text-primary mb-3">Clarity</h3>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed">
                 We translate &ldquo;finance-speak&rdquo; into plain English. No jargon enters our content without a clear explanation.
               </p>
             </div>
@@ -186,13 +186,13 @@ export default function AboutPage() {
           <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-emerald-300">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-green-400 flex items-center justify-center mx-auto mb-5 ring-1 ring-emerald-400/60 transition-transform duration-300 group-hover:scale-110">
-                <svg className="w-7 h-7 text-emerald-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center mx-auto mb-5 ring-1 ring-emerald-400/60 transition-transform duration-300 group-hover:scale-110">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-extrabold text-slate-800 mb-3">Actionability</h3>
-              <p className="text-slate-800 text-sm font-medium leading-relaxed">
+              <h3 className="text-lg font-extrabold text-primary mb-3">Actionability</h3>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed">
                 Theory is useless without execution. Every piece of content includes concrete steps you can take today.
               </p>
             </div>
@@ -202,13 +202,13 @@ export default function AboutPage() {
           <div className="group relative rounded-2xl bg-white border border-gray-200/80 p-8 text-center shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="relative">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-400 flex items-center justify-center mx-auto mb-5 ring-1 ring-blue-400/60 transition-transform duration-300 group-hover:scale-110">
-                <svg className="w-7 h-7 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center mx-auto mb-5 ring-1 ring-blue-400/60 transition-transform duration-300 group-hover:scale-110">
+                <svg className="w-7 h-7 text-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-extrabold text-slate-800 mb-3">Honesty</h3>
-              <p className="text-slate-800 text-sm font-medium leading-relaxed">
+              <h3 className="text-lg font-extrabold text-primary mb-3">Honesty</h3>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed">
                 We prioritize transparency over trends. We share what actually works, what&apos;s a trap, and the &ldquo;why&rdquo; behind every strategy.
               </p>
             </div>
