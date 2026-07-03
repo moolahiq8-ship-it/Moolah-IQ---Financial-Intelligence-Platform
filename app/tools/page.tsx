@@ -17,10 +17,10 @@ const tools = [
     // Tools carry no iqScore, so badges are tier-only (no invented numbers)
     badge: "Strategy",
     badgeColor: IQ_BADGE_CLASSES.Strategy,
-    tile: "bg-[#F0DFA0]",
+    tile: "bg-pillar-save-tint",
     icon: (
       <svg
-        className="w-7 h-7 text-yellow-800"
+        className="w-7 h-7 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -41,10 +41,10 @@ const tools = [
     href: "/tools/compound-interest-calculator",
     badge: "Strategy",
     badgeColor: IQ_BADGE_CLASSES.Strategy,
-    tile: "bg-emerald-200",
+    tile: "bg-pillar-earn-tint",
     icon: (
       <svg
-        className="w-7 h-7 text-emerald-800"
+        className="w-7 h-7 text-emerald-700"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -65,10 +65,10 @@ const tools = [
     href: "/tools/mortgage-refinance-calculator",
     badge: "Strategy",
     badgeColor: IQ_BADGE_CLASSES.Strategy,
-    tile: "bg-[#F0DFA0]",
+    tile: "bg-pillar-legacy-tint",
     icon: (
       <svg
-        className="w-7 h-7 text-yellow-800"
+        className="w-7 h-7 text-pillar-legacy-glyph"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -137,7 +137,7 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-700 leading-relaxed mb-4">
               {tool.description}
             </p>
-            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold group-hover:text-gold-dark transition-colors">
+            <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-gold-dark group-hover:text-gold-dark transition-colors">
               Try it now
               <svg
                 className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform"
