@@ -21,7 +21,7 @@ export default function IntelligenceBrief() {
               className="text-3xl md:text-[36px]/[1.2] font-extrabold text-primary mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              One brief. Every Tuesday. Five minutes.
+              One brief. Weekly. Five minutes.
             </h2>
             <p className="text-base leading-relaxed text-slate-600 mb-8">
               Each issue: one scored guide, one rate or rule change worth
