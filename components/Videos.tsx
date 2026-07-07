@@ -1,3 +1,5 @@
+import { CHANNEL_URL } from "@/lib/social";
+
 /*
  * Latest videos — HARDCODED by design (no YouTube API fetch).
  * To update: edit the three entries below.
@@ -6,8 +8,6 @@
  *   duration — e.g. "8:24"
  *   age      — publish month (stable label; relative ages go stale)
  */
-const CHANNEL_URL = "https://www.youtube.com/@MoolahIQ";
-
 const VIDEOS = [
   {
     id: "c6CcNKM27Yc",
