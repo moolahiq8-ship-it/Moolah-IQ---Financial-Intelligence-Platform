@@ -84,7 +84,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Moolah IQ on ${label}`}
-                    className="text-white/60 hover:text-white transition-colors"
+                    className="text-light-bg hover:text-white transition-colors"
                   >
                     <Icon className="w-5 h-5" />
                   </a>
