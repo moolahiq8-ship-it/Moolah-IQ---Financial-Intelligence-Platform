@@ -1,4 +1,21 @@
 import Link from "next/link";
+import {
+  SiYoutube,
+  SiFacebook,
+  SiInstagram,
+  SiTiktok,
+  SiPinterest,
+} from "react-icons/si";
+import { SOCIAL_LINKS } from "@/lib/social";
+
+// Map each SOCIAL_LINKS label to its Simple Icons brand glyph.
+const SOCIAL_ICONS = {
+  YouTube: SiYoutube,
+  Facebook: SiFacebook,
+  Instagram: SiInstagram,
+  TikTok: SiTiktok,
+  Pinterest: SiPinterest,
+} as const;
 
 const EXPLORE_LINKS = [
   { label: "Start here", href: "/#start" },
@@ -56,6 +73,24 @@ export default function Footer() {
               Level up your financial intelligence. Data-backed strategies to
               build wealth, budget smarter, and invest with confidence.
             </p>
+            {/* Social row — same link convention as the footer columns */}
+            <div className="flex items-center gap-4 mt-6">
+              {SOCIAL_LINKS.map(({ label, href }) => {
+                const Icon = SOCIAL_ICONS[label];
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Moolah IQ on ${label}`}
+                    className="text-light-bg hover:text-gold transition-colors"
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           {/* Explore */}
