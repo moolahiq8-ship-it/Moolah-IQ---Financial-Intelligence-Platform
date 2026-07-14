@@ -7,6 +7,9 @@ tags: ["savings", "high-yield", "banks", "emergency-fund", "interest-rates"]
 iqLevel: "Strategic IQ"
 iqScore: 125
 author: "Moolah IQ"
+illustration:
+  variant: apy
+  apyValue: "4.50%"
 tldr: "High-yield savings accounts pay 4%+ APY vs. the 0.01% national average — that's a $2,300+ difference on $10,000 over 5 years. Our top picks are Wealthfront (4.50% APY), Marcus (4.40%), and SoFi (4.30% with direct deposit). Open one in 10 minutes and automate your deposits."
 ---
 

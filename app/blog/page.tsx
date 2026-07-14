@@ -1,4 +1,5 @@
 import { getAllPosts, getAllCategories } from "@/lib/posts";
+import { BlogScope } from "@/components/blog/BlogScope";
 import BlogClient from "./BlogClient";
 
 export const metadata = {
@@ -10,5 +11,9 @@ export default function BlogPage() {
   const posts = getAllPosts();
   const categories = getAllCategories();
 
-  return <BlogClient posts={posts} categories={categories} />;
+  return (
+    <BlogScope>
+      <BlogClient posts={posts} categories={categories} />
+    </BlogScope>
+  );
 }

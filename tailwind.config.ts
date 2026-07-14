@@ -86,7 +86,29 @@ const config: Config = {
         "pillar-legacy-grad2": "#9F8329",
         // Mortgage tool glyph — requested #96790A had no existing token match
         "pillar-legacy-glyph": "#96790A",
+        // --- v2 blog design (spec §1.7) — scoped to /blog; STATIC tokens only.
+        //     Per-category/level colours live in lib/blog/theme.ts, not here.
+        //     Spec's `gold` renamed `bgold` to avoid clobbering the site gold.
+        cream: "#f6f3ec",
+        surface: "#fffdf8",
+        navy: { DEFAULT: "#0f2b52", deep: "#0b1f3d", panel: "#173a63" },
+        bgold: { DEFAULT: "#e2ac47", ink: "#b8842a", rule: "#c08a2d" },
+        ink: "#17263b",
+        body: { DEFAULT: "#5e6675", strong: "#47566a" },
+        muted: { DEFAULT: "#8f887a", 2: "#a79f8e", 3: "#b3aca0" },
+        line: { DEFAULT: "#e6e0d4", card: "#ebe5d8", divider: "#efe9dc", track: "#eae3d5" },
       },
+      fontFamily: {
+        "blog-serif": ["var(--font-spectral)", "Georgia", "serif"],
+        "blog-sans": ["var(--font-libre)", "system-ui", "sans-serif"],
+      },
+      borderRadius: { card: "16px", hero: "20px", pill: "8px", badge: "5px" },
+      boxShadow: {
+        hero: "0 26px 60px -28px rgba(15,43,82,.55)",
+        card: "0 10px 30px -22px rgba(15,43,82,.4)",
+        "card-hover": "0 22px 46px -20px rgba(15,43,82,.4)",
+      },
+      maxWidth: { container: "1200px" },
       typography: {
         DEFAULT: {
           css: {

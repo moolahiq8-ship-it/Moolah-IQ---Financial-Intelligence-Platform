@@ -7,6 +7,8 @@ tags: ["earn", "online-income", "scams", "due-diligence", "ftc"]
 iqLevel: "Foundational IQ"
 iqScore: 95
 author: "Moolah IQ"
+illustration:
+  variant: check
 tldr: "Most people who lose money online aren't careless — they just never learned to check an offer first. Run this 5-point, 10-minute check: trace which way the money flows, test the income promise, name the real product and customer, verify reputation off the company's own site, and pause before every yes."
 ---
 

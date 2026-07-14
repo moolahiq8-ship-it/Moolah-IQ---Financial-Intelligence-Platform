@@ -7,6 +7,15 @@ tags: ["budgeting", "beginners", "saving", "50-30-20"]
 iqLevel: "Foundational IQ"
 iqScore: 95
 author: "Moolah IQ"
+illustration:
+  variant: budget
+  budget:
+    - label: Needs
+      pct: 50
+    - label: Wants
+      pct: 30
+    - label: Save
+      pct: 20
 tldr: "The 50/30/20 rule is the simplest budget framework: 50% of income to needs, 30% to wants, 20% to savings and debt. Track spending for one month to find your baseline, then automate savings transfers on payday. Consistency beats perfection."
 ---
 

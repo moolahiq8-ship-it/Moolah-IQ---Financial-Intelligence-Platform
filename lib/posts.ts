@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import type { Illustration, HeroStat } from "@/lib/blog/types";
 
 const postsDirectory = path.join(process.cwd(), "content", "posts");
 
@@ -21,6 +22,10 @@ export interface PostFrontmatter {
   slug: string;
   readingTime: string;
   tldr?: string;
+  // v2 blog (optional): grandfathered data variants + featured hero stat.
+  // New articles set neither — variant defaults from category, hero is copy-only.
+  illustration?: Illustration;
+  heroStat?: HeroStat;
 }
 
 export interface Post extends PostFrontmatter {
@@ -61,6 +66,8 @@ export function getAllPosts(): PostFrontmatter[] {
         author: data.author || "Moolah IQ",
         readingTime: calculateReadingTime(content),
         tldr: data.tldr,
+        illustration: data.illustration,
+        heroStat: data.heroStat,
       } as PostFrontmatter;
     });
 

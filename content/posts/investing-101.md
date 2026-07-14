@@ -7,6 +7,10 @@ tags: ["investing", "beginners", "index-funds", "compound-interest"]
 iqLevel: "Market IQ"
 iqScore: 110
 author: "Moolah IQ"
+illustration:
+  variant: portfolio
+  portfolioValue: "$52,841"
+  portfolioDelta: "+18.4%"
 tldr: "You can start investing with as little as $1 using fractional shares and zero-commission brokerages. Focus on index funds for instant diversification at near-zero fees. Investing $200/month at 7% annual return from age 25 grows to $528,000 by age 65."
 ---
 

@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import PostCard from "@/components/PostCard";
 import { getPostsByCategory, getAllCategories } from "@/lib/posts";
+import { BlogScope } from "@/components/blog/BlogScope";
+import { ArticleCard } from "@/components/blog/ArticleCard";
+import { adaptPost } from "@/lib/blog/adaptPost";
 
 interface Props {
   params: { category: string };
@@ -42,31 +44,31 @@ export default function CategoryPage({ params }: Props) {
   const posts = getPostsByCategory(params.category);
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12">
-      <nav className="text-sm text-gray-700 mb-6">
-        <Link href="/" className="hover:text-accent">
+    <BlogScope>
+      <nav className="mb-6 text-[13px] text-body">
+        <Link href="/" className="hover:text-bgold-ink">
           Home
         </Link>{" "}
         /{" "}
-        <Link href="/blog" className="hover:text-accent">
+        <Link href="/blog" className="hover:text-bgold-ink">
           Blog
         </Link>{" "}
-        / <span className="text-dark-text">{category}</span>
+        / <span className="text-ink">{category}</span>
       </nav>
 
-      <h1 className="text-4xl font-bold text-primary mb-8">
+      <h1 className="mb-8 font-blog-serif text-[40px] font-bold text-navy">
         {category} Articles
       </h1>
 
       {posts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
+            <ArticleCard key={post.slug} post={adaptPost(post)} />
           ))}
         </div>
       ) : (
-        <p className="text-gray-700">No posts in this category yet.</p>
+        <p className="text-body">No posts in this category yet.</p>
       )}
-    </section>
+    </BlogScope>
   );
 }
