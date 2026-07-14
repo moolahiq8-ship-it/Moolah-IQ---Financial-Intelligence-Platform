@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Newsletter from "@/components/Newsletter";
-import { CATEGORY_COLORS, CategorySlug } from "@/lib/categories";
+import { CATEGORY, categoryGradient } from "@/lib/blog/theme";
+import type { Category } from "@/lib/blog/types";
 
 export const metadata: Metadata = {
   title: "About",
@@ -126,22 +127,47 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {pillars.map((pillar) => {
-            const c = CATEGORY_COLORS[pillar.slug as CategorySlug];
+          {pillars.map((pillar, i) => {
+            const c = CATEGORY[pillar.slug as Category];
+            const num = String(i + 1).padStart(2, "0");
             return (
             <div
               key={pillar.name}
-              className={`group relative rounded-2xl bg-gradient-to-br ${c.bg} border border-gray-200/80 p-6 ring-1 ${c.ring} transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gray-300/40`}
+              className="group relative overflow-hidden rounded-2xl bg-[#fffdf8] border border-[#ebe5d8] pt-[26px] px-6 pb-6 shadow-[0_10px_30px_-22px_rgba(15,43,82,0.4)] transition-[transform,box-shadow] duration-[180ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_24px_46px_-22px_rgba(15,43,82,0.42)]"
             >
-              <div className={`w-11 h-11 rounded-xl ${c.solid} shadow-md flex items-center justify-center mb-4 ring-1 ${c.ring} transition-transform duration-300 group-hover:scale-110`}>
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={pillar.icon} />
+              {/* Top accent bar — 90° gradient in the pillar's two brand colours */}
+              <span
+                aria-hidden
+                className="absolute top-0 left-0 h-1 w-full"
+                style={{ background: `linear-gradient(90deg, ${c.gradFrom}, ${c.gradTo})` }}
+              />
+              {/* Ghosted index numeral — Playfair (site serif), pillar colour at ~15% */}
+              <span
+                aria-hidden
+                className="absolute top-4 right-5 font-extrabold text-[44px] leading-none"
+                style={{ fontFamily: "var(--font-playfair)", color: `${c.gradFrom}26` }}
+              >
+                {num}
+              </span>
+              {/* Icon tile — 150° gradient, white icon */}
+              <div
+                className="w-[46px] h-[46px] rounded-xl flex items-center justify-center mb-[18px]"
+                style={{
+                  background: categoryGradient(pillar.slug as Category),
+                  boxShadow: `0 8px 16px -8px ${c.gradTo}99`,
+                }}
+              >
+                <svg className="w-[23px] h-[23px] text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d={pillar.icon} />
                 </svg>
               </div>
-              <h3 className={`text-sm font-extrabold uppercase tracking-wider ${c.text} mb-2`}>
+              <h3
+                className="text-[13px] font-extrabold uppercase tracking-[0.09em] mb-[9px]"
+                style={{ color: c.text }}
+              >
                 {pillar.name}
               </h3>
-              <p className="text-dark-text/[0.76] text-sm font-medium leading-relaxed">{pillar.description}</p>
+              <p className="text-[14px] leading-[1.55] text-[#5e6675]">{pillar.description}</p>
             </div>
             );
           })}
