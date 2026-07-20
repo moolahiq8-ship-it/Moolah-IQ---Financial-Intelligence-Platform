@@ -1,37 +1,60 @@
+import Link from "next/link";
 import { CHANNEL_URL } from "@/lib/social";
 
 /*
  * Latest videos — HARDCODED by design (no YouTube API fetch).
- * To update: edit the three entries below.
- *   id       — the YouTube video id (the part after watch?v=, no &t= params)
- *   title    — display title
- *   duration — e.g. "8:24"
- *   age      — publish month (stable label; relative ages go stale)
+ * To update: add an entry below (newest-first is computed — the list is sorted
+ * by `date` descending at render).
+ *   id          — YouTube video id (the part after watch?v=, no &t= params)
+ *   title       — display title
+ *   duration    — e.g. "8:24"
+ *   date        — ISO "YYYY-MM-DD" (use the 1st when the exact day is unknown);
+ *                 the "Jul 2026" month label is derived from this at render
+ *   articleSlug — optional companion post in content/posts/ (renders a
+ *                 "Read the article" link to /blog/{articleSlug})
  */
-const VIDEOS = [
+type Video = {
+  id: string;
+  title: string;
+  duration: string;
+  date: string;
+  articleSlug?: string;
+};
+
+const VIDEOS: Video[] = [
   {
     id: "c6CcNKM27Yc",
     title: "How to Vet Any Online Income Opportunity in 10 Minutes",
     duration: "9:45",
-    age: "Jul 2026",
+    date: "2026-07-01",
+    articleSlug: "vet-online-income-opportunity",
   },
   {
     id: "6C2KTFRXWhE",
     title:
       "How to Build Passive Income From Scratch in 2026? 5 Ideas That Actually Work",
     duration: "10:59",
-    age: "Feb 2026",
+    date: "2026-02-01",
   },
   {
     id: "dDpAoKCAiSE",
     title:
       "The 2026 Wealth Gap: Why Waiting 12 Months Just Costs You a Fortune!",
     duration: "14:05",
-    age: "Feb 2026",
+    date: "2026-02-01",
   },
 ];
 
-function Thumbnail({ video }: { video: (typeof VIDEOS)[number] }) {
+// "2026-07-01" -> "Jul 2026". Parsed as LOCAL midnight (no trailing Z) so the
+// month label never shifts a day under a negative-offset timezone.
+function monthLabel(iso: string): string {
+  return new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
+}
+
+function Thumbnail({ video }: { video: Video }) {
   return (
     <div className="relative aspect-video rounded-[14px] overflow-hidden bg-slate-200">
       {video.id ? (
@@ -94,23 +117,34 @@ export default function Videos() {
         {/* Videos — 3-col desktop, single column below 1024px (a 2-col
             tablet layout orphans the third video) */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-5">
-          {VIDEOS.map((video, i) => (
-            <a
-              key={video.id || i}
-              href={video.id ? `https://www.youtube.com/watch?v=${video.id}` : "#"}
-              target={video.id ? "_blank" : undefined}
-              rel={video.id ? "noopener noreferrer" : undefined}
-              className="group block"
-            >
-              <Thumbnail video={video} />
-              <h3 className="text-[15px] font-bold text-primary mt-3 group-hover:text-accent transition-colors">
-                {video.title}
-              </h3>
-              {video.age && (
-                <p className="text-[13px] text-slate-400 mt-1">{video.age}</p>
-              )}
-            </a>
-          ))}
+          {[...VIDEOS]
+            .sort((a, b) => b.date.localeCompare(a.date))
+            .map((video, i) => (
+              <div key={video.id || i}>
+                <a
+                  href={video.id ? `https://www.youtube.com/watch?v=${video.id}` : "#"}
+                  target={video.id ? "_blank" : undefined}
+                  rel={video.id ? "noopener noreferrer" : undefined}
+                  className="group block"
+                >
+                  <Thumbnail video={video} />
+                  <h3 className="text-[15px] font-bold text-primary mt-3 group-hover:text-accent transition-colors">
+                    {video.title}
+                  </h3>
+                  <p className="text-[13px] text-slate-400 mt-1">
+                    {monthLabel(video.date)}
+                  </p>
+                </a>
+                {video.articleSlug && (
+                  <Link
+                    href={`/blog/${video.articleSlug}`}
+                    className="inline-flex items-center gap-1 text-[13px] font-semibold text-accent hover:text-primary mt-2 transition-colors"
+                  >
+                    Read the article <span aria-hidden>&rarr;</span>
+                  </Link>
+                )}
+              </div>
+            ))}
         </div>
       </div>
     </section>
