@@ -22,6 +22,8 @@ export interface PostFrontmatter {
   slug: string;
   readingTime: string;
   tldr?: string;
+  /** Optional companion YouTube video id — renders an embed on the post page. */
+  youtubeId?: string;
   // v2 blog (optional): grandfathered data variants + featured hero stat.
   // New articles set neither — variant defaults from category, hero is copy-only.
   illustration?: Illustration;
@@ -66,6 +68,7 @@ export function getAllPosts(): PostFrontmatter[] {
         author: data.author || "Moolah IQ",
         readingTime: calculateReadingTime(content),
         tldr: data.tldr,
+        youtubeId: data.youtubeId,
         illustration: data.illustration,
         heroStat: data.heroStat,
       } as PostFrontmatter;
@@ -101,6 +104,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     author: data.author || "Moolah IQ",
     readingTime: calculateReadingTime(content),
     tldr: data.tldr,
+    youtubeId: data.youtubeId,
     content: contentHtml,
   };
 }

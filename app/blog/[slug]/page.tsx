@@ -112,6 +112,21 @@ export default async function PostPage({ params }: Props) {
         </div>
       )}
 
+      {/* Companion video — renders only when the post declares youtubeId */}
+      {post.youtubeId && (
+        <div className="mb-8 aspect-video overflow-hidden rounded-xl bg-slate-200">
+          <iframe
+            className="w-full h-full"
+            src={`https://www.youtube-nocookie.com/embed/${post.youtubeId}`}
+            title={post.title}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      )}
+
       {/* Table of Contents */}
       <TableOfContents content={post.content} />
 
