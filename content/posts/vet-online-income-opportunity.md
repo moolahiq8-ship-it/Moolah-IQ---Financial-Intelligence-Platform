@@ -99,6 +99,6 @@ A year from now, you could be the person friends come to *before* they spend a d
 
 ---
 
-*Want the printable version? Grab the free MoolahIQ vetting checklist and get one money skill like this in your inbox each week at moolahiq.com.*
+*Want the printable version? Grab the free MoolahIQ vetting checklist and get one money skill like this in your inbox every Sunday at moolahiq.com.*
 
 *This article is educational and general in nature. It is not financial, legal, or tax advice. Company examples reference public FTC enforcement records; always verify current information independently before making decisions.*

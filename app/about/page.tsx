@@ -250,7 +250,7 @@ export default function AboutPage() {
               Join the Moolah IQ Community
             </h2>
             <p className="text-slate-800 font-medium mb-8 max-w-lg mx-auto text-lg leading-relaxed">
-              Subscribe to our newsletter and get weekly money intelligence delivered straight to your inbox.
+              Subscribe to the Sunday Seed and get money intelligence delivered to your inbox every Sunday.
             </p>
             <Newsletter variant="inline" />
           </div>

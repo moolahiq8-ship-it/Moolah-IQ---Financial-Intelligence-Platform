@@ -15,13 +15,13 @@ export default function IntelligenceBrief() {
           {/* Left — pitch + form */}
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-3">
-              The Intelligence Brief
+              The Sunday Seed
             </p>
             <h2
               className="text-3xl md:text-[36px]/[1.2] font-extrabold text-primary mb-4"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              One brief. Weekly. Five minutes.
+              One seed. Every Sunday. Five minutes.
             </h2>
             <p className="text-base leading-relaxed text-slate-600 mb-8">
               Each issue: one scored guide, one rate or rule change worth
@@ -34,7 +34,7 @@ export default function IntelligenceBrief() {
           {/* Right — sample card */}
           <div className="bg-light-bg border border-slate-200 rounded-2xl p-7">
             <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">
-              What&apos;s in the brief
+              What&apos;s in the Seed
             </p>
             <ul className="space-y-4">
               {SAMPLE_ITEMS.map((item, i) => (

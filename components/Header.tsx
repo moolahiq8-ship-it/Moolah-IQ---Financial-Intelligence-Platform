@@ -63,7 +63,7 @@ export default function Header() {
               href="/#newsletter"
               className="bg-primary hover:bg-accent text-white font-semibold px-[22px] py-[11px] rounded-full text-sm transition-colors"
             >
-              Get the weekly brief
+              Get the Sunday Seed
             </Link>
           </div>
 
@@ -110,7 +110,7 @@ export default function Header() {
                 className="block text-center bg-primary hover:bg-accent text-white font-semibold px-[22px] py-3 rounded-full text-sm transition-colors"
                 onClick={() => setMenuOpen(false)}
               >
-                Get the weekly brief
+                Get the Sunday Seed
               </Link>
             </div>
           </div>

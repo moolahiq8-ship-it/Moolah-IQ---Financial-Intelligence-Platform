@@ -112,6 +112,6 @@ If you want to actually build one of these, we made you a free guide: **The 5-We
 
 **[Grab the free guide at moolahiq.com →](https://moolahiq.com/)**
 
-This is the first article in a weekly series. In the coming weeks, we'll build each of these systems together, start to finish — beginning with the one that's simplest to sell. Subscribe to the weekly newsletter and we'll send one money skill like this every week.
+This is the first article in a weekly series. In the coming weeks, we'll build each of these systems together, start to finish — beginning with the one that's simplest to sell. Subscribe to the Sunday Seed and we'll send one money skill like this every Sunday.
 
 *This is MoolahIQ — helping you increase your financial IQ, one wise decision at a time.*

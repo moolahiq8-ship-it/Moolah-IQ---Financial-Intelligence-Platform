@@ -91,6 +91,6 @@ Picture the years ahead: markets rising and falling while you stay steady and in
 
 ---
 
-*Grab the free MoolahIQ position-sizing worksheet and get one practical money skill in your inbox each week at moolahiq.com.*
+*Grab the free MoolahIQ position-sizing worksheet and get one practical money skill in your inbox every Sunday at moolahiq.com.*
 
 *This article is educational and general in nature. It is not financial, legal, or tax advice. All investing involves risk, including the possible loss of principal. Always do your own research and consider speaking with a licensed professional about your specific situation.*

@@ -93,7 +93,7 @@ This one is deliberately small. Do not build anything yet. Open a map app, pick 
 
 ## Get the full playbook
 
-If you want the complete written playbook for this build and the four that follow, step by step, plus the exact messages to send to land your first client, we made you a free guide. It is called the 5-Week Micro-Automation Builder. Grab your copy at [moolahiq.com](https://moolahiq.com) and get on the Sunday Seed newsletter while you are there, where we send one practical money idea every week.
+If you want the complete written playbook for this build and the four that follow, step by step, plus the exact messages to send to land your first client, we made you a free guide. It is called the 5-Week Micro-Automation Builder. Grab your copy at [moolahiq.com](https://moolahiq.com) and get on the Sunday Seed newsletter while you are there, where we send one practical money idea every Sunday.
 
 ---
 
