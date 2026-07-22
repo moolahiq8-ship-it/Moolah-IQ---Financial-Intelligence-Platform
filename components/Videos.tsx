@@ -23,6 +23,21 @@ type Video = {
 
 const VIDEOS: Video[] = [
   {
+    id: "E2purjLAF9M",
+    title:
+      "The Missed-Call Text-Back: The Automation Businesses Pay You Monthly to Run",
+    duration: "8:21",
+    date: "2026-07-21",
+    articleSlug: "missed-call-text-back-service",
+  },
+  {
+    id: "6VBbpRnhHvc",
+    title: "5 Automations Local Businesses Pay You Monthly For",
+    duration: "9:47",
+    date: "2026-07-14",
+    articleSlug: "micro-automation-side-hustle-5-systems",
+  },
+  {
     id: "c6CcNKM27Yc",
     title: "How to Vet Any Online Income Opportunity in 10 Minutes",
     duration: "9:45",
