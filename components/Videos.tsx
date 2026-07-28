@@ -23,6 +23,13 @@ type Video = {
 
 const VIDEOS: Video[] = [
   {
+    id: "pD5n0e3V6ew",
+    title: "Build This in 1 Hour, Charge $400 Plus Monthly",
+    duration: "8:50",
+    date: "2026-07-28",
+    articleSlug: "instant-lead-reply-system",
+  },
+  {
     id: "E2purjLAF9M",
     title:
       "The Missed-Call Text-Back: The Automation Businesses Pay You Monthly to Run",
