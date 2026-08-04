@@ -1,0 +1,16 @@
+# Binary assets must never be line-ending normalized.
+# Three PDFs here are uncompressed, so git's heuristic classifies them
+# as text and autocrlf would rewrite them on checkout, breaking xref.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.mp4   binary
+*.xlsx  binary
