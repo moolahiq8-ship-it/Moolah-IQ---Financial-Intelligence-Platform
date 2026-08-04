@@ -21,7 +21,18 @@ type Video = {
   articleSlug?: string;
 };
 
+/** Cards rendered on the homepage. Applied AFTER the date sort, so the six
+ *  newest always win and the list cannot drift when a 7th entry is added. */
+const MAX_VIDEOS = 6;
+
 const VIDEOS: Video[] = [
+  {
+    id: "vL9bpw5sjS8",
+    title: "How to Automate Appointment Reminders and Charge $400",
+    duration: "8:56",
+    date: "2026-08-04",
+    articleSlug: "appointment-reminder-automation-make",
+  },
   {
     id: "pD5n0e3V6ew",
     title: "Build This in 1 Hour, Charge $400 Plus Monthly",
@@ -50,13 +61,6 @@ const VIDEOS: Video[] = [
     duration: "9:45",
     date: "2026-07-01",
     articleSlug: "vet-online-income-opportunity",
-  },
-  {
-    id: "6C2KTFRXWhE",
-    title:
-      "How to Build Passive Income From Scratch in 2026? 5 Ideas That Actually Work",
-    duration: "10:59",
-    date: "2026-02-01",
   },
   {
     id: "dDpAoKCAiSE",
@@ -141,6 +145,7 @@ export default function Videos() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-5">
           {[...VIDEOS]
             .sort((a, b) => b.date.localeCompare(a.date))
+            .slice(0, MAX_VIDEOS)
             .map((video, i) => (
               <div key={video.id || i}>
                 <a
