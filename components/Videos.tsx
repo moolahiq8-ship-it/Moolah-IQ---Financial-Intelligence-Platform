@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "02l00RK3bBs",
+    title: "The $300 Review System Local Businesses Pay Monthly For",
+    duration: "8:32",
+    date: "2026-08-11",
+    articleSlug: "review-request-engine-local-business-automation",
+  },
+  {
     id: "vL9bpw5sjS8",
     title: "How to Automate Appointment Reminders and Charge $400",
     duration: "8:56",
