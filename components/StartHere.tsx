@@ -6,7 +6,7 @@ const GUIDES = [
     slug: "getting-started-with-budgeting",
     title: "Getting Started with Budgeting: A Beginner's Guide",
     dek: "Create your first budget with the 50/30/20 rule and a system that actually sticks.",
-    category: "Spend",
+    category: "Save",
     minutes: 2,
     iqScore: 95,
     stat: "50/30/20",

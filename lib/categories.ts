@@ -9,12 +9,10 @@
 
 export type CategorySlug =
   | "earn"
-  | "spend"
   | "save"
   | "invest"
   | "optimize"
   | "protect"
-  | "milestones"
   | "legacy";
 
 export interface CategoryColor {
@@ -43,15 +41,6 @@ export const CATEGORY_COLORS: Record<CategorySlug, CategoryColor> = {
     active: "bg-pillar-earn-active",
     text: "text-pillar-earn-text",
     thumb: "from-accent to-pillar-earn-grad2",
-  },
-  spend: {
-    bg: "from-pillar-spend-bg to-pillar-spend-bg2",
-    ring: "ring-pillar-spend-icon/25",
-    tint: "bg-pillar-spend-tint",
-    solid: "bg-pillar-spend-icon",
-    active: "bg-pillar-spend-active",
-    text: "text-pillar-spend-text",
-    thumb: "from-pillar-spend-grad to-pillar-spend-grad2",
   },
   save: {
     bg: "from-pillar-save-bg to-pillar-save-bg2",
@@ -89,15 +78,6 @@ export const CATEGORY_COLORS: Record<CategorySlug, CategoryColor> = {
     text: "text-pillar-protect-text",
     thumb: "from-pillar-protect-icon to-pillar-protect-grad2",
   },
-  milestones: {
-    bg: "from-pillar-milestones-bg to-pillar-milestones-bg2",
-    ring: "ring-pillar-milestones-icon/25",
-    tint: "bg-pillar-milestones-tint",
-    solid: "bg-pillar-milestones-icon",
-    active: "bg-pillar-milestones-active",
-    text: "text-pillar-milestones-text",
-    thumb: "from-pillar-milestones-icon to-pillar-milestones-grad2",
-  },
   legacy: {
     bg: "from-pillar-legacy-bg to-pillar-legacy-bg2",
     ring: "ring-gold/25",
@@ -109,15 +89,13 @@ export const CATEGORY_COLORS: Record<CategorySlug, CategoryColor> = {
   },
 };
 
-/** Ordered slugs, matching the 8-pillar narrative order. */
+/** Ordered slugs, matching the 6-pillar narrative order. */
 export const CATEGORY_SLUGS: CategorySlug[] = [
   "earn",
-  "spend",
   "save",
   "invest",
-  "optimize",
   "protect",
-  "milestones",
+  "optimize",
   "legacy",
 ];
 

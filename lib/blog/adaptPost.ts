@@ -13,10 +13,8 @@ const DEFAULT_VARIANT: Record<Category, IllustrationVariant> = {
   earn: "bars",
   save: "bars",
   invest: "line-area",
-  spend: "line-area",
   optimize: "bars",
   protect: "line-area",
-  milestones: "line-area",
   legacy: "bars",
 };
 

@@ -1,16 +1,16 @@
 // Moolah IQ v2 blog — shared types (from the handoff, Spec §5.1).
-// Category widened from the spec's four to all eight brand pillars so a future
-// post in optimize/protect/milestones/legacy renders instead of crashing;
-// their colours are derived in theme.ts from lib/categories.ts.
+// Category covers the six brand pillars, so a future post in optimize/protect/
+// legacy renders instead of crashing; their colours live in theme.ts.
+// Spend and Milestones were retired in the six-pillar consolidation — Spend
+// folded into Save. Narrowing this union is deliberate: a stringly-typed
+// "spend" now fails to compile rather than rendering an unstyled card.
 
 export type Category =
   | "earn"
   | "invest"
   | "save"
-  | "spend"
   | "optimize"
   | "protect"
-  | "milestones"
   | "legacy";
 
 export type Level = "beginner" | "intermediate" | "advanced";
