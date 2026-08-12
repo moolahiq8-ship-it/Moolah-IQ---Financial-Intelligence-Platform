@@ -7,6 +7,9 @@ import {
   SiPinterest,
 } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/social";
+import { getAllCategories } from "@/lib/posts";
+import { CATEGORY } from "@/lib/blog/theme";
+import type { Category } from "@/lib/blog/types";
 
 // Map each SOCIAL_LINKS label to its Simple Icons brand glyph.
 const SOCIAL_ICONS = {
@@ -25,16 +28,20 @@ const EXPLORE_LINKS = [
   { label: "About", href: "/about" },
 ];
 
-const DISCIPLINE_LINKS = [
-  { label: "Earn", href: "/category/earn" },
-  { label: "Spend", href: "/category/spend" },
-  { label: "Save", href: "/category/save" },
-  { label: "Invest", href: "/category/invest" },
-  { label: "Optimize", href: "/category/optimize" },
-  { label: "Protect", href: "/category/protect" },
-  { label: "Milestones", href: "/category/milestones" },
-  { label: "Legacy", href: "/category/legacy" },
-];
+// Derived from the SAME source as generateStaticParams in
+// app/category/[category]/page.tsx, so the footer can only ever link to a route
+// that exists. The previous hardcoded eight outlived the posts backing them:
+// four of them (optimize, protect, milestones, legacy) pointed at routes that
+// were never generated, on every page of the site.
+function disciplineLinks() {
+  return getAllCategories().map((cat) => {
+    const slug = cat.toLowerCase();
+    return {
+      label: CATEGORY[slug as Category]?.label ?? cat,
+      href: `/category/${slug}`,
+    };
+  });
+}
 
 const LEGAL_LINKS = [
   { label: "Disclaimer", href: "/legal/disclaimer" },
@@ -43,6 +50,8 @@ const LEGAL_LINKS = [
 ];
 
 export default function Footer() {
+  const DISCIPLINE_LINKS = disciplineLinks();
+
   return (
     <footer className="bg-[#0f2847] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
