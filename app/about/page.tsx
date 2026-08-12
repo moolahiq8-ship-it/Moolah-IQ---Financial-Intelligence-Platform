@@ -17,14 +17,8 @@ const pillars = [
     slug: "earn",
   },
   {
-    name: "Spend",
-    description: "Transition from mindless consumption to intentional spending\u2014making every dollar work harder.",
-    icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z",
-    slug: "spend",
-  },
-  {
     name: "Save",
-    description: "Move beyond the piggy bank with high-yield strategies and robust emergency funds.",
+    description: "Keep more of what comes in. Emergency funds, high-yield accounts, and cutting the bills you simply pay.",
     icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
     slug: "save",
   },
@@ -35,22 +29,16 @@ const pillars = [
     slug: "invest",
   },
   {
-    name: "Optimize",
-    description: "Fine-tune the engine through tax efficiency, credit score mastery, and strategic debt management.",
-    icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-    slug: "optimize",
-  },
-  {
     name: "Protect",
     description: "Shield your hard-earned wealth with smart insurance, estate planning, and fraud prevention.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
     slug: "protect",
   },
   {
-    name: "Milestones",
-    description: "Navigate life\u2019s major plays\u2014from securing your first home to starting a family and planning for retirement.",
-    icon: "M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9",
-    slug: "milestones",
+    name: "Optimize",
+    description: "Change the terms. Debt rates, tax position, credit score, and the order you pay things in.",
+    icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
+    slug: "optimize",
   },
   {
     name: "Legacy",
@@ -114,19 +102,19 @@ export default function AboutPage() {
         <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
       </div>
 
-      {/* The 8 Pillars */}
+      {/* The 6 Pillars */}
       <section className="max-w-5xl mx-auto px-4 py-14 sm:py-16">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/[0.06] border border-primary/10 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Foundation</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 tracking-tight">The 8 Pillars</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 tracking-tight">The 6 Pillars</h2>
           <p className="text-slate-800 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
-            Every strategy, video, and guide at Moolah IQ is built upon our eight core pillars of personal finance:
+            Every strategy, video, and guide at Moolah IQ is built upon our six core pillars of personal finance:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {pillars.map((pillar, i) => {
             const c = CATEGORY[pillar.slug as Category];
             const num = String(i + 1).padStart(2, "0");
