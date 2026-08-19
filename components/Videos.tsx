@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "fm6boTX_5rY",
+    title: "The Quote Chaser: Get Paid for Work You Already Did",
+    duration: "10:45",
+    date: "2026-08-18",
+    articleSlug: "quote-chaser-follow-up-system",
+  },
+  {
     id: "02l00RK3bBs",
     title: "The $300 Review System Local Businesses Pay Monthly For",
     duration: "8:32",
