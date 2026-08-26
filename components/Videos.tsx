@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "rEscgs5Lr3Y",
+    title: "The Subscriptions Still Charging You After You Cancelled",
+    duration: "10:45",
+    date: "2026-08-25",
+    articleSlug: "subscriptions-still-charging-after-cancel",
+  },
+  {
     id: "fm6boTX_5rY",
     title: "The Quote Chaser: Get Paid for Work You Already Did",
     duration: "10:45",
