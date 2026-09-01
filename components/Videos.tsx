@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "-KNDZZfURDw",
+    title: "Cut These 3 Bills This Week Without Giving Anything Up",
+    duration: "10:10",
+    date: "2026-09-01",
+    articleSlug: "cut-three-bills-without-giving-anything-up",
+  },
+  {
     id: "rEscgs5Lr3Y",
     title: "The Subscriptions Still Charging You After You Cancelled",
     duration: "10:45",
