@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "ZPsbskiyXx8",
+    title: "3 Ways To Pay Off Your Mortgage Years Early (No Refinance)",
+    duration: "10:02",
+    date: "2026-09-08",
+    articleSlug: "three-ways-pay-off-mortgage-years-early-without-refinancing",
+  },
+  {
     id: "-KNDZZfURDw",
     title: "Cut These 3 Bills This Week Without Giving Anything Up",
     duration: "10:10",
