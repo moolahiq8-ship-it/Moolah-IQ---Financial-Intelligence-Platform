@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "aqBTPnPYASo",
+    title: "Debt Avalanche vs Debt Snowball: Run Your Own Numbers First.",
+    duration: "11:56",
+    date: "2026-09-16",
+    articleSlug: "debt-avalanche-vs-debt-snowball-run-your-own-numbers-first",
+  },
+  {
     id: "ZPsbskiyXx8",
     title: "3 Ways To Pay Off Your Mortgage Years Early (No Refinance)",
     duration: "10:02",
