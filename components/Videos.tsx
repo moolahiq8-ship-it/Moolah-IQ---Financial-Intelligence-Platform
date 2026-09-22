@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "rU2qGmRVayI",
+    title: "How to Ask Your Credit Card Issuer for a Lower Rate",
+    duration: "4:22",
+    date: "2026-09-22",
+    articleSlug: "ask-credit-card-issuer-for-lower-rate",
+  },
+  {
     id: "aqBTPnPYASo",
     title: "Debt Avalanche vs Debt Snowball: Run Your Own Numbers First.",
     duration: "11:56",
