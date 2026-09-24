@@ -27,7 +27,7 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
-    id: "rU2qGmRVayI",
+    id: "cBRE5d2duSs",
     title: "How to Ask Your Credit Card Issuer for a Lower Rate",
     duration: "4:22",
     date: "2026-09-22",

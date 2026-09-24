@@ -8,7 +8,7 @@ iqLevel: "Foundational IQ"
 iqScore: 95
 author: "Moolah IQ"
 tldr: "Call the number on the back of your card and ask whether a lower purchase APR is available. Before the review starts, ask whether it requires a hard credit check. Confirm which balances an offer covers, how long it lasts, and any fees or conditions. Request written confirmation and check the statement covering the effective date."
-youtubeId: "rU2qGmRVayI"
+youtubeId: "cBRE5d2duSs"
 ---
 
 You can ask your credit card issuer for a lower interest rate. You do not need a long speech or a company to call on your behalf. Start with your current rate and one clear question: **Is a lower purchase APR available on my account?**
@@ -128,7 +128,7 @@ Contact your issuer promptly and ask about payment assistance. Explain what you 
 
 ## Watch the video
 
-[Watch MOOLAH IQ's guide to asking for a lower credit card interest rate](https://www.youtube.com/watch?v=rU2qGmRVayI).
+[Watch MOOLAH IQ's guide to asking for a lower credit card interest rate](https://www.youtube.com/watch?v=cBRE5d2duSs).
 
 ## Sources
 
