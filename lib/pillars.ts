@@ -80,3 +80,17 @@ export function getPillar(slug: string): Pillar | undefined {
 
 /** Filter key for posts in no pillar (kept visible as the archive). */
 export const MORE_TOPICS = "more";
+
+/**
+ * The label + colour key a card shows: the pillar for mapped articles (GROW / PROTECT /
+ * OPTIMIZE), otherwise the article's own category label (archive articles are not forced
+ * into a pillar). The article's category metadata and URL are unchanged either way.
+ */
+export function displayLabel(post: { slug: string; category: string }): { label: string; theme: Category } {
+  const p = pillarOf(post);
+  if (p) {
+    const pillar = getPillar(p)!;
+    return { label: pillar.label, theme: pillar.theme };
+  }
+  return { label: post.category.toUpperCase(), theme: post.category.toLowerCase() as Category };
+}

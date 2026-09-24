@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Post } from "@/lib/blog/types";
-import { CATEGORY, LEVEL } from "@/lib/blog/theme";
+import { LEVEL } from "@/lib/blog/theme";
 import { HeroStatPanel } from "./HeroChart";
 
 /**
@@ -10,7 +10,6 @@ import { HeroStatPanel } from "./HeroChart";
  * Adapted for scoping: gold* → bgold*; font-serif → font-blog-serif; href → /blog/.
  */
 export function FeaturedHero({ post }: { post: Post }) {
-  const cat = CATEGORY[post.category];
   const lvl = LEVEL[post.level];
   const hasStat = Boolean(post.heroStat);
 
@@ -36,11 +35,11 @@ export function FeaturedHero({ post }: { post: Post }) {
           <div className="mb-[22px] flex items-center gap-2.5 text-[12px] font-bold tracking-[0.05em]">
             <span className="flex items-center gap-[7px]" style={{ color: "#7fe3b1" }}>
               <span className="h-[7px] w-[7px] rounded-full" style={{ background: "#22c184" }} />
-              {cat.label}
+              {post.display.label}
             </span>
             <span className="text-white/40">·</span>
             <span className="text-white/65">
-              {post.tier} · {lvl.label} · {post.readingTime} min read
+              {lvl.label} · {post.readingTime} min read
             </span>
           </div>
 

@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { iqBadgeLabel, iqTier, IQ_BADGE_CLASSES } from "@/lib/iq";
+import { iqLevel } from "@/lib/iq";
+import { LEVEL } from "@/lib/blog/theme";
 import { getAllPosts } from "@/lib/posts";
-import { getPillar, pillarOf } from "@/lib/pillars";
+import { displayLabel } from "@/lib/pillars";
 
 // The four featured guides (2026-09-23), in display order. Title, summary, reading time
-// and level come from each article's own metadata (content/posts/*.md) at build time;
+// and plain-language level (Beginner/Intermediate/Advanced; no numeric score) come from each article's own metadata (content/posts/*.md) at build time;
 // only the panel's topic label is written here - a topic, never an invented statistic.
 const FEATURED = [
   {
@@ -42,14 +43,13 @@ function featuredGuides() {
   return FEATURED.map((f) => {
     const post = posts.find((p) => p.slug === f.slug);
     if (!post) throw new Error(`StartHere: featured article ${f.slug} not found in content/posts`);
-    const pillarSlug = pillarOf(post);
     return {
       ...f,
       title: post.title,
       dek: post.excerpt,
       readingTime: post.readingTime,
-      iqScore: post.iqScore,
-      pillar: pillarSlug ? getPillar(pillarSlug)?.label ?? post.category : post.category,
+      level: LEVEL[iqLevel(post.iqScore)],
+      pillar: displayLabel(post).label,
     };
   });
 }
@@ -106,10 +106,8 @@ export default function StartHere() {
                     {guide.pillar}
                   </span>
                   <span className="text-xs text-slate-500">· {guide.readingTime}</span>
-                  <span
-                    className={`ml-auto text-[11px] font-bold px-2 py-1 rounded-full whitespace-nowrap ${IQ_BADGE_CLASSES[iqTier(guide.iqScore)]}`}
-                  >
-                    {iqBadgeLabel(guide.iqScore)}
+                  <span className="ml-auto text-[12px] font-semibold whitespace-nowrap" style={{ color: guide.level.text }}>
+                    {guide.level.label}
                   </span>
                 </div>
                 <h3 className="text-lg/[1.3] font-bold text-primary mb-2">

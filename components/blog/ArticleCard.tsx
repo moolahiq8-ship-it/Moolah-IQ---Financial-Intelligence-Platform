@@ -10,7 +10,8 @@ import { CardIllustration, panelClassFor } from "./CardIllustration";
  * Adapted for scoping: font-serif → font-blog-serif; href → /blog/.
  */
 export function ArticleCard({ post }: { post: Post }) {
-  const cat = CATEGORY[post.category];
+  // label + colours: the pillar for mapped articles, else the category (post.display)
+  const cat = CATEGORY[post.display.theme] ?? CATEGORY[post.category];
   const lvl = LEVEL[post.level];
 
   return (
@@ -21,7 +22,7 @@ export function ArticleCard({ post }: { post: Post }) {
       {/* image panel */}
       <div
         className={`h-[168px] p-[22px] ${panelClassFor(post.illustration.variant)}`}
-        style={{ background: categoryGradient(post.category) }}
+        style={{ background: categoryGradient(CATEGORY[post.display.theme] ? post.display.theme : post.category) }}
       >
         <CardIllustration art={post.illustration} />
       </div>
@@ -32,7 +33,7 @@ export function ArticleCard({ post }: { post: Post }) {
         <div className="mb-[13px] flex items-center gap-2.5 text-[12px] font-bold">
           <span className="flex items-center gap-1.5" style={{ color: cat.text }}>
             <span className="h-[7px] w-[7px] rounded-full" style={{ background: cat.dot }} />
-            {cat.label}
+            {post.display.label}
           </span>
           <span className="text-[#cfc8ba]">·</span>
           <span className="font-medium text-muted">{post.readingTime} min read</span>

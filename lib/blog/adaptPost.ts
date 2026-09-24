@@ -5,6 +5,7 @@
 
 import type { PostFrontmatter } from "@/lib/posts";
 import { iqLevel, iqTier } from "@/lib/iq";
+import { displayLabel } from "@/lib/pillars";
 import type { Category, IllustrationVariant, Post } from "./types";
 
 // Deviation #1: variant defaults from category — no per-post design decision.
@@ -30,6 +31,7 @@ export function adaptPost(fm: PostFrontmatter, featured = false): Post {
     title: fm.title,
     dek: fm.excerpt,
     category,
+    display: displayLabel(fm),
     level: iqLevel(fm.iqScore),
     tier: iqTier(fm.iqScore),
     readingTime: minutes(fm.readingTime),

@@ -48,6 +48,9 @@ export interface Post {
   title: string;
   dek: string;
   category: Category;
+  /** what a card shows: the pillar (GROW/PROTECT/OPTIMIZE) for mapped articles, else the
+   *  category (lib/pillars.ts displayLabel); `category` itself is unchanged */
+  display: { label: string; theme: Category };
   level: Level;
   tier: string; // e.g. "Foundations" | "Strategy" — meta string only
   readingTime: number; // integer minutes

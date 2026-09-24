@@ -16,6 +16,8 @@ type Depth = "overview" | "walkthrough" | "detailed";
 export interface QuizGuide {
   title: string;
   readingTime: string;
+  /** GROW / PROTECT / OPTIMIZE for mapped articles, else the category (lib/pillars.ts) */
+  label: string;
 }
 
 const QUESTIONS = [
@@ -177,7 +179,7 @@ export default function MoneyIQQuiz({ guides }: { guides: Record<string, QuizGui
                     className="block rounded-xl bg-accent hover:bg-primary text-white px-5 py-4 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
                   >
                     <span className="block text-[12px] font-bold uppercase tracking-wider text-white/80">
-                      Start with · {guides[result.primary]?.readingTime}
+                      Start with · {guides[result.primary]?.label} · {guides[result.primary]?.readingTime}
                     </span>
                     <span className="block text-[16px] font-bold leading-snug">{guides[result.primary]?.title}</span>
                   </Link>
@@ -186,7 +188,8 @@ export default function MoneyIQQuiz({ guides }: { guides: Record<string, QuizGui
                       Also useful:{" "}
                       <Link href={`/blog/${result.also}`} className="font-semibold text-accent hover:text-primary underline-offset-2 hover:underline">
                         {guides[result.also]?.title}
-                      </Link>
+                      </Link>{" "}
+                      <span className="text-[12px] font-bold tracking-wide text-slate-500">({guides[result.also]?.label})</span>
                     </p>
                   )}
                   <p className="mt-2 text-[14px] text-slate-600">

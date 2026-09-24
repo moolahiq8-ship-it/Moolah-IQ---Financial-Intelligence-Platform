@@ -1,140 +1,43 @@
-const IQ_TIERS = [
-  {
-    score: 95,
-    name: "Foundations",
-    description: "Debt payoff order, a lower-rate call, spotting scams",
-    // Deepened fill: real mint #A7F3D0 (emerald-200); score darkened to
-    // emerald-800 for AA contrast on the deeper fill
-    row: "bg-emerald-200",
-    scoreColor: "text-emerald-800",
-    nameColor: "text-dark-text",
-    descColor: "text-slate-600",
-    track: "bg-emerald-100",
-    fill: "bg-accent",
-    fillWidth: "w-[33%]",
-  },
-  {
-    score: 110,
-    name: "Strategy",
-    description: "Index investing, position sizing, insurance trade-offs",
-    // Deepened fill: real warm gold #F0DFA0; score darkened to yellow-800
-    // for AA contrast on the deeper fill
-    row: "bg-[#F0DFA0]",
-    scoreColor: "text-yellow-800",
-    nameColor: "text-dark-text",
-    descColor: "text-slate-600",
-    track: "bg-[#F3E9C6]",
-    fill: "bg-gold",
-    fillWidth: "w-[66%]",
-  },
-  {
-    score: 140,
-    name: "Mastery",
-    description: "Chart setups, futures and options strategies, advanced risk",
-    // Spec: row bg primary, text #F8FAFC (light-bg), score gold-light; meter solid #FFD700 (gold-light)
-    row: "bg-primary",
-    scoreColor: "text-gold-light",
-    nameColor: "text-light-bg",
-    descColor: "text-light-bg/70",
-    track: "bg-gold-light",
-    fill: "bg-gold-light",
-    fillWidth: "w-full",
-  },
-];
+// Homepage hero (2026-09-23): headline, introduction and the two calls to action in one
+// spacious column. The former "Learning levels" panel (numeric scores, meters, note) and
+// the "Every guide rated by complexity" badge were removed at Richard's direction.
 
 export default function Hero() {
   return (
     <section className="bg-light-bg">
-      {/* Spec: padding 80px 56px 88px, max-width 1360px centered */}
-      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-14 pt-16 lg:pt-20 pb-16 lg:pb-[88px]">
-        {/* Spec: 2-col grid 1.1fr / 0.9fr, gap 64px */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16 items-center">
-          {/* Left — copy */}
-          <div>
-            {/* Badge pill — 13px/600 primary, border #C7D6EA, bg #EDF3FA, 6px 14px */}
-            <span className="inline-block bg-[#EDF3FA] border border-[#C7D6EA] text-primary text-[13px] font-semibold px-3.5 py-1.5 rounded-full mb-6">
-              Every guide rated by complexity
-            </span>
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-14 pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28">
+        <div className="max-w-[880px]">
+          {/* H1 — Playfair 800, lh 1.05, ls -0.015em */}
+          <h1
+            className="text-4xl/[1.05] md:text-6xl/[1.05] lg:text-[72px]/[1.05] font-extrabold text-primary tracking-[-0.015em] mb-7"
+            style={{ fontFamily: "var(--font-playfair)" }}
+          >
+            Grow, protect, and optimize your{" "}
+            <em className="text-accent italic">money</em>.
+          </h1>
 
-            {/* H1 — Playfair 800 66px, lh 1.05, ls -0.015em */}
-            <h1
-              className="text-4xl/[1.05] md:text-5xl/[1.05] lg:text-[66px]/[1.05] font-extrabold text-primary tracking-[-0.015em] mb-6"
-              style={{ fontFamily: "var(--font-playfair)" }}
+          {/* Subcopy — Inter 18-20px/1.65 slate-600, max ~56ch */}
+          <p className="text-lg lg:text-xl leading-[1.65] text-slate-600 max-w-[56ch] mb-10">
+            Clear, research-backed education on trading and investing,
+            protecting what matters, and making your finances work more
+            efficiently&mdash;without the hype.
+          </p>
+
+          {/* CTAs — primary: bg accent, white 16px/700, 15px 30px, hover primary */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <a
+              href="#quiz"
+              className="inline-block text-center bg-accent hover:bg-primary text-white font-bold text-base px-[30px] py-[15px] rounded-xl transition-colors"
             >
-              Grow, protect, and optimize your{" "}
-              <em className="text-accent italic">money</em>.
-            </h1>
-
-            {/* Subcopy — Inter 18px/1.65 #475569 (slate-600), max 52ch */}
-            <p className="text-lg leading-[1.65] text-slate-600 max-w-[52ch] mb-8">
-              Clear, research-backed education on trading and investing,
-              protecting what matters, and making your finances work more
-              efficiently&mdash;without the hype.
-            </p>
-
-            {/* CTAs — primary: bg accent, white 16px/700, 15px 30px, hover primary */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <a
-                href="#quiz"
-                className="inline-block text-center bg-accent hover:bg-primary text-white font-bold text-base px-[30px] py-[15px] rounded-xl transition-colors"
-              >
-                Find your starting point
-              </a>
-              <a
-                href="#tool"
-                className="inline-flex items-center justify-center gap-1.5 text-accent hover:text-primary font-semibold text-base transition-colors"
-              >
-                Try the Crossover Calculator
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right — learning levels card (content complexity, not the reader) */}
-          {/* Spec: white, border #E2E8F0, radius 20px, padding 30px,
-              shadow 0 24px 48px -32px rgba(26,60,110,0.4) */}
-          <div className="lg:justify-self-end w-full max-w-md">
-            <div className="bg-white border border-slate-200 rounded-[20px] p-[30px] shadow-[0_24px_48px_-32px_rgba(26,60,110,0.4)]">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-5">
-                Learning levels
-              </p>
-
-              {/* Tier rows — grid 56px / 1fr / auto, gap 16px, padding 14px 16px, radius 12px */}
-              <ul className="space-y-3">
-                {IQ_TIERS.map((tier) => (
-                  <li
-                    key={tier.name}
-                    className={`grid grid-cols-[56px_1fr_auto] items-center gap-4 px-4 py-3.5 rounded-xl ${tier.row}`}
-                  >
-                    <span className={`text-lg font-extrabold ${tier.scoreColor}`}>
-                      {tier.score}
-                    </span>
-                    <div>
-                      <p className={`text-[15px] font-bold ${tier.nameColor}`}>
-                        {tier.name}
-                      </p>
-                      <p className={`text-[13px] leading-snug ${tier.descColor}`}>
-                        {tier.description}
-                      </p>
-                    </div>
-                    {/* Meter — 40 × 6px pill */}
-                    <span
-                      className={`block w-10 h-1.5 rounded-full overflow-hidden ${tier.track}`}
-                    >
-                      <span
-                        className={`block h-full rounded-full ${tier.fill} ${tier.fillWidth}`}
-                      />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <p className="text-xs text-slate-500 leading-relaxed border-t border-slate-200 mt-5 pt-4">
-                Levels describe how complex a guide&apos;s topic is &mdash; not
-                the reader&apos;s ability, wealth, or worth. Start wherever
-                the topic is new to you.
-              </p>
-            </div>
+              Find your starting point
+            </a>
+            <a
+              href="#tool"
+              className="inline-flex items-center justify-center gap-1.5 text-accent hover:text-primary font-semibold text-base transition-colors"
+            >
+              Try the Crossover Calculator
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </div>
