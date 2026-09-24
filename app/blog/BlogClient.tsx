@@ -7,17 +7,17 @@ import { PostFrontmatter } from "@/lib/posts";
 import { FeaturedHero } from "@/components/blog/FeaturedHero";
 import { ArticleCard } from "@/components/blog/ArticleCard";
 import { adaptPost } from "@/lib/blog/adaptPost";
+import { pillarOf, MORE_TOPICS } from "@/lib/pillars";
 
 interface BlogClientProps {
   posts: PostFrontmatter[];
-  categories: string[];
 }
 
 // The LATEST grid shows six cards until the reader asks for more.
 // The hero takes the newest post, so the page opens with seven visible.
 const GRID_PAGE_SIZE = 6;
 
-export default function BlogClient({ posts, categories }: BlogClientProps) {
+export default function BlogClient({ posts }: BlogClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchResults, setSearchResults] = useState(posts);
   const [showAll, setShowAll] = useState(false);
@@ -38,9 +38,14 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
   // Featured = newest post overall (posts is date-desc from getAllPosts).
   const featured = posts[0];
 
-  const filtered = searchResults.filter(
-    (p) => !selectedCategory || p.category.toLowerCase() === selectedCategory.toLowerCase()
-  );
+  // Pillar filter (lib/pillars.ts): a grouping over the existing categories; "More topics"
+  // = earlier articles outside the three pillars, so the archive stays one click away.
+  const filtered = searchResults.filter((p) => {
+    if (!selectedCategory) return true;
+    const pillar = pillarOf(p);
+    return selectedCategory === MORE_TOPICS ? pillar === null : pillar === selectedCategory;
+  });
+  const hasMoreTopics = posts.some((p) => pillarOf(p) === null);
 
   // The featured post headlines the hero — don't repeat it in the LATEST grid.
   const gridPosts = filtered.filter((p) => p.slug !== featured?.slug);
@@ -58,7 +63,7 @@ export default function BlogClient({ posts, categories }: BlogClientProps) {
           <SearchBar posts={posts} onResults={handleResults} />
         </div>
         <CategoryFilter
-          categories={categories}
+          hasMoreTopics={hasMoreTopics}
           selected={selectedCategory}
           onSelect={handleSelect}
         />

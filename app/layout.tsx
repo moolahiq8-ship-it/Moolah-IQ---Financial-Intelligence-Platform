@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Moolah IQ",
   },
   description:
-    "Practical personal finance tips on budgeting, investing, saving, and building wealth. No jargon, no fluff.",
+    "Grow, protect, and optimize your money: clear, research-backed education on trading and investing, protecting what matters, and making your finances work more efficiently, without the hype.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png", sizes: "512x512" },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Moolah IQ — Smart Money Insights",
     description:
-      "Practical personal finance tips on budgeting, investing, saving, and building wealth.",
+      "Grow, protect, and optimize your money: clear, research-backed education on trading and investing, protecting what matters, and making your finances work more efficiently, without the hype.",
     type: "website",
     locale: "en_US",
     siteName: "Moolah IQ",

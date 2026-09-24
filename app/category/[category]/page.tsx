@@ -12,9 +12,9 @@ interface Props {
 const categoryDescriptions: Record<string, string> = {
   earn: "Strategies to grow your income through careers, side hustles, freelancing, and salary negotiation.",
   save: "High-yield savings accounts, emergency funds, and goal-based saving strategies.",
-  invest: "Stock market fundamentals, index funds, retirement accounts, and compound growth.",
-  optimize: "Tax planning, credit score improvement, debt payoff strategies, and financial fine-tuning.",
-  protect: "Insurance essentials, estate planning, fraud prevention, and wealth protection.",
+  invest: "Trading and investing: market fundamentals, index funds, position sizing, and risk.",
+  optimize: "Mortgage and debt payoff strategies, credit management, and ways to cut interest, fees, and hidden costs.",
+  protect: "Practical insurance knowledge and fraud prevention to safeguard your family and assets.",
   legacy: "Generational wealth building, charitable giving, and long-term financial planning.",
 };
 

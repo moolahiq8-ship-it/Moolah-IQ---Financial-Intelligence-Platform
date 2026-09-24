@@ -7,9 +7,7 @@ import {
   SiPinterest,
 } from "react-icons/si";
 import { SOCIAL_LINKS } from "@/lib/social";
-import { getAllCategories } from "@/lib/posts";
-import { CATEGORY } from "@/lib/blog/theme";
-import type { Category } from "@/lib/blog/types";
+import { PILLARS } from "@/lib/pillars";
 
 // Map each SOCIAL_LINKS label to its Simple Icons brand glyph.
 const SOCIAL_ICONS = {
@@ -28,20 +26,13 @@ const EXPLORE_LINKS = [
   { label: "About", href: "/about" },
 ];
 
-// Derived from the SAME source as generateStaticParams in
-// app/category/[category]/page.tsx, so the footer can only ever link to a route
-// that exists. The previous hardcoded eight outlived the posts backing them:
-// four of them (optimize, protect, milestones, legacy) pointed at routes that
-// were never generated, on every page of the site.
-function disciplineLinks() {
-  return getAllCategories().map((cat) => {
-    const slug = cat.toLowerCase();
-    return {
-      label: CATEGORY[slug as Category]?.label ?? cat,
-      href: `/category/${slug}`,
-    };
-  });
-}
+// The three pillars (lib/pillars.ts, 2026-09-23) link to their pillar pages; "All articles"
+// keeps every earlier topic one click away. The /category/* routes are unchanged and still
+// reachable from each article's category tag.
+const PILLAR_LINKS = [
+  ...PILLARS.map((p) => ({ label: p.label, href: `/pillar/${p.slug}` })),
+  { label: "All articles", href: "/blog" },
+];
 
 const LEGAL_LINKS = [
   { label: "Disclaimer", href: "/legal/disclaimer" },
@@ -50,8 +41,6 @@ const LEGAL_LINKS = [
 ];
 
 export default function Footer() {
-  const DISCIPLINE_LINKS = disciplineLinks();
-
   return (
     <footer className="bg-[#0f2847] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -79,8 +68,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-sm">
-              Level up your financial intelligence. Data-backed strategies to
-              build wealth, budget smarter, and invest with confidence.
+              Clear, research-backed education on trading and investing,
+              protecting what matters, and making your finances work more
+              efficiently&mdash;without the hype.
             </p>
             {/* Social row — same link convention as the footer columns */}
             <div className="flex items-center gap-4 mt-6">
@@ -121,13 +111,13 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Disciplines */}
+          {/* Pillars */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-              Disciplines
+              Pillars
             </h4>
             <ul className="grid grid-cols-2 gap-x-8 gap-y-3 text-sm">
-              {DISCIPLINE_LINKS.map((link) => (
+              {PILLAR_LINKS.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
