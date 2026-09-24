@@ -6,45 +6,33 @@ import type { Category } from "@/lib/blog/types";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Moolah IQ — our mission to make personal finance accessible and actionable for everyone.",
+    "Moolah IQ helps you grow, protect, and optimize your money through clear, research-backed personal finance and market education, with trading and investing as its main focus.",
 };
 
-const pillars = [
+// Three pillars (2026-09-23): GROW leads. Colours come from the shared CATEGORY theme
+// (lib/blog/theme.ts) read-only: GROW uses the existing INVEST palette (trading and
+// investing), PROTECT and OPTIMIZE their own. The theme map itself is unchanged.
+const pillars: { name: string; description: string; icon: string; theme: Category; primary?: boolean }[] = [
   {
-    name: "Earn",
-    description: "Scale your primary income, launch side hustles, and master the art of negotiation.",
-    icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-    slug: "earn",
-  },
-  {
-    name: "Save",
-    description: "Keep more of what comes in. Emergency funds, high-yield accounts, and cutting the bills you simply pay.",
-    icon: "M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z",
-    slug: "save",
-  },
-  {
-    name: "Invest",
-    description: "Demystify the markets by mastering stocks, index funds, and the unstoppable power of compound growth.",
+    name: "Grow",
+    description:
+      "Trading and investing, including technical analysis, futures day trading, options swing trading, and long-term investing. Explore chart walkthroughs and honest breakdowns of setups, strategies, and risk.",
     icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
-    slug: "invest",
+    theme: "invest",
+    primary: true,
   },
   {
     name: "Protect",
-    description: "Shield your hard-earned wealth with smart insurance, estate planning, and fraud prevention.",
+    description: "Safeguard your family and assets with practical insurance knowledge and fraud prevention.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-    slug: "protect",
+    theme: "protect",
   },
   {
     name: "Optimize",
-    description: "Change the terms. Debt rates, tax position, credit score, and the order you pay things in.",
+    description:
+      "Make your finances work more efficiently with mortgage and debt payoff strategies, credit management, and ways to cut interest, fees, and hidden costs.",
     icon: "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-    slug: "optimize",
-  },
-  {
-    name: "Legacy",
-    description: "Think beyond yourself by building generational wealth and creating a lasting impact through charitable planning.",
-    icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
-    slug: "legacy",
+    theme: "optimize",
   },
 ];
 
@@ -67,7 +55,7 @@ export default function AboutPage() {
             About Moolah IQ
           </h1>
           <p className="text-lg sm:text-xl font-medium text-white/70 max-w-2xl leading-relaxed">
-            Empowering smarter money decisions through data-backed intelligence and disciplined strategy.
+            Helping you grow, protect, and optimize your money through clear, research-backed personal finance and market education&mdash;without the hype.
           </p>
         </div>
       </section>
@@ -85,13 +73,14 @@ export default function AboutPage() {
           </div>
           <div className="mt-4 space-y-5">
             <p className="text-slate-700 text-lg sm:text-xl font-medium leading-relaxed">
-              At{" "}
-              <strong className="text-primary font-extrabold">Moolah IQ</strong>, we believe financial mastery shouldn&apos;t be a &ldquo;Wall Street secret.&rdquo; Whether you are architecting your first budget, deploying your first investment dollar, or optimizing a complex path to financial independence, we are here to bridge the gap between where you are and where you want to be.
+              <strong className="text-primary font-extrabold">Moolah IQ</strong> helps you understand your money and make informed decisions. Our main focus is{" "}
+              <strong className="text-primary font-extrabold">trading and investing</strong>, supported by practical education on protecting your family and assets and making your finances work more efficiently.
             </p>
             <p className="text-slate-700 text-lg sm:text-xl font-medium leading-relaxed">
-              Our goal is to empower you with the{" "}
-              <strong className="text-primary font-extrabold">data and discipline</strong>{" "}
-              needed to make smarter, high-conviction money decisions.
+              Through chart walkthroughs, research-backed explanations, and honest breakdowns of strategies and risk, we make complex topics easier to understand.
+            </p>
+            <p className="text-primary text-base sm:text-lg font-extrabold tracking-tight">
+              Human-directed. Clarity over hype. Insight over noise.
             </p>
           </div>
         </div>
@@ -102,31 +91,36 @@ export default function AboutPage() {
         <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
       </div>
 
-      {/* The 6 Pillars */}
+      {/* Our Three Pillars — GROW first and emphasized (primary focus) */}
       <section className="max-w-5xl mx-auto px-4 py-14 sm:py-16">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/[0.06] border border-primary/10 rounded-full px-4 py-1.5 mb-5">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Foundation</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 tracking-tight">The 6 Pillars</h2>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary mb-4 tracking-tight">Our Three Pillars</h2>
           <p className="text-slate-800 font-medium max-w-2xl mx-auto text-lg leading-relaxed">
-            Every strategy, video, and guide at Moolah IQ is built upon our six core pillars of personal finance:
+            Trading and investing are our primary focus, supported by practical ways to protect what matters and optimize your finances.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {pillars.map((pillar, i) => {
-            const c = CATEGORY[pillar.slug as Category];
+            const c = CATEGORY[pillar.theme];
             const num = String(i + 1).padStart(2, "0");
             return (
             <div
               key={pillar.name}
-              className="group relative overflow-hidden rounded-2xl bg-[#fffdf8] border border-[#ebe5d8] pt-[26px] px-6 pb-6 shadow-[0_10px_30px_-22px_rgba(15,43,82,0.4)] transition-[transform,box-shadow] duration-[180ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_24px_46px_-22px_rgba(15,43,82,0.42)]"
+              className={`group relative overflow-hidden rounded-2xl bg-[#fffdf8] border pt-[26px] px-6 pb-6 transition-[transform,box-shadow] duration-[180ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_24px_46px_-22px_rgba(15,43,82,0.42)] ${
+                pillar.primary
+                  ? "border-transparent shadow-[0_16px_36px_-20px_rgba(15,43,82,0.5)]"
+                  : "border-[#ebe5d8] shadow-[0_10px_30px_-22px_rgba(15,43,82,0.4)]"
+              }`}
+              style={pillar.primary ? { boxShadow: `0 0 0 2px ${c.gradFrom}, 0 16px 36px -20px rgba(15,43,82,0.5)` } : undefined}
             >
-              {/* Top accent bar — 90° gradient in the pillar's two brand colours */}
+              {/* Top accent bar — 90° gradient in the pillar's two brand colours (thicker on the primary pillar) */}
               <span
                 aria-hidden
-                className="absolute top-0 left-0 h-1 w-full"
+                className={`absolute top-0 left-0 w-full ${pillar.primary ? "h-1.5" : "h-1"}`}
                 style={{ background: `linear-gradient(90deg, ${c.gradFrom}, ${c.gradTo})` }}
               />
               {/* Ghosted index numeral — Playfair (site serif), pillar colour at ~15% */}
@@ -141,7 +135,7 @@ export default function AboutPage() {
               <div
                 className="w-[46px] h-[46px] rounded-xl flex items-center justify-center mb-[18px]"
                 style={{
-                  background: categoryGradient(pillar.slug as Category),
+                  background: categoryGradient(pillar.theme),
                   boxShadow: `0 8px 16px -8px ${c.gradTo}99`,
                 }}
               >
@@ -149,12 +143,22 @@ export default function AboutPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d={pillar.icon} />
                 </svg>
               </div>
-              <h3
-                className="text-[13px] font-extrabold uppercase tracking-[0.09em] mb-[9px]"
-                style={{ color: c.text }}
-              >
-                {pillar.name}
-              </h3>
+              <div className="flex flex-wrap items-center gap-2 mb-[9px]">
+                <h3
+                  className={`font-extrabold uppercase tracking-[0.09em] ${pillar.primary ? "text-[15px]" : "text-[13px]"}`}
+                  style={{ color: c.text }}
+                >
+                  {pillar.name}
+                </h3>
+                {pillar.primary && (
+                  <span
+                    className="text-[10px] font-bold uppercase tracking-widest rounded-full px-2 py-0.5 text-white"
+                    style={{ background: categoryGradient(pillar.theme) }}
+                  >
+                    Primary focus
+                  </span>
+                )}
+              </div>
               <p className="text-[14px] leading-[1.55] text-[#5e6675]">{pillar.description}</p>
             </div>
             );
@@ -231,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="max-w-4xl mx-auto px-4 pb-16 sm:pb-20 pt-6">
+      <section className="max-w-4xl mx-auto px-4 pb-10 sm:pb-12 pt-6">
         <div className="relative overflow-hidden bg-gradient-to-br from-primary/[0.06] via-white to-accent/[0.10] rounded-3xl border border-gray-200/80 p-8 sm:p-12 text-center shadow-md">
           <div className="relative">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-primary mb-3 tracking-tight">
@@ -243,6 +247,17 @@ export default function AboutPage() {
             <Newsletter variant="inline" />
           </div>
         </div>
+      </section>
+
+      {/* Closing line + disclaimer */}
+      <section className="max-w-4xl mx-auto px-4 pb-16 sm:pb-20 text-center">
+        <p className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight mb-6">
+          Keep raising your financial IQ.
+        </p>
+        <p className="text-slate-500 text-sm leading-relaxed max-w-2xl mx-auto">
+          Educational content only. Not financial, investment, insurance, tax, or legal advice. Trading and investing involve risk,
+          including loss of principal. Past performance does not guarantee future results.
+        </p>
       </section>
     </div>
   );

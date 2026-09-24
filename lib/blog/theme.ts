@@ -1,7 +1,8 @@
 // Moolah IQ v2 blog — system lookups (Handoff Spec §1.2, §1.3, §1.4, §5.2, §5.3).
 // SINGLE SOURCE OF TRUTH for the SITE-WIDE per-category / per-pillar colours.
 // As of 2026-07-14 this CATEGORY map is ALSO consumed by the About page's
-// "The 6 Pillars" grid (app/about/page.tsx), not just the blog. So a category
+// pillar grid (app/about/page.tsx; since 2026-09-23 "Our Three Pillars": GROW uses the
+// invest palette, plus protect and optimize), not just the blog. So a category
 // colour changed here changes it in BOTH places — do NOT treat it as blog-only.
 // (File is still named blog/theme.ts for now; renaming was deferred to avoid churn.)
 // These are consumed at runtime via inline styles by the blog + About components —
