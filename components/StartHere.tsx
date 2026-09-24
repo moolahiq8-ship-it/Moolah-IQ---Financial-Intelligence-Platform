@@ -1,60 +1,61 @@
 import Link from "next/link";
 import { iqBadgeLabel, iqTier, IQ_BADGE_CLASSES } from "@/lib/iq";
+import { getAllPosts } from "@/lib/posts";
+import { getPillar, pillarOf } from "@/lib/pillars";
 
-const GUIDES = [
-  {
-    slug: "getting-started-with-budgeting",
-    title: "Getting Started with Budgeting: A Beginner's Guide",
-    dek: "Create your first budget with the 50/30/20 rule and a system that actually sticks.",
-    category: "Save",
-    minutes: 2,
-    iqScore: 95,
-    stat: "50/30/20",
-    caption: "needs · wants · savings",
-    // Panel fills cycle mint → warm gold → blue (deepened per reference:
-    // emerald-200 / #F0DFA0 / blue-200); stat text darkened for AA contrast
-    panel: "bg-emerald-200",
-    statColor: "text-emerald-800",
-  },
-  {
-    slug: "vet-online-income-opportunity",
-    title: "How to Vet Any Online Income Opportunity in 10 Minutes",
-    dek: "A 5-point due-diligence check to tell whether any “make money online” offer is real.",
-    category: "Earn",
-    minutes: 6,
-    iqScore: 95,
-    stat: "10 min",
-    caption: "5-point legitimacy check",
-    panel: "bg-[#F0DFA0]",
-    statColor: "text-yellow-800",
-  },
+// The four featured guides (2026-09-23), in display order. Title, summary, reading time
+// and level come from each article's own metadata (content/posts/*.md) at build time;
+// only the panel's topic label is written here - a topic, never an invented statistic.
+const FEATURED = [
   {
     slug: "investing-101",
-    title: "Investing 101: How to Start Investing with Any Amount",
-    dek: "The basics of stocks, index funds, and compound interest — no big balance required.",
-    category: "Invest",
-    minutes: 3,
-    iqScore: 110,
-    stat: "+18.4%",
-    caption: "compound growth, illustrated",
+    topic: "How compounding works",
+    caption: "stocks · index funds · any amount",
     panel: "bg-blue-200",
-    statColor: "text-primary",
+    topicColor: "text-primary",
   },
   {
-    slug: "best-high-yield-savings-accounts-2026",
-    title: "The 5 Best High-Yield Savings Accounts in 2026",
-    dek: "Top high-yield savings accounts compared by rate, fees, minimums, and features.",
-    category: "Save",
-    minutes: 5,
-    iqScore: 125,
-    stat: "4.50% APY",
-    caption: "top rate, verified Feb 2026",
+    slug: "size-your-first-investments",
+    topic: "Position sizing",
+    caption: "the asymmetric-risk rule",
+    panel: "bg-[#F0DFA0]",
+    topicColor: "text-yellow-800",
+  },
+  {
+    slug: "ask-credit-card-issuer-for-lower-rate",
+    topic: "Ask for a lower rate",
+    caption: "what to say on the call",
     panel: "bg-emerald-200",
-    statColor: "text-emerald-800",
+    topicColor: "text-emerald-800",
+  },
+  {
+    slug: "three-ways-pay-off-mortgage-years-early-without-refinancing",
+    topic: "Pay off your mortgage early",
+    caption: "without refinancing",
+    panel: "bg-blue-200",
+    topicColor: "text-primary",
   },
 ];
 
+function featuredGuides() {
+  const posts = getAllPosts();
+  return FEATURED.map((f) => {
+    const post = posts.find((p) => p.slug === f.slug);
+    if (!post) throw new Error(`StartHere: featured article ${f.slug} not found in content/posts`);
+    const pillarSlug = pillarOf(post);
+    return {
+      ...f,
+      title: post.title,
+      dek: post.excerpt,
+      readingTime: post.readingTime,
+      iqScore: post.iqScore,
+      pillar: pillarSlug ? getPillar(pillarSlug)?.label ?? post.category : post.category,
+    };
+  });
+}
+
 export default function StartHere() {
+  const GUIDES = featuredGuides();
   return (
     <section id="start" className="bg-white scroll-mt-20">
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-14 py-16 lg:py-20">
@@ -68,7 +69,7 @@ export default function StartHere() {
               className="text-3xl md:text-[38px]/[1.2] font-extrabold text-primary"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Four guides most readers begin with
+              Four guides to start with
             </h2>
           </div>
           <Link
@@ -80,20 +81,20 @@ export default function StartHere() {
           </Link>
         </div>
 
-        {/* Cards — 4-col, gap 20px */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Cards — 1 col, 2 col from sm, 4 col from xl (at 1024px four columns were ~209px wide), gap 20px */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
           {GUIDES.map((guide) => (
             <Link
               key={guide.slug}
               href={`/blog/${guide.slug}`}
               className="group block bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-[180ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_36px_-24px_rgba(26,60,110,0.4)]"
             >
-              {/* Top panel — typographic stat */}
+              {/* Top panel — topic label */}
               <div
                 className={`min-h-[112px] px-[22px] py-6 flex flex-col items-center justify-center text-center ${guide.panel}`}
               >
-                <span className={`text-[28px] font-bold leading-tight ${guide.statColor}`}>
-                  {guide.stat}
+                <span className={`text-[22px] font-bold leading-tight ${guide.topicColor}`}>
+                  {guide.topic}
                 </span>
                 <span className="text-xs text-slate-700 mt-1">{guide.caption}</span>
               </div>
@@ -102,9 +103,9 @@ export default function StartHere() {
               <div className="p-[22px]">
                 <div className="flex items-center gap-1.5 mb-3">
                   <span className="text-xs font-bold uppercase tracking-wide text-gold-dark">
-                    {guide.category}
+                    {guide.pillar}
                   </span>
-                  <span className="text-xs text-slate-400">· {guide.minutes} min</span>
+                  <span className="text-xs text-slate-500">· {guide.readingTime}</span>
                   <span
                     className={`ml-auto text-[11px] font-bold px-2 py-1 rounded-full whitespace-nowrap ${IQ_BADGE_CLASSES[iqTier(guide.iqScore)]}`}
                   >
@@ -114,7 +115,7 @@ export default function StartHere() {
                 <h3 className="text-lg/[1.3] font-bold text-primary mb-2">
                   {guide.title}
                 </h3>
-                <p className="text-sm/[1.55] text-slate-500">{guide.dek}</p>
+                <p className="text-sm/[1.55] text-slate-500 line-clamp-4">{guide.dek}</p>
               </div>
             </Link>
           ))}

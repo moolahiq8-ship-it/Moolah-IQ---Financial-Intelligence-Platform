@@ -40,13 +40,15 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Desktop nav — centered, gap 36px, 15px links */}
-          <nav className="hidden md:flex items-center gap-9 absolute left-1/2 -translate-x-1/2">
+          {/* Desktop nav — centered, gap 36px, 15px links. From lg (1024px) only: at tablet
+              widths (~800px) the centred links wrapped and collided with the CTA, so
+              tablets use the mobile menu below (2026-09-23). */}
+          <nav aria-label="Main" className="hidden lg:flex items-center gap-9 absolute left-1/2 -translate-x-1/2">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-[15px] transition-colors hover:text-accent ${
+                className={`text-[15px] whitespace-nowrap transition-colors hover:text-accent ${
                   link.primary
                     ? "font-semibold text-primary"
                     : "font-medium text-slate-600"
@@ -58,10 +60,10 @@ export default function Header() {
           </nav>
 
           {/* Right CTA pill — bg primary, white 14px/600, 11px 22px, radius 999px, hover accent */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <Link
               href="/#newsletter"
-              className="bg-primary hover:bg-accent text-white font-semibold px-[22px] py-[11px] rounded-full text-sm transition-colors"
+              className="bg-primary hover:bg-accent text-white font-semibold px-[22px] py-[11px] rounded-full text-sm whitespace-nowrap transition-colors"
             >
               Get the Sunday Seed
             </Link>
@@ -69,9 +71,12 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 -mr-2 text-slate-600"
+            type="button"
+            className="lg:hidden p-2 -mr-2 text-slate-600"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
           >
             {menuOpen ? (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +93,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <nav className="md:hidden border-t border-slate-200 bg-light-bg">
+        <nav id="mobile-menu" aria-label="Main" className="lg:hidden border-t border-slate-200 bg-light-bg">
           <div className="px-4 py-4 space-y-1">
             {NAV_LINKS.map((link) => (
               <Link

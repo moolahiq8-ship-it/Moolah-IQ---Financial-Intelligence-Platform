@@ -2,7 +2,7 @@ const IQ_TIERS = [
   {
     score: 95,
     name: "Foundations",
-    description: "First budget, emergency fund, debt basics",
+    description: "Debt payoff order, a lower-rate call, spotting scams",
     // Deepened fill: real mint #A7F3D0 (emerald-200); score darkened to
     // emerald-800 for AA contrast on the deeper fill
     row: "bg-emerald-200",
@@ -16,7 +16,7 @@ const IQ_TIERS = [
   {
     score: 110,
     name: "Strategy",
-    description: "Index investing, tax basics, rate shopping",
+    description: "Index investing, position sizing, insurance trade-offs",
     // Deepened fill: real warm gold #F0DFA0; score darkened to yellow-800
     // for AA contrast on the deeper fill
     row: "bg-[#F0DFA0]",
@@ -30,7 +30,7 @@ const IQ_TIERS = [
   {
     score: 140,
     name: "Mastery",
-    description: "Optimization, protection, legacy planning",
+    description: "Chart setups, futures and options strategies, advanced risk",
     // Spec: row bg primary, text #F8FAFC (light-bg), score gold-light; meter solid #FFD700 (gold-light)
     row: "bg-primary",
     scoreColor: "text-gold-light",
@@ -53,7 +53,7 @@ export default function Hero() {
           <div>
             {/* Badge pill — 13px/600 primary, border #C7D6EA, bg #EDF3FA, 6px 14px */}
             <span className="inline-block bg-[#EDF3FA] border border-[#C7D6EA] text-primary text-[13px] font-semibold px-3.5 py-1.5 rounded-full mb-6">
-              Personal finance, rated by difficulty
+              Every guide rated by complexity
             </span>
 
             {/* H1 — Playfair 800 66px, lh 1.05, ls -0.015em */}
@@ -61,15 +61,15 @@ export default function Hero() {
               className="text-4xl/[1.05] md:text-5xl/[1.05] lg:text-[66px]/[1.05] font-extrabold text-primary tracking-[-0.015em] mb-6"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Make smarter <em className="text-accent italic">money</em>{" "}
-              decisions.
+              Grow, protect, and optimize your{" "}
+              <em className="text-accent italic">money</em>.
             </h1>
 
             {/* Subcopy — Inter 18px/1.65 #475569 (slate-600), max 52ch */}
             <p className="text-lg leading-[1.65] text-slate-600 max-w-[52ch] mb-8">
-              Every guide and tool carries a Money IQ score — from 95 (first
-              budget) to 140 (estate strategy). Take the 60-second quiz below
-              to find your starting point.
+              Clear, research-backed education on trading and investing,
+              protecting what matters, and making your finances work more
+              efficiently&mdash;without the hype.
             </p>
 
             {/* CTAs — primary: bg accent, white 16px/700, 15px 30px, hover primary */}
@@ -78,7 +78,7 @@ export default function Hero() {
                 href="#quiz"
                 className="inline-block text-center bg-accent hover:bg-primary text-white font-bold text-base px-[30px] py-[15px] rounded-xl transition-colors"
               >
-                Take the Money IQ quiz
+                Find your starting point
               </a>
               <a
                 href="#tool"
@@ -90,13 +90,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — THE IQ SCALE card */}
+          {/* Right — learning levels card (content complexity, not the reader) */}
           {/* Spec: white, border #E2E8F0, radius 20px, padding 30px,
               shadow 0 24px 48px -32px rgba(26,60,110,0.4) */}
           <div className="lg:justify-self-end w-full max-w-md">
             <div className="bg-white border border-slate-200 rounded-[20px] p-[30px] shadow-[0_24px_48px_-32px_rgba(26,60,110,0.4)]">
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-5">
-                The IQ Scale
+                Learning levels
               </p>
 
               {/* Tier rows — grid 56px / 1fr / auto, gap 16px, padding 14px 16px, radius 12px */}
@@ -130,8 +130,9 @@ export default function Hero() {
               </ul>
 
               <p className="text-xs text-slate-500 leading-relaxed border-t border-slate-200 mt-5 pt-4">
-                Scores measure the topic&apos;s complexity — never the
-                reader&apos;s. Everyone starts at Foundations.
+                Levels describe how complex a guide&apos;s topic is &mdash; not
+                the reader&apos;s ability, wealth, or worth. Start wherever
+                the topic is new to you.
               </p>
             </div>
           </div>
