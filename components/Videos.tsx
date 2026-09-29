@@ -27,6 +27,13 @@ const MAX_VIDEOS = 6;
 
 const VIDEOS: Video[] = [
   {
+    id: "M7CKVc5RgFQ",
+    title: "ETF vs mutual fund: what is actually different?",
+    duration: "6:06",
+    date: "2026-09-29",
+    articleSlug: "etf-vs-mutual-fund",
+  },
+  {
     id: "cBRE5d2duSs",
     title: "How to Ask Your Credit Card Issuer for a Lower Rate",
     duration: "4:22",
